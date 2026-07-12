@@ -176,7 +176,34 @@
     "send": "Send",
     "thinking": "Thinking...",
     "error": "Sorry, something went wrong. Please try again or contact our sales team directly.",
-    "disclaimer": "AI-generated answers — please confirm prices and specs with our sales team"
+    "disclaimer": "AI-generated answers — please confirm prices and specs with our sales team",
+    "lineLabel": "Chat on LINE"
+  },
+  "process": {
+    "title": "How we work",
+    "subtitle": "From your part to the right packaging, in four steps",
+    "step1Title": "Consult & analyse",
+    "step1Desc": "Describe your challenge or send a physical part / CAD file. We assess risk points and suitable materials — free of charge.",
+    "step2Title": "Design & prototype",
+    "step2Desc": "We engineer the packaging structure, select material specs, and deliver a working sample within 5–10 business days.",
+    "step3Title": "Test on your line",
+    "step3Desc": "Trial the sample in your real production line; we refine until protection and cost are both right.",
+    "step4Title": "Produce & deliver on schedule",
+    "step4Desc": "Volume production with recurring deliveries synced to your build plan — your line never stops."
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "subtitle": "Can't find your answer? Ask our AI assistant or message us on LINE",
+    "q1": "What is the minimum order?",
+    "a1": "It's flexible by product type. Standard items like bubble wrap, film and tape start at small quantities; custom jobs depend on spec. Tell us your monthly usage and we'll propose the most cost-effective plan.",
+    "q2": "Can I get a sample before ordering?",
+    "a2": "Yes — every custom job includes a prototype for real-world testing, typically within 5–10 business days of receiving your part or drawings.",
+    "q3": "How is delivery handled and how long does it take?",
+    "a3": "We deliver direct to factories nationwide. Bangkok metro is typically 1–3 business days, and we can set recurring deliveries matched to your production plan.",
+    "q4": "Do you have automotive-specific packaging?",
+    "a4": "Yes — it's our core expertise: returnable boxes, dividers and part trays built to the standards used in Toyota and Honda supply chains.",
+    "q5": "What information do you need for a quote?",
+    "a5": "Part dimensions and weight, monthly volume, and any special requirements (ESD-safe, export, etc.). We reply with a proposal within 24 business hours."
   },
   "notFound": {
     "title": "Page not found",

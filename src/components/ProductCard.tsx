@@ -17,15 +17,28 @@ export default function ProductCard({
       href={`/products/${category.slug}`}
       className="group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-navy-900/10"
     >
-      <div className={`relative bg-gradient-to-br ${category.accent} p-6`}>
-        <Image
-          src={category.image}
-          alt={category.name[locale]}
-          width={400}
-          height={240}
-          className="h-36 w-full object-contain drop-shadow-md transition group-hover:scale-105"
-        />
-      </div>
+      {category.isPhoto ? (
+        <div className="relative h-48 overflow-hidden">
+          <Image
+            src={category.image}
+            alt={category.name[locale]}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover transition duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-950/45 via-transparent to-transparent" />
+        </div>
+      ) : (
+        <div className={`relative bg-gradient-to-br ${category.accent} p-6`}>
+          <Image
+            src={category.image}
+            alt={category.name[locale]}
+            width={400}
+            height={240}
+            className="h-36 w-full object-contain drop-shadow-md transition group-hover:scale-105"
+          />
+        </div>
+      )}
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-lg font-bold text-navy-900">
           {category.name[locale]}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -27,19 +28,38 @@ export default async function HomePage({
   const t = await getTranslations();
   const l = locale as Locale;
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [1, 2, 3, 4, 5].map((n) => ({
+      "@type": "Question",
+      name: t(`faq.q${n}`),
+      acceptedAnswer: { "@type": "Answer", text: t(`faq.a${n}`) },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="thai-weave relative overflow-hidden bg-navy-950 text-white">
-        <div
-          aria-hidden="true"
-          className="absolute -right-40 -top-40 h-[480px] w-[480px] rounded-full bg-navy-700/30 blur-3xl"
+      <section className="relative overflow-hidden bg-navy-950 text-white">
+        <Image
+          src="/photos/hero.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
         />
         <div
           aria-hidden="true"
-          className="absolute -bottom-48 -left-24 h-[400px] w-[400px] rounded-full bg-gold-500/10 blur-3xl"
+          className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/85 to-navy-900/50"
         />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:py-28">
+        <div aria-hidden="true" className="thai-weave absolute inset-0" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-24 sm:px-6 lg:grid-cols-2 lg:py-36">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-gold-500/40 bg-gold-500/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-gold-300">
               <span className="h-1.5 w-1.5 rounded-full bg-gold-400" />
@@ -71,56 +91,23 @@ export default async function HomePage({
             </div>
           </div>
 
-          {/* Isometric packaging illustration */}
-          <div className="hidden justify-center lg:flex" aria-hidden="true">
-            <svg width="420" height="360" viewBox="0 0 420 360" fill="none">
-              <defs>
-                <linearGradient id="boxTop" x1="0" y1="0" x2="1" y2="1">
-                  <stop stopColor="#f6b83d" />
-                  <stop offset="1" stopColor="#f0a421" />
-                </linearGradient>
-                <linearGradient id="boxSide" x1="0" y1="0" x2="0" y2="1">
-                  <stop stopColor="#2b5892" />
-                  <stop offset="1" stopColor="#1d3a62" />
-                </linearGradient>
-              </defs>
-              {/* pallet */}
-              <path d="M60 290l150 60 150-60-150-60-150 60z" fill="#122a4a" />
-              <path d="M60 290v18l150 60v-18l-150-60z" fill="#0a1b33" />
-              <path d="M360 290v18l-150 60v-18l150-60z" fill="#0e2340" />
-              {/* big box */}
-              <path d="M110 180l100 40v100l-100-40V180z" fill="url(#boxSide)" />
-              <path d="M310 180l-100 40v100l100-40V180z" fill="#234677" />
-              <path d="M110 180l100-40 100 40-100 40-100-40z" fill="url(#boxTop)" />
-              <path d="M205 144l10-4 10 4v40l-10 4-10-4v-40z" fill="#fdf8ec" opacity="0.9" />
-              {/* small box left */}
-              <path d="M70 240l55 22v55l-55-22v-55z" fill="#1d3a62" />
-              <path d="M180 240l-55 22v55l55-22v-55z" fill="#16304f" />
-              <path d="M70 240l55-22 55 22-55 22-55-22z" fill="#5a8cc2" />
-              {/* small box right */}
-              <path d="M250 245l50 20v50l-50-20v-50z" fill="#b46f0b" />
-              <path d="M350 245l-50 20v50l50-20v-50z" fill="#925a10" />
-              <path d="M250 245l50-20 50 20-50 20-50-20z" fill="#f0a421" />
-              {/* floating bubbles = protection */}
-              <circle cx="90" cy="120" r="10" stroke="#5a8cc2" strokeWidth="3" opacity="0.5" />
-              <circle cx="130" cy="80" r="6" stroke="#f0a421" strokeWidth="3" opacity="0.6" />
-              <circle cx="330" cy="100" r="8" stroke="#5a8cc2" strokeWidth="3" opacity="0.5" />
-              <circle cx="360" cy="140" r="5" stroke="#f0a421" strokeWidth="3" opacity="0.6" />
-              {/* shield */}
-              <path
-                d="M210 30l34 12v26c0 22-14 39-34 46-20-7-34-24-34-46V42l34-12z"
-                fill="#f0a421"
-                opacity="0.95"
-              />
-              <path
-                d="M196 70l10 10 20-22"
-                stroke="#0a1b33"
-                strokeWidth="6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-              />
-            </svg>
+          {/* Trust chip floating over the warehouse photo */}
+          <div className="hidden justify-end lg:flex">
+            <div className="max-w-xs rounded-2xl border border-white/15 bg-navy-950/60 p-6 backdrop-blur-md">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-500 text-navy-950">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2l8 3v6c0 5.2-3.4 9.3-8 11-4.6-1.7-8-5.8-8-11V5l8-3z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+                  <path d="M8.5 12l2.5 2.5 4.5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <p className="mt-4 text-sm font-semibold leading-relaxed text-slate-200">
+                {t("trust.subtitle")}
+              </p>
+              <div className="mt-4 flex gap-6 text-lg font-black tracking-widest text-slate-400">
+                <span>TOYOTA</span>
+                <span>HONDA</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -199,6 +186,41 @@ export default async function HomePage({
         </div>
       </section>
 
+      {/* ── How we work (4-step process) ─────────────────── */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl">
+              {t("process.title")}
+            </h2>
+            <p className="mt-3 text-slate-500">{t("process.subtitle")}</p>
+          </Reveal>
+          <ol className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            {([1, 2, 3, 4] as const).map((n, i) => (
+              <Reveal key={n} delay={i * 120}>
+                <li className="relative">
+                  {i < 3 && (
+                    <span
+                      aria-hidden="true"
+                      className="absolute left-14 top-7 hidden h-0.5 w-[calc(100%-2rem)] bg-gradient-to-r from-gold-400 to-transparent lg:block"
+                    />
+                  )}
+                  <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-navy-950 text-xl font-black text-gold-400 shadow-lg shadow-navy-950/20">
+                    {n}
+                  </span>
+                  <h3 className="mt-5 font-bold text-navy-900">
+                    {t(`process.step${n}Title`)}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                    {t(`process.step${n}Desc`)}
+                  </p>
+                </li>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
+      </section>
+
       {/* ── Featured products ────────────────────────────── */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
@@ -230,9 +252,53 @@ export default async function HomePage({
         </div>
       </section>
 
+      {/* ── FAQ ──────────────────────────────────────────── */}
+      <section className="thai-weave-light bg-navy-50/50">
+        <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
+          <Reveal className="text-center">
+            <h2 className="text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl">
+              {t("faq.title")}
+            </h2>
+            <p className="mt-3 text-slate-500">{t("faq.subtitle")}</p>
+          </Reveal>
+          <div className="mt-10 space-y-3">
+            {([1, 2, 3, 4, 5] as const).map((n) => (
+              <details
+                key={n}
+                className="group rounded-2xl border border-slate-100 bg-white shadow-sm open:shadow-md"
+              >
+                <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-4 font-bold text-navy-900 [&::-webkit-details-marker]:hidden">
+                  {t(`faq.q${n}`)}
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    aria-hidden="true"
+                    className="shrink-0 text-gold-600 transition group-open:rotate-180"
+                  >
+                    <path d="M2 5l5 5 5-5" stroke="currentColor" strokeWidth="2.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </summary>
+                <p className="px-6 pb-5 text-sm leading-relaxed text-slate-600">
+                  {t(`faq.a${n}`)}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA ──────────────────────────────────────────── */}
-      <section className="thai-weave bg-navy-950">
-        <div className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6">
+      <section className="relative overflow-hidden bg-navy-950">
+        <Image
+          src="/photos/hero.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover opacity-20"
+        />
+        <div aria-hidden="true" className="thai-weave absolute inset-0" />
+        <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6">
           <Reveal>
             <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               {t("cta.title")}

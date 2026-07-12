@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import Reveal from "@/components/Reveal";
@@ -70,14 +71,15 @@ export default async function IndustriesPage({
                     <span>HONDA</span>
                   </div>
                 </div>
-                <div className="hidden justify-center lg:flex" aria-hidden="true">
-                  <svg width="340" height="200" viewBox="0 0 340 200" fill="none">
-                    <path d="M40 140h260l-20-45c-4-9-13-15-23-15h-64l-40-30H93c-6 0-12 3-15 9l-24 41-14 40z" fill="#1d3a62" />
-                    <path d="M110 80h60l-32-24h-45l17 24z" fill="#5a8cc2" opacity="0.5" />
-                    <circle cx="100" cy="145" r="24" fill="#0a1b33" stroke="#f0a421" strokeWidth="5" />
-                    <circle cx="240" cy="145" r="24" fill="#0a1b33" stroke="#f0a421" strokeWidth="5" />
-                    <path d="M300 100l24-8M304 118l26-2" stroke="#f0a421" strokeWidth="4" strokeLinecap="round" opacity="0.6" />
-                  </svg>
+                <div className="relative hidden h-64 overflow-hidden rounded-2xl ring-1 ring-white/15 lg:block">
+                  <Image
+                    src="/photos/automotive.jpg"
+                    alt={t("automotiveTitle")}
+                    fill
+                    sizes="(max-width: 1024px) 0px, 40vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-950/50 to-transparent" />
                 </div>
               </div>
             </div>

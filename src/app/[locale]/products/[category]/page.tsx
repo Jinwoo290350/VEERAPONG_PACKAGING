@@ -72,14 +72,27 @@ export default async function CategoryPage({
             </Link>
           </div>
           <div className="hidden justify-center lg:flex">
-            <Image
-              src={cat.image}
-              alt={cat.name[l]}
-              width={440}
-              height={300}
-              className="w-full max-w-md drop-shadow-2xl"
-              priority
-            />
+            {cat.isPhoto ? (
+              <div className="relative h-80 w-full max-w-md overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/20">
+                <Image
+                  src={cat.image}
+                  alt={cat.name[l]}
+                  fill
+                  sizes="28rem"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            ) : (
+              <Image
+                src={cat.image}
+                alt={cat.name[l]}
+                width={440}
+                height={300}
+                className="w-full max-w-md drop-shadow-2xl"
+                priority
+              />
+            )}
           </div>
         </div>
       </section>

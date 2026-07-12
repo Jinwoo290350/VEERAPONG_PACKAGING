@@ -8,6 +8,7 @@ import { company } from "@/data/company";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
+import FloatingLine from "@/components/FloatingLine";
 import JsonLd from "@/components/JsonLd";
 import "../globals.css";
 
@@ -79,6 +80,7 @@ export default async function LocaleLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <FloatingLine />
           <ChatWidget locale={locale as Locale} />
         </NextIntlClientProvider>
       </body>

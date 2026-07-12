@@ -13,6 +13,7 @@ export interface SpecRow {
 export interface ProductCategory {
   slug: string;
   image: string;
+  isPhoto?: boolean; // true = real photo (cover crop), false/absent = illustration
   accent: string; // tailwind gradient classes for the card header
   name: Localized;
   tagline: Localized;
@@ -28,7 +29,8 @@ export interface ProductCategory {
 export const productCategories: ProductCategory[] = [
   {
     slug: "foam",
-    image: "/products/foam.svg",
+    image: "/photos/foam.jpg",
+    isPhoto: true,
     accent: "from-sky-500 to-blue-700",
     name: {
       th: "โฟมกันกระแทก",
@@ -123,7 +125,8 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "bubble",
-    image: "/products/bubble.svg",
+    image: "/photos/bubble.jpg",
+    isPhoto: true,
     accent: "from-cyan-500 to-teal-600",
     name: {
       th: "พลาสติกกันกระแทก (บับเบิ้ล)",
@@ -195,7 +198,8 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "pp-board",
-    image: "/products/pp-board.svg",
+    image: "/photos/pp-board.jpg",
+    isPhoto: true,
     accent: "from-indigo-500 to-violet-700",
     name: {
       th: "แผ่นพลาสติกลูกฟูก (PP Board)",
@@ -285,7 +289,8 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "boxes",
-    image: "/products/boxes.svg",
+    image: "/photos/boxes.jpg",
+    isPhoto: true,
     accent: "from-amber-500 to-orange-600",
     name: {
       th: "กล่องและลังอุตสาหกรรม",
@@ -357,7 +362,8 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "film-tape",
-    image: "/products/film-tape.svg",
+    image: "/photos/film-tape.jpg",
+    isPhoto: true,
     accent: "from-emerald-500 to-green-700",
     name: {
       th: "ฟิล์ม เทป และสายรัด",
