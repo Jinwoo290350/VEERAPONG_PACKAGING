@@ -1,0 +1,178 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import { routing, type Locale } from "@/i18n/routing";
+import { getCategory, productCategories } from "@/data/products";
+import ProductCard from "@/components/ProductCard";
+import Reveal from "@/components/Reveal";
+
+export function generateStaticParams() {
+  return routing.locales.flatMap((locale) =>
+    productCategories.map((c) => ({ locale, category: c.slug })),
+  );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; category: string }>;
+}): Promise<Metadata> {
+  const { locale, category } = await params;
+  const cat = getCategory(category);
+  if (!cat) return {};
+  const l = locale as Locale;
+  return {
+    title: cat.name[l],
+    description: `${cat.tagline[l]} — ${cat.description[l].slice(0, 140)}`,
+  };
+}
+
+export default async function CategoryPage({
+  params,
+}: {
+  params: Promise<{ locale: string; category: string }>;
+}) {
+  const { locale, category } = await params;
+  setRequestLocale(locale);
+  const cat = getCategory(category);
+  if (!cat) notFound();
+  const t = await getTranslations("products");
+  const tf = await getTranslations("featured");
+  const l = locale as Locale;
+  const others = productCategories.filter((c) => c.slug !== cat.slug).slice(0, 3);
+
+  return (
+    <>
+      {/* Header */}
+      <section className={`bg-gradient-to-br ${cat.accent} text-white`}>
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-2">
+          <div>
+            <Link
+              href="/products"
+              className="text-sm font-semibold text-white/80 transition hover:text-white"
+            >
+              ← {t("backToProducts")}
+            </Link>
+            <h1 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              {cat.name[l]}
+            </h1>
+            <p className="mt-2 text-lg font-medium text-white/85">
+              {cat.tagline[l]}
+            </p>
+            <p className="mt-4 max-w-xl leading-relaxed text-white/80">
+              {cat.description[l]}
+            </p>
+            <Link
+              href="/contact"
+              className="mt-7 inline-block rounded-full bg-white px-7 py-3 font-bold text-navy-950 shadow-lg transition hover:bg-gold-50"
+            >
+              {t("enquire")}
+            </Link>
+          </div>
+          <div className="hidden justify-center lg:flex">
+            <Image
+              src={cat.image}
+              alt={cat.name[l]}
+              width={440}
+              height={300}
+              className="w-full max-w-md drop-shadow-2xl"
+              priority
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Items + specs */}
+      <section className="bg-white">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-5">
+          <div className="lg:col-span-3">
+            <h2 className="text-2xl font-extrabold text-navy-950">
+              {t("itemsTitle")}
+            </h2>
+            <div className="mt-6 space-y-4">
+              {cat.items.map((item, i) => (
+                <Reveal key={i} delay={i * 80}>
+                  <div className="rounded-2xl border border-slate-100 bg-slate-50/50 p-5">
+                    <h3 className="font-bold text-navy-900">{item.name[l]}</h3>
+                    <p className="mt-1 text-sm text-slate-500">{item.desc[l]}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
+            <h2 className="mt-12 text-2xl font-extrabold text-navy-950">
+              {t("useCasesTitle")}
+            </h2>
+            <ul className="mt-5 space-y-3">
+              {cat.useCases[l].map((u, i) => (
+                <li key={i} className="flex items-start gap-3 text-slate-600">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    aria-hidden="true"
+                    className="mt-0.5 shrink-0 text-gold-500"
+                  >
+                    <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.15" />
+                    <path d="M6 10.5l2.5 2.5L14 7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  {u}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lg:col-span-2">
+            <div className="sticky top-24 overflow-hidden rounded-2xl border border-slate-100 shadow-sm">
+              <div className="bg-navy-950 px-6 py-4">
+                <h2 className="font-bold text-white">{t("specsTitle")}</h2>
+              </div>
+              <table className="w-full text-sm">
+                <tbody>
+                  {cat.specs.map((s, i) => (
+                    <tr key={i} className={i % 2 ? "bg-slate-50" : "bg-white"}>
+                      <th className="w-2/5 px-6 py-3.5 text-left align-top font-semibold text-navy-900">
+                        {s.label[l]}
+                      </th>
+                      <td className="px-6 py-3.5 text-slate-600">{s.value[l]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <div className="border-t border-slate-100 bg-gold-50 px-6 py-4">
+                <Link
+                  href="/contact"
+                  className="text-sm font-bold text-gold-700 transition hover:text-gold-800"
+                >
+                  {t("enquire")} →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Other categories */}
+      <section className="bg-navy-50/50">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+          <h2 className="text-2xl font-extrabold text-navy-950">
+            {t("otherCategories")}
+          </h2>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {others.map((c) => (
+              <ProductCard
+                key={c.slug}
+                category={c}
+                locale={l}
+                exploreLabel={tf("explore")}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

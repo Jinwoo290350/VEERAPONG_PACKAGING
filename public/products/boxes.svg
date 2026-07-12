@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 300" fill="none">
+  <!-- pallet -->
+  <path d="M70 236l150 48 150-48-150-48-150 48z" fill="#0a1b33" opacity="0.35"/>
+  <!-- back box -->
+  <path d="M150 96l70 28v66l-70-28V96z" fill="#ffffff" opacity="0.7"/>
+  <path d="M290 96l-70 28v66l70-28V96z" fill="#ffffff" opacity="0.5"/>
+  <path d="M150 96l70-28 70 28-70 28-70-28z" fill="#ffffff" opacity="0.9"/>
+  <path d="M213 71l7-3 7 3v28l-7 3-7-3V71z" fill="#0a1b33" opacity="0.25"/>
+  <!-- left box -->
+  <path d="M96 180l62 25v52l-62-25v-52z" fill="#ffffff" opacity="0.85"/>
+  <path d="M220 180l-62 25v52l62-25v-52z" fill="#ffffff" opacity="0.6"/>
+  <path d="M96 180l62-25 62 25-62 25-62-25z" fill="#ffffff" opacity="0.95"/>
+  <!-- right box -->
+  <path d="M232 186l56 22v46l-56-22v-46z" fill="#ffffff" opacity="0.75"/>
+  <path d="M344 186l-56 22v46l56-22v-46z" fill="#ffffff" opacity="0.55"/>
+  <path d="M232 186l56-22 56 22-56 22-56-22z" fill="#ffffff" opacity="0.9"/>
+  <!-- tape line -->
+  <path d="M152 156l6 2.5v26l-6-2.5v-26zM290 208l6 2.5v22l-6-2.5v-22z" fill="#0a1b33" opacity="0.25"/>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 300" fill="none">
+  <!-- stretch film roll -->
+  <rect x="96" y="60" width="70" height="180" rx="35" fill="#ffffff" opacity="0.9"/>
+  <rect x="118" y="60" width="26" height="180" rx="13" fill="#0a1b33" opacity="0.2"/>
+  <!-- film sheet flowing out -->
+  <path d="M166 80c70 10 130 10 190 0v140c-60 10-120 10-190 0V80z" fill="#ffffff" opacity="0.45"/>
+  <path d="M166 80c70 10 130 10 190 0" stroke="#ffffff" stroke-width="5" opacity="0.8"/>
+  <path d="M166 220c70 10 130 10 190 0" stroke="#ffffff" stroke-width="5" opacity="0.8"/>
+  <!-- tape roll -->
+  <circle cx="330" cy="212" r="52" fill="#ffffff" opacity="0.95"/>
+  <circle cx="330" cy="212" r="26" fill="#0a1b33" opacity="0.3"/>
+  <path d="M330 160h56v18h-50" stroke="#ffffff" stroke-width="10" opacity="0.7"/>
+  <!-- strapping zigzag -->
+  <path d="M70 44l40 14-36 12 40 14" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" fill="none"/>
+</svg>

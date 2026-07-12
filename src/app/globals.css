@@ -1,26 +1,73 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Brand palette — deep navy (industrial trust) + Thai gold accent */
+  --color-navy-50: #f0f5fa;
+  --color-navy-100: #dbe7f3;
+  --color-navy-200: #b8cfe7;
+  --color-navy-300: #8bb0d6;
+  --color-navy-400: #5a8cc2;
+  --color-navy-500: #3a6fae;
+  --color-navy-600: #2b5892;
+  --color-navy-700: #234677;
+  --color-navy-800: #1d3a62;
+  --color-navy-900: #122a4a;
+  --color-navy-950: #0a1b33;
+
+  --color-gold-50: #fdf8ec;
+  --color-gold-100: #faedcb;
+  --color-gold-200: #f5da92;
+  --color-gold-300: #f1c65c;
+  --color-gold-400: #f6b83d;
+  --color-gold-500: #f0a421;
+  --color-gold-600: #d98a0e;
+  --color-gold-700: #b46f0b;
+  --color-gold-800: #925a10;
+  --color-gold-900: #784a12;
+
+  --font-sans: var(--font-inter), var(--font-noto-thai), ui-sans-serif,
+    system-ui, -apple-system, "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+    "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-white text-slate-800 antialiased;
+}
+
+/* Subtle Thai basket-weave pattern (ลายสาน) used on dark sections */
+.thai-weave {
+  background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='2'%3E%3Cpath d='M0 12h20M28 12h20M12 0v20M12 28v20M0 36h20M28 36h20M36 0v20M36 28v20'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.thai-weave-light {
+  background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23122a4a' stroke-opacity='0.04' stroke-width='2'%3E%3Cpath d='M0 12h20M28 12h20M12 0v20M12 28v20M0 36h20M28 36h20M36 0v20M36 28v20'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Scroll-reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Chat message content */
+.chat-bubble p + p {
+  margin-top: 0.5rem;
 }

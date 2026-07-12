@@ -1,0 +1,185 @@
+{
+  "meta": {
+    "home": {
+      "title": "Veerapong Packaging | Industrial Packaging Wholesale — Protective Foam, Returnable Boxes",
+      "description": "Veerapong Packaging Ltd., Part. — 19 years of industrial packaging expertise. EPE protective foam, bubble wrap, PP corrugated boards and returnable boxes, trusted in Toyota and Honda automotive supply chains. Delivered straight to factories across Thailand."
+    },
+    "products": {
+      "title": "Industrial Packaging Products | Veerapong Packaging",
+      "description": "EPE/PU/EVA protective foam, air bubble packaging, PP corrugated board, corrugated cartons, plastic crates, stretch film and custom packaging engineering — all in one place."
+    },
+    "about": {
+      "title": "About Us | Veerapong Packaging — 19 Years of Expertise",
+      "description": "Meet Veerapong Packaging Ltd., Part., an industrial packaging wholesaler since 2007 and packaging partner to factories in world-class automotive supply chains."
+    },
+    "industries": {
+      "title": "Industries We Serve | Veerapong Packaging",
+      "description": "Packaging for automotive, electronics, appliance, food, logistics and export industries — with hands-on experience in Toyota and Honda supply chains."
+    },
+    "contact": {
+      "title": "Contact Us / Request a Quote | Veerapong Packaging",
+      "description": "Contact Veerapong Packaging in Nong Khaem, Bangkok. Free industrial packaging consultation and quotes within 24 hours."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "industries": "Industries",
+    "about": "About",
+    "contact": "Contact",
+    "getQuote": "Get a Quote"
+  },
+  "hero": {
+    "badge": "Industrial packaging specialists since 2007",
+    "title": "Packaging that protects",
+    "titleHighlight": "every part you make",
+    "titleEnd": "to its destination",
+    "subtitle": "Wholesale protective foam, bubble packaging, PP corrugated board and returnable packaging systems for industrial plants — built to the standards trusted by world-class automotive supply chains.",
+    "ctaProducts": "Browse products",
+    "ctaContact": "Free consultation",
+    "statYears": "Years of experience",
+    "statClients": "Factories served",
+    "statCategories": "Product categories",
+    "statDelivery": "Direct-to-factory delivery"
+  },
+  "trust": {
+    "title": "Inside world-class supply chains",
+    "subtitle": "Our packaging protects automotive parts across leading manufacturer networks",
+    "note": "Via tier-supplier networks in Thailand"
+  },
+  "whyUs": {
+    "title": "Why leading factories choose us",
+    "subtitle": "For nearly 20 years we've delivered more than packaging — we deliver certainty that your parts arrive intact",
+    "item1Title": "Automotive-grade standards",
+    "item1Desc": "First-hand experience with parts in Toyota and Honda supply chains — the most demanding standards for quality and on-time delivery.",
+    "item2Title": "Engineered around your part",
+    "item2Desc": "We analyse your part and prototype before production — not just sell off-the-shelf stock.",
+    "item3Title": "Synced to your production plan",
+    "item3Desc": "Scheduled deliveries matched to your build plan, so your line never stops for missing materials.",
+    "item4Title": "Cost control on your side",
+    "item4Desc": "Honest spec recommendations plus returnable packaging systems that cut long-run cost per unit."
+  },
+  "featured": {
+    "title": "Our product range",
+    "subtitle": "Every industrial packaging material your plant needs",
+    "viewAll": "View all products",
+    "explore": "View details"
+  },
+  "cta": {
+    "title": "Let us protect what you make",
+    "subtitle": "Send us your part drawings or describe your packaging problem — our team replies with a proposal within 24 hours.",
+    "button": "Contact sales",
+    "orChat": "or ask our AI assistant right now"
+  },
+  "products": {
+    "title": "Industrial Packaging Products",
+    "subtitle": "Every protective material and factory packaging system, from die-cut foam to returnable box programs",
+    "itemsTitle": "Products in this range",
+    "specsTitle": "Specifications",
+    "useCasesTitle": "Ideal for",
+    "enquire": "Enquire about this product",
+    "backToProducts": "All products",
+    "otherCategories": "Other categories"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Nearly two decades of trust — from a small warehouse in Nong Khaem to world-class automotive supply chains",
+    "storyTitle": "Our story",
+    "story1": "Veerapong Packaging Ltd., Part. was founded on 6 November 2007 in Nong Khaem, Bangkok, with a single purpose: making sure every customer's part completes its journey intact.",
+    "story2": "From a small protective-materials wholesaler, we grew by understanding how factories actually work — earning the trust to supply automotive parts packaging within Toyota and Honda supply chains, the most demanding standards in the industry.",
+    "story3": "Today we are a full-line packaging partner to industrial plants nationwide, still guided by the same principles as day one: honesty with customers, integrity in quality, and delivery that is always on time.",
+    "timelineTitle": "Our journey",
+    "milestone1Year": "2007",
+    "milestone1": "Veerapong Packaging founded in Nong Khaem, Bangkok, wholesaling protective materials to local factories.",
+    "milestone2Year": "2012",
+    "milestone2": "Expanded into automotive, supplying parts packaging into Toyota and Honda supplier networks.",
+    "milestone3Year": "2018",
+    "milestone3": "Launched full custom packaging engineering and returnable packaging programs.",
+    "milestone4Year": "2026",
+    "milestone4": "Entering our 19th year with digital services — consultations and quotes online, around the clock.",
+    "missionTitle": "Mission",
+    "mission": "Deliver packaging that truly protects, at competitive cost, with service factories can rely on every day.",
+    "visionTitle": "Vision",
+    "vision": "To be the first name factories across ASEAN think of for industrial packaging.",
+    "valuesTitle": "What we stand by",
+    "value1": "Quality before profit",
+    "value1Desc": "We never downgrade material specs for margin — one damaged part costs more than a whole lot of packaging.",
+    "value2": "Always on time",
+    "value2Desc": "Production lines can't stop, so we deliver on schedule, every time.",
+    "value3": "Growing together",
+    "value3Desc": "We help customers cut long-term packaging costs, because their success is ours.",
+    "companyInfoTitle": "Company information",
+    "regNoLabel": "Registration no.",
+    "foundedLabel": "Founded",
+    "foundedValue": "6 November 2007",
+    "businessLabel": "Business type",
+    "businessValue": "Wholesale of industrial packaging (TSIC 46694)",
+    "addressLabel": "Address"
+  },
+  "industries": {
+    "title": "Industries We Serve",
+    "subtitle": "Every industry has different packaging problems — we've been learning them on the factory floor for nearly 20 years",
+    "automotiveTitle": "Automotive",
+    "automotiveDesc": "Our core expertise — OEM-bound parts packaging including returnable boxes, dividers and part trays built to Toyota and Honda supply chain standards.",
+    "automotiveBadge": "Core expertise",
+    "electronicsTitle": "Electronics",
+    "electronicsDesc": "Protective and ESD-safe materials for circuit boards, components and finished devices.",
+    "applianceTitle": "Home appliances",
+    "applianceDesc": "Moulded foam and large-format corrugated cartons protecting products from factory to living room.",
+    "foodTitle": "Food & beverage",
+    "foodDesc": "Food-contact-grade transport packaging, cold-resistant plastic crates and product-protection films.",
+    "logisticsTitle": "Logistics & warehousing",
+    "logisticsDesc": "Pallets, stretch film and every packing-line consumable, replenished automatically on schedule.",
+    "exportTitle": "Export",
+    "exportDesc": "Internationally compliant export packaging, fumigation-free plastic pallets, full documentation.",
+    "ctaTitle": "Don't see your industry?",
+    "ctaDesc": "We engineer job-specific packaging for any sector. Tell us your challenge.",
+    "ctaButton": "Talk to our team"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Every enquiry answered within 24 business hours — call, LINE, or use the form below",
+    "formTitle": "Request a quote / enquiry",
+    "nameLabel": "Contact name",
+    "namePlaceholder": "Full name",
+    "companyLabel": "Company / factory",
+    "companyPlaceholder": "Your company name",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "messageLabel": "What do you need?",
+    "messagePlaceholder": "e.g. Protective foam for a 30×20 cm part, 5,000 pcs per month",
+    "submit": "Send message",
+    "submitNote": "Submitting opens your email client with the message pre-filled",
+    "infoTitle": "Contact information",
+    "addressTitle": "Address",
+    "phoneTitle": "Phone",
+    "emailTitle": "Email",
+    "lineTitle": "LINE Official",
+    "hoursTitle": "Business hours",
+    "hours": "Mon–Sat 8:00–17:30",
+    "mapTitle": "Map"
+  },
+  "footer": {
+    "tagline": "Industrial packaging wholesale specialists, trusted in world-class automotive supply chains since 2007.",
+    "quickLinks": "Quick links",
+    "productsTitle": "Products",
+    "contactTitle": "Contact",
+    "rights": "All rights reserved.",
+    "regNo": "Company registration no."
+  },
+  "chat": {
+    "buttonLabel": "Ask AI assistant",
+    "title": "Veerapong AI Assistant",
+    "subtitle": "Ask about products, pricing or services",
+    "greeting": "Hello! 👋 I'm the Veerapong Packaging AI assistant. Ask me about protective foam, returnable boxes, or advice for packaging your specific parts.",
+    "placeholder": "Type your question...",
+    "send": "Send",
+    "thinking": "Thinking...",
+    "error": "Sorry, something went wrong. Please try again or contact our sales team directly.",
+    "disclaimer": "AI-generated answers — please confirm prices and specs with our sales team"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "backHome": "Back to home"
+  }
+}

@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# เว็บไซต์ หจก. วีรพงษ์ แพคเกจจิ้ง (Veerapong Packaging)
 
-## Getting Started
+เว็บไซต์บริษัทขายส่งบรรจุภัณฑ์อุตสาหกรรม — Next.js 16 (App Router) + Tailwind CSS v4 + next-intl
 
-First, run the development server:
+## ฟีเจอร์
+
+- **4 ภาษา**: ไทย (default) / English / 日本語 / 中文 — สลับได้ทุกหน้าโดยอยู่หน้าเดิม
+- **AI Chatbot**: ผู้ช่วยตอบคำถามสินค้า ผ่าน OpenRouter (โมเดลฟรี, มี fallback หลายโมเดล)
+- **SEO เต็มรูปแบบ**: SSG ทุกหน้า, hreflang 4 ภาษา, JSON-LD (Organization/LocalBusiness/Product), sitemap.xml, robots.txt
+- **หน้า**: หน้าแรก / สินค้า 6 หมวด (+หน้ารายละเอียด) / อุตสาหกรรม / เกี่ยวกับเรา / ติดต่อเรา
+
+## เริ่มใช้งาน
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.local.example .env.local   # แล้วใส่ OPENROUTER_API_KEY ของคุณ
+npm run dev                         # เปิด http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build production: `npm run build && npm start`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## จุดที่ต้องแก้ก่อนขึ้นจริง (placeholder)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| ที่ไฟล์ | สิ่งที่ต้องแก้ |
+|---|---|
+| `src/data/company.ts` | เบอร์โทร, อีเมล, LINE ID, โดเมนจริง (`siteUrl`) |
+| `src/data/products.ts` | รายการสินค้า/สเปกจริง (ตอนนี้เป็นร่างจากข้อมูลอุตสาหกรรม) |
+| `src/messages/*.json` | ประวัติบริษัทในหน้า "เกี่ยวกับเรา" — ปี milestone เป็นร่าง ควรตรวจกับข้อมูลจริง |
+| `public/products/*.svg` | เปลี่ยนเป็นรูปถ่ายสินค้าจริงได้ (แก้ path ใน `products.ts`) |
 
-## Learn More
+## โครงสร้างเนื้อหา
 
-To learn more about Next.js, take a look at the following resources:
+- ข้อความ UI + เนื้อหาแต่ละหน้า: `src/messages/{th,en,ja,zh}.json`
+- ข้อมูลสินค้า (4 ภาษาในไฟล์เดียว): `src/data/products.ts`
+- ข้อมูลบริษัท: `src/data/company.ts`
+- ระบบภาษา: `src/i18n/` + `src/proxy.ts` (redirect `/` → `/th`)
+- AI chat API: `src/app/api/chat/route.ts` (API key อยู่ฝั่ง server เท่านั้น + rate limit ต่อ IP)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+แนะนำ [Vercel](https://vercel.com) (ฟรี): import repo แล้วตั้ง env `OPENROUTER_API_KEY` ใน Project Settings → Environment Variables จากนั้นชี้โดเมนจริงและอัปเดต `siteUrl` ใน `src/data/company.ts`

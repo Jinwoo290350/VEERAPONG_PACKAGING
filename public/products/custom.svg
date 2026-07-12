@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 300" fill="none">
+  <!-- blueprint sheet -->
+  <rect x="70" y="52" width="300" height="196" rx="14" fill="#ffffff" opacity="0.92"/>
+  <g stroke="#0a1b33" stroke-width="2" opacity="0.1">
+    <path d="M70 92h300M70 132h300M70 172h300M70 212h300"/>
+    <path d="M110 52v196M150 52v196M190 52v196M230 52v196M270 52v196M310 52v196M350 52v196"/>
+  </g>
+  <!-- part outline (gear-ish) -->
+  <circle cx="170" cy="150" r="44" stroke="#0a1b33" stroke-width="6" opacity="0.45" fill="none"/>
+  <circle cx="170" cy="150" r="16" stroke="#0a1b33" stroke-width="6" opacity="0.45" fill="none"/>
+  <g stroke="#0a1b33" stroke-width="6" opacity="0.45" stroke-linecap="round">
+    <path d="M170 96v-14M170 218v-14M116 150h-14M238 150h-14M132 112l-10-10M218 198l-10-10M208 112l10-10M122 198l10-10"/>
+  </g>
+  <!-- arrow to packaging -->
+  <path d="M240 150h56" stroke="#0a1b33" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+  <path d="M288 136l16 14-16 14" stroke="#0a1b33" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.5" fill="none"/>
+  <!-- fitted box with foam cavity -->
+  <rect x="304" y="116" width="70" height="70" rx="10" fill="#0a1b33" opacity="0.3"/>
+  <circle cx="339" cy="151" r="22" fill="#ffffff" opacity="0.85"/>
+  <circle cx="339" cy="151" r="8" fill="#0a1b33" opacity="0.3"/>
+  <!-- pencil -->
+  <path d="M96 236l100-100 18 18-100 100-24 6 6-24z" fill="#ffffff" opacity="0.9"/>
+  <path d="M196 136l18 18" stroke="#0a1b33" stroke-width="4" opacity="0.3"/>
+  <path d="M96 236l6-24 18 18-24 6z" fill="#0a1b33" opacity="0.4"/>
+</svg>

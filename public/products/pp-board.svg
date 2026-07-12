@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 300" fill="none">
+  <!-- open returnable box -->
+  <path d="M100 130l120 46v100l-120-46V130z" fill="#ffffff" opacity="0.9"/>
+  <path d="M340 130l-120 46v100l120-46V130z" fill="#ffffff" opacity="0.7"/>
+  <path d="M100 130l120-46 120 46-120 46-120-46z" fill="#ffffff" opacity="0.5"/>
+  <!-- partition grid inside -->
+  <path d="M160 106l120 46M280 106l-120 46" stroke="#0a1b33" stroke-width="6" opacity="0.3"/>
+  <path d="M220 84v92" stroke="#0a1b33" stroke-width="6" opacity="0.3"/>
+  <!-- flute lines on front face -->
+  <g stroke="#0a1b33" stroke-width="3" opacity="0.15">
+    <path d="M112 150v86M132 158v86M152 166v86M172 174v86M192 182v86M212 190v82"/>
+  </g>
+  <!-- recycle arrows -->
+  <g stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.75">
+    <path d="M60 84a26 26 0 0140-22"/>
+    <path d="M100 62l4 12-13 2"/>
+    <path d="M86 96a26 26 0 01-26-12"/>
+    <path d="M60 84l-2 13 13-1"/>
+  </g>
+</svg>

@@ -1,0 +1,185 @@
+{
+  "meta": {
+    "home": {
+      "title": "Veerapong Packaging | 工业包装批发 — 缓冲泡沫、周转箱",
+      "description": "威拉蓬包装有限合伙公司 — 深耕工业包装批发19年。EPE缓冲泡沫、气泡膜、中空板、周转箱，品质获丰田、本田汽车供应链信赖，直送泰国全国工厂。"
+    },
+    "products": {
+      "title": "工业包装产品 | Veerapong Packaging",
+      "description": "EPE/PU/EVA缓冲泡沫、气泡缓冲包装、PP中空板、瓦楞纸箱、塑料周转筐、缠绕膜及定制包装工程，一站式供应。"
+    },
+    "about": {
+      "title": "关于我们 | Veerapong Packaging — 19年专业经验",
+      "description": "了解威拉蓬包装有限合伙公司：自2007年起专注工业包装批发，是世界级汽车供应链工厂的包装合作伙伴。"
+    },
+    "industries": {
+      "title": "服务行业 | Veerapong Packaging",
+      "description": "为汽车、电子、家电、食品、物流和出口行业提供包装方案，拥有丰田、本田供应链的一线实战经验。"
+    },
+    "contact": {
+      "title": "联系我们 / 索取报价 | Veerapong Packaging",
+      "description": "联系位于曼谷农凯区的威拉蓬包装。免费工业包装咨询，24小时内提供报价。"
+    }
+  },
+  "nav": {
+    "home": "首页",
+    "products": "产品",
+    "industries": "服务行业",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "getQuote": "索取报价"
+  },
+  "hero": {
+    "badge": "自2007年 工业包装专家",
+    "title": "让每一个工件",
+    "titleHighlight": "安全无损",
+    "titleEnd": "抵达目的地",
+    "subtitle": "面向工业工厂批发缓冲泡沫、气泡包装、PP中空板及循环包装系统 — 品质标准获世界级汽车供应链信赖。",
+    "ctaProducts": "浏览产品",
+    "ctaContact": "免费咨询",
+    "statYears": "年行业经验",
+    "statClients": "服务工厂",
+    "statCategories": "主要产品类别",
+    "statDelivery": "直送工厂"
+  },
+  "trust": {
+    "title": "身处世界级供应链之中",
+    "subtitle": "我们的包装在领先制造商网络中保护着汽车零部件",
+    "note": "通过泰国的各级供应商网络"
+  },
+  "whyUs": {
+    "title": "领先工厂选择我们的理由",
+    "subtitle": "近20年来，我们交付的不只是包装 — 更是工件完好抵达的确定性",
+    "item1Title": "汽车行业标准",
+    "item1Desc": "在丰田、本田供应链零部件包装上的一线经验 — 那是对品质和交期要求最严苛的标准。",
+    "item2Title": "按工件量身设计",
+    "item2Desc": "分析工件、打样验证后再量产，而不是只卖现成品。",
+    "item3Title": "与生产计划同步交付",
+    "item3Desc": "按您的生产计划定期送货，产线绝不因缺料停工。",
+    "item4Title": "为您控制成本",
+    "item4Desc": "诚实推荐真正合适的规格，配合循环包装系统降低长期单件成本。"
+  },
+  "featured": {
+    "title": "产品系列",
+    "subtitle": "工厂所需的全部工业包装材料",
+    "viewAll": "查看全部产品",
+    "explore": "查看详情"
+  },
+  "cta": {
+    "title": "让我们守护您的产品",
+    "subtitle": "发来工件图纸或描述您的包装难题，团队将在24小时内回复方案。",
+    "button": "联系销售",
+    "orChat": "或立即咨询我们的AI助手"
+  },
+  "products": {
+    "title": "工业包装产品",
+    "subtitle": "从模切泡沫到周转箱方案，涵盖所有防护材料与工厂包装系统",
+    "itemsTitle": "本系列产品",
+    "specsTitle": "规格参数",
+    "useCasesTitle": "适用场景",
+    "enquire": "咨询此产品",
+    "backToProducts": "全部产品",
+    "otherCategories": "其他类别"
+  },
+  "about": {
+    "title": "关于我们",
+    "subtitle": "从农凯区的小仓库到世界级汽车供应链 — 近二十年的信赖之路",
+    "storyTitle": "我们的故事",
+    "story1": "威拉蓬包装有限合伙公司于2007年11月6日在曼谷农凯区创立，初心只有一个：让客户的每一个工件都完好抵达目的地。",
+    "story2": "从一家小型缓冲材料批发商起步，我们凭借对工厂一线的深入理解不断成长，最终赢得信任，为丰田、本田供应链提供汽车零部件包装 — 那是行业内最严苛的标准。",
+    "story3": "今天，我们是全国工业工厂的全线包装合作伙伴，依然坚守创业第一天的原则：对客户诚实、对品质较真、交付永远准时。",
+    "timelineTitle": "发展历程",
+    "milestone1Year": "2007",
+    "milestone1": "威拉蓬包装在曼谷农凯区创立，向本地工厂批发缓冲材料。",
+    "milestone2Year": "2012",
+    "milestone2": "进军汽车行业，开始向丰田、本田供应商网络提供零部件包装。",
+    "milestone3Year": "2018",
+    "milestone3": "全面推出定制包装工程与循环周转包装方案。",
+    "milestone4Year": "2026",
+    "milestone4": "迈入第19年，升级数字化服务，全天候在线咨询与报价。",
+    "missionTitle": "使命",
+    "mission": "以有竞争力的成本，交付真正起保护作用的包装，提供工厂每天都能依赖的服务。",
+    "visionTitle": "愿景",
+    "vision": "成为东盟工厂提到工业包装时想起的第一个名字。",
+    "valuesTitle": "我们的坚持",
+    "value1": "品质先于利润",
+    "value1Desc": "绝不为利润降低材料规格 — 损坏一个工件的代价高过一整批包装。",
+    "value2": "永远准时",
+    "value2Desc": "深知产线不能停，所以我们每次都按时交付。",
+    "value3": "共同成长",
+    "value3Desc": "帮助客户降低长期包装成本，因为客户的成功就是我们的成功。",
+    "companyInfoTitle": "公司信息",
+    "regNoLabel": "法人注册号",
+    "foundedLabel": "成立日期",
+    "foundedValue": "2007年11月6日",
+    "businessLabel": "经营范围",
+    "businessValue": "工业用包装材料批发（TSIC 46694）",
+    "addressLabel": "地址"
+  },
+  "industries": {
+    "title": "服务行业",
+    "subtitle": "每个行业的包装难题都不同 — 我们在工厂一线学习了近20年",
+    "automotiveTitle": "汽车",
+    "automotiveDesc": "我们的核心专长 — 面向OEM产线的零部件包装，包括按丰田、本田供应链标准打造的周转箱、隔板和零件托盘。",
+    "automotiveBadge": "核心专长",
+    "electronicsTitle": "电子",
+    "electronicsDesc": "用于电路板、元器件和整机的缓冲及防静电（ESD）材料。",
+    "applianceTitle": "家电",
+    "applianceDesc": "成型泡沫与大尺寸瓦楞纸箱，从工厂到客厅全程保护产品。",
+    "foodTitle": "食品饮料",
+    "foodDesc": "食品接触级运输包装、耐低温塑料筐及产品保护膜。",
+    "logisticsTitle": "物流仓储",
+    "logisticsDesc": "托盘、缠绕膜及包装线全部耗材，按周期自动补货。",
+    "exportTitle": "出口",
+    "exportDesc": "符合国际标准的出口包装，免熏蒸塑料托盘，单证齐全。",
+    "ctaTitle": "没有找到您的行业？",
+    "ctaDesc": "我们可为任何行业设计专项包装方案，欢迎告诉我们您的难题。",
+    "ctaButton": "咨询团队"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "所有咨询将在24个工作小时内回复 — 电话、LINE或填写下方表单",
+    "formTitle": "索取报价 / 咨询",
+    "nameLabel": "联系人",
+    "namePlaceholder": "姓名",
+    "companyLabel": "公司 / 工厂",
+    "companyPlaceholder": "贵公司名称",
+    "emailLabel": "邮箱",
+    "phoneLabel": "电话",
+    "messageLabel": "需求详情",
+    "messagePlaceholder": "例如：需要30×20厘米工件的缓冲泡沫，每月5,000件",
+    "submit": "发送信息",
+    "submitNote": "点击发送后将打开邮件客户端并自动填入内容",
+    "infoTitle": "联系方式",
+    "addressTitle": "地址",
+    "phoneTitle": "电话",
+    "emailTitle": "邮箱",
+    "lineTitle": "LINE官方账号",
+    "hoursTitle": "营业时间",
+    "hours": "周一至周六 8:00–17:30",
+    "mapTitle": "地图"
+  },
+  "footer": {
+    "tagline": "工业包装批发专家，自2007年起获世界级汽车供应链信赖。",
+    "quickLinks": "快速链接",
+    "productsTitle": "产品",
+    "contactTitle": "联系我们",
+    "rights": "版权所有。",
+    "regNo": "法人注册号"
+  },
+  "chat": {
+    "buttonLabel": "咨询AI助手",
+    "title": "Veerapong AI助手",
+    "subtitle": "产品、价格、服务，随时提问",
+    "greeting": "您好！👋 我是威拉蓬包装的AI助手。欢迎咨询缓冲泡沫、周转箱，或获取针对您工件的包装建议。",
+    "placeholder": "输入您的问题...",
+    "send": "发送",
+    "thinking": "思考中...",
+    "error": "抱歉，系统暂时出现问题，请重试或直接联系销售团队。",
+    "disclaimer": "AI生成的回答 — 价格与规格请与销售团队确认"
+  },
+  "notFound": {
+    "title": "找不到该页面",
+    "backHome": "返回首页"
+  }
+}
