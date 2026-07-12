@@ -8,6 +8,8 @@ import { yearsInBusiness } from "@/data/company";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 
+const trustBrands = ["TOYOTA", "HITACHI"];
+
 export async function generateMetadata({
   params,
 }: {
@@ -105,7 +107,7 @@ export default async function HomePage({
               </p>
               <div className="mt-4 flex gap-6 text-lg font-black tracking-widest text-slate-400">
                 <span>TOYOTA</span>
-                <span>HONDA</span>
+                <span>HITACHI</span>
               </div>
             </div>
           </div>
@@ -131,20 +133,37 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ── Trust bar ────────────────────────────────────── */}
+      {/* ── Trust bar (floating logo marquee) ────────────── */}
       <section className="border-b border-slate-100 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6">
           <h2 className="text-sm font-bold uppercase tracking-widest text-slate-400">
             {t("trust.title")}
           </h2>
           <p className="mt-2 text-sm text-slate-500">{t("trust.subtitle")}</p>
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-x-14 gap-y-4">
-            <span className="text-3xl font-black tracking-widest text-slate-300 transition hover:text-navy-900">
-              TOYOTA
-            </span>
-            <span className="text-3xl font-black tracking-widest text-slate-300 transition hover:text-navy-900">
-              HONDA
-            </span>
+          <div className="relative mt-8 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_18%,black_82%,transparent)]">
+            <div className="flex w-max animate-marquee">
+              {[0, 1].map((half) => (
+                <div
+                  key={half}
+                  aria-hidden={half === 1}
+                  className="flex items-center gap-24 pr-24"
+                >
+                  {Array.from({ length: 3 }).flatMap((_, r) =>
+                    trustBrands.map((b, i) => (
+                      <span
+                        key={`${r}-${b}`}
+                        className="animate-floaty text-3xl font-black tracking-widest text-slate-300 transition hover:text-navy-900"
+                        style={{
+                          animationDelay: `${((r * trustBrands.length + i) % 5) * 0.7}s`,
+                        }}
+                      >
+                        {b}
+                      </span>
+                    )),
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
           <p className="mt-4 text-xs text-slate-400">{t("trust.note")}</p>
         </div>

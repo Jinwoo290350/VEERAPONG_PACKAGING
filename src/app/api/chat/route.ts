@@ -52,7 +52,7 @@ COMPANY FACTS
 - Address: ${company.address.en} (Thai: ${company.address.th})
 - Phone: ${company.phone} / ${company.mobile} · Email: ${company.email} · LINE: ${company.lineId}
 - Hours: Mon–Sat 8:00–17:30 (Thailand time).
-- Track record: supplies automotive parts packaging used within Toyota and Honda supply chains in Thailand (via tier suppliers), plus electronics, appliance, food, logistics and export customers.
+- Track record: supplies automotive parts packaging used within Toyota and Hitachi supply chains in Thailand (via tier suppliers), plus electronics, appliance, food, logistics and export customers.
 
 PRODUCT CATALOG
 ${catalog}

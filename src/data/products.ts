@@ -214,10 +214,10 @@ export const productCategories: ProductCategory[] = [
       zh: "生产线用可循环周转箱与隔板",
     },
     description: {
-      th: "แผ่นพลาสติกลูกฟูก PP น้ำหนักเบา ทนทาน กันน้ำ ใช้ซ้ำได้หลายรอบ ผลิตเป็นกล่องหมุนเวียน (Returnable Box) ไส้กั้น (Partition) และถาดรองชิ้นงานตามสเปกโรงงาน เป็นมาตรฐานที่โรงงานยานยนต์อย่างโตโยต้าและฮอนด้าใช้หมุนเวียนชิ้นส่วนในซัพพลายเชน",
-      en: "Lightweight, durable, waterproof PP corrugated sheets fabricated into returnable boxes, partitions, and part trays to factory spec. The workhorse standard for circulating parts in automotive supply chains such as Toyota's and Honda's.",
-      ja: "軽量・高耐久・防水のPPプラダンを、工場仕様の通い箱・仕切り・部品トレイに加工。トヨタやホンダをはじめとする自動車サプライチェーンで部品循環の標準として使われています。",
-      zh: "轻质、耐用、防水的PP中空板，可按工厂规格加工成周转箱、隔板和零件托盘。是丰田、本田等汽车供应链中零部件周转的标准选择。",
+      th: "แผ่นพลาสติกลูกฟูก PP น้ำหนักเบา ทนทาน กันน้ำ ใช้ซ้ำได้หลายรอบ ผลิตเป็นกล่องหมุนเวียน (Returnable Box) ไส้กั้น (Partition) และถาดรองชิ้นงานตามสเปกโรงงาน เป็นมาตรฐานที่โรงงานยานยนต์อย่างโตโยต้าและฮิตาชิใช้หมุนเวียนชิ้นส่วนในซัพพลายเชน",
+      en: "Lightweight, durable, waterproof PP corrugated sheets fabricated into returnable boxes, partitions, and part trays to factory spec. The workhorse standard for circulating parts in automotive supply chains such as Toyota's and Hitachi's.",
+      ja: "軽量・高耐久・防水のPPプラダンを、工場仕様の通い箱・仕切り・部品トレイに加工。トヨタや日立をはじめとする自動車サプライチェーンで部品循環の標準として使われています。",
+      zh: "轻质、耐用、防水的PP中空板，可按工厂规格加工成周转箱、隔板和零件托盘。是丰田、日立等汽车供应链中零部件周转的标准选择。",
     },
     items: [
       {
@@ -450,10 +450,10 @@ export const productCategories: ProductCategory[] = [
       zh: "寄来工件，我们为您设计包装方案",
     },
     description: {
-      th: "บริการออกแบบบรรจุภัณฑ์เฉพาะชิ้นงาน เริ่มจากวิเคราะห์ชิ้นงานจริงหรือแบบ CAD ทดลองผลิตตัวอย่าง (Prototype) ทดสอบการป้องกัน แล้วจึงผลิตจริง ประสบการณ์เกือบ 20 ปีกับชิ้นส่วนยานยนต์ในซัพพลายเชนโตโยต้าและฮอนด้า ทำให้เรารู้ว่าบรรจุภัณฑ์ที่ดีต้องปกป้องได้จริงและคุมต้นทุนได้ด้วย",
-      en: "Part-specific packaging engineering: we analyse your physical part or CAD data, prototype, drop-test, then move to production. Nearly two decades supplying automotive parts packaging in Toyota and Honda supply chains taught us that good packaging must both protect the part and control cost.",
-      ja: "部品専用の包装設計サービス。実物またはCADデータを分析し、試作・落下試験を経て量産へ。トヨタ・ホンダのサプライチェーンで約20年、自動車部品包装を手がけてきた経験から、確実な保護とコスト管理を両立する包装をご提案します。",
-      zh: "针对具体工件的包装工程服务：分析实物或CAD数据，打样、跌落测试后再量产。近二十年为丰田、本田供应链提供汽车零部件包装的经验，让我们深知好的包装既要保护到位，也要控制成本。",
+      th: "บริการออกแบบบรรจุภัณฑ์เฉพาะชิ้นงาน เริ่มจากวิเคราะห์ชิ้นงานจริงหรือแบบ CAD ทดลองผลิตตัวอย่าง (Prototype) ทดสอบการป้องกัน แล้วจึงผลิตจริง ประสบการณ์เกือบ 20 ปีกับชิ้นส่วนยานยนต์ในซัพพลายเชนโตโยต้าและฮิตาชิ ทำให้เรารู้ว่าบรรจุภัณฑ์ที่ดีต้องปกป้องได้จริงและคุมต้นทุนได้ด้วย",
+      en: "Part-specific packaging engineering: we analyse your physical part or CAD data, prototype, drop-test, then move to production. Nearly two decades supplying automotive parts packaging in Toyota and Hitachi supply chains taught us that good packaging must both protect the part and control cost.",
+      ja: "部品専用の包装設計サービス。実物またはCADデータを分析し、試作・落下試験を経て量産へ。トヨタ・日立のサプライチェーンで約20年、自動車部品包装を手がけてきた経験から、確実な保護とコスト管理を両立する包装をご提案します。",
+      zh: "针对具体工件的包装工程服务：分析实物或CAD数据，打样、跌落测试后再量产。近二十年为丰田、日立供应链提供汽车零部件包装的经验，让我们深知好的包装既要保护到位，也要控制成本。",
     },
     items: [
       {

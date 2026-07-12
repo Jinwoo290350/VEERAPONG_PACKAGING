@@ -68,7 +68,7 @@ export default async function IndustriesPage({
                   </p>
                   <div className="mt-6 flex gap-10 text-2xl font-black tracking-widest text-slate-500">
                     <span>TOYOTA</span>
-                    <span>HONDA</span>
+                    <span>HITACHI</span>
                   </div>
                 </div>
                 <div className="relative hidden h-64 overflow-hidden rounded-2xl ring-1 ring-white/15 lg:block">

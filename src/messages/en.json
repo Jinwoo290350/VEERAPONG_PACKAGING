@@ -2,7 +2,7 @@
   "meta": {
     "home": {
       "title": "Veerapong Packaging | Industrial Packaging Wholesale — Protective Foam, Returnable Boxes",
-      "description": "Veerapong Packaging Ltd., Part. — 19 years of industrial packaging expertise. EPE protective foam, bubble wrap, PP corrugated boards and returnable boxes, trusted in Toyota and Honda automotive supply chains. Delivered straight to factories across Thailand."
+      "description": "Veerapong Packaging Ltd., Part. — 19 years of industrial packaging expertise. EPE protective foam, bubble wrap, PP corrugated boards and returnable boxes, trusted in Toyota and Hitachi automotive supply chains. Delivered straight to factories across Thailand."
     },
     "products": {
       "title": "Industrial Packaging Products | Veerapong Packaging",
@@ -14,7 +14,7 @@
     },
     "industries": {
       "title": "Industries We Serve | Veerapong Packaging",
-      "description": "Packaging for automotive, electronics, appliance, food, logistics and export industries — with hands-on experience in Toyota and Honda supply chains."
+      "description": "Packaging for automotive, electronics, appliance, food, logistics and export industries — with hands-on experience in Toyota and Hitachi supply chains."
     },
     "contact": {
       "title": "Contact Us / Request a Quote | Veerapong Packaging",
@@ -51,7 +51,7 @@
     "title": "Why leading factories choose us",
     "subtitle": "For nearly 20 years we've delivered more than packaging — we deliver certainty that your parts arrive intact",
     "item1Title": "Automotive-grade standards",
-    "item1Desc": "First-hand experience with parts in Toyota and Honda supply chains — the most demanding standards for quality and on-time delivery.",
+    "item1Desc": "First-hand experience with parts in Toyota and Hitachi supply chains — the most demanding standards for quality and on-time delivery.",
     "item2Title": "Engineered around your part",
     "item2Desc": "We analyse your part and prototype before production — not just sell off-the-shelf stock.",
     "item3Title": "Synced to your production plan",
@@ -86,13 +86,13 @@
     "subtitle": "Nearly two decades of trust — from a small warehouse in Nong Khaem to world-class automotive supply chains",
     "storyTitle": "Our story",
     "story1": "Veerapong Packaging Ltd., Part. was founded on 6 November 2007 in Nong Khaem, Bangkok, with a single purpose: making sure every customer's part completes its journey intact.",
-    "story2": "From a small protective-materials wholesaler, we grew by understanding how factories actually work — earning the trust to supply automotive parts packaging within Toyota and Honda supply chains, the most demanding standards in the industry.",
+    "story2": "From a small protective-materials wholesaler, we grew by understanding how factories actually work — earning the trust to supply automotive parts packaging within Toyota and Hitachi supply chains, the most demanding standards in the industry.",
     "story3": "Today we are a full-line packaging partner to industrial plants nationwide, still guided by the same principles as day one: honesty with customers, integrity in quality, and delivery that is always on time.",
     "timelineTitle": "Our journey",
     "milestone1Year": "2007",
     "milestone1": "Veerapong Packaging founded in Nong Khaem, Bangkok, wholesaling protective materials to local factories.",
     "milestone2Year": "2012",
-    "milestone2": "Expanded into automotive, supplying parts packaging into Toyota and Honda supplier networks.",
+    "milestone2": "Expanded into automotive, supplying parts packaging into Toyota and Hitachi supplier networks.",
     "milestone3Year": "2018",
     "milestone3": "Launched full custom packaging engineering and returnable packaging programs.",
     "milestone4Year": "2026",
@@ -120,7 +120,7 @@
     "title": "Industries We Serve",
     "subtitle": "Every industry has different packaging problems — we've been learning them on the factory floor for nearly 20 years",
     "automotiveTitle": "Automotive",
-    "automotiveDesc": "Our core expertise — OEM-bound parts packaging including returnable boxes, dividers and part trays built to Toyota and Honda supply chain standards.",
+    "automotiveDesc": "Our core expertise — OEM-bound parts packaging including returnable boxes, dividers and part trays built to Toyota and Hitachi supply chain standards.",
     "automotiveBadge": "Core expertise",
     "electronicsTitle": "Electronics",
     "electronicsDesc": "Protective and ESD-safe materials for circuit boards, components and finished devices.",
@@ -201,7 +201,7 @@
     "q3": "How is delivery handled and how long does it take?",
     "a3": "We deliver direct to factories nationwide. Bangkok metro is typically 1–3 business days, and we can set recurring deliveries matched to your production plan.",
     "q4": "Do you have automotive-specific packaging?",
-    "a4": "Yes — it's our core expertise: returnable boxes, dividers and part trays built to the standards used in Toyota and Honda supply chains.",
+    "a4": "Yes — it's our core expertise: returnable boxes, dividers and part trays built to the standards used in Toyota and Hitachi supply chains.",
     "q5": "What information do you need for a quote?",
     "a5": "Part dimensions and weight, monthly volume, and any special requirements (ESD-safe, export, etc.). We reply with a proposal within 24 business hours."
   },
