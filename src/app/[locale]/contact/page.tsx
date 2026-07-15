@@ -24,7 +24,11 @@ export default async function ContactPage({
   const t = await getTranslations("contact");
   const l = locale as Locale;
 
-  const infoRows = [
+  const infoRows: {
+    title: string;
+    lines: { text: string; href?: string }[];
+    icon: string;
+  }[] = [
     {
       title: t("addressTitle"),
       lines: [{ text: company.address[l] }],
