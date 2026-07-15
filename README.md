@@ -23,7 +23,7 @@ Build production: `npm run build && npm start`
 
 | ที่ไฟล์ | สิ่งที่ต้องแก้ |
 |---|---|
-| `src/data/company.ts` | เบอร์โทร, อีเมล, LINE ID, โดเมนจริง (`siteUrl`) |
+| `src/data/company.ts` | LINE ID (`@vrppackaging` ยังเป็น placeholder), โดเมนจริง (`siteUrl`) — เบอร์โทร/อีเมล/ที่อยู่เป็นข้อมูลจริงแล้ว |
 | `src/data/products.ts` | รายการสินค้า/สเปกจริง (ตอนนี้เป็นร่างจากข้อมูลอุตสาหกรรม) |
 | `src/messages/*.json` | ประวัติบริษัทในหน้า "เกี่ยวกับเรา" — ปี milestone เป็นร่าง ควรตรวจกับข้อมูลจริง |
 | `public/products/*.svg` | เปลี่ยนเป็นรูปถ่ายสินค้าจริงได้ (แก้ path ใน `products.ts`) |

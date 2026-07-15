@@ -27,29 +27,30 @@ export default async function ContactPage({
   const infoRows = [
     {
       title: t("addressTitle"),
-      value: company.address[l],
+      lines: [{ text: company.address[l] }],
       icon: "M12 21s-7-5.5-7-11a7 7 0 1114 0c0 5.5-7 11-7 11zM12 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z",
     },
     {
       title: t("phoneTitle"),
-      value: `${company.phone} / ${company.mobile}`,
-      href: `tel:${company.phone.replace(/-/g, "")}`,
+      lines: company.contacts.map((c) => ({
+        text: `${c.phone} · ${c.name[l]}`,
+        href: `tel:${c.phone.replace(/-/g, "")}`,
+      })),
       icon: "M4 4h5l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v5a2 2 0 01-2 2A16 16 0 012 6a2 2 0 012-2z",
     },
     {
       title: t("emailTitle"),
-      value: company.email,
-      href: `mailto:${company.email}`,
+      lines: company.emails.map((e) => ({ text: e, href: `mailto:${e}` })),
       icon: "M3 6h18v12H3V6zM3 7l9 6 9-6",
     },
     {
       title: t("lineTitle"),
-      value: company.lineId,
+      lines: [{ text: company.lineId }],
       icon: "M12 4C7 4 3 7.3 3 11.4c0 3.7 3.2 6.7 7.5 7.3.3 0 .7.2.8.5l.2 1.6c0 .5.5.7.9.5 2.4-1.4 6-4.1 7.6-6.4 1-1.3 1.5-2.7 1.5-3.5C21.5 7.3 17 4 12 4z",
     },
     {
       title: t("hoursTitle"),
-      value: t("hours"),
+      lines: [{ text: t("hours") }],
       icon: "M12 21a9 9 0 100-18 9 9 0 000 18zM12 7v5l3.5 2",
     },
   ];
@@ -90,15 +91,20 @@ export default async function ContactPage({
                   </span>
                   <div>
                     <p className="text-sm font-bold text-navy-900">{row.title}</p>
-                    {row.href ? (
-                      <a
-                        href={row.href}
-                        className="text-sm text-slate-600 transition hover:text-gold-600"
-                      >
-                        {row.value}
-                      </a>
-                    ) : (
-                      <p className="text-sm text-slate-600">{row.value}</p>
+                    {row.lines.map((line) =>
+                      line.href ? (
+                        <a
+                          key={line.text}
+                          href={line.href}
+                          className="block text-sm text-slate-600 transition hover:text-gold-600"
+                        >
+                          {line.text}
+                        </a>
+                      ) : (
+                        <p key={line.text} className="text-sm text-slate-600">
+                          {line.text}
+                        </p>
+                      ),
                     )}
                   </div>
                 </li>

@@ -2,16 +2,37 @@ import type { Locale } from "@/i18n/routing";
 
 export type Localized<T = string> = Record<Locale, T>;
 
-// NOTE: phone / email / LINE are placeholders — replace with real contact
-// details before going live.
+// Real contact details confirmed by the owners (July 2026).
+// LINE ID is still a placeholder — confirm before going live.
 export const company = {
   founded: 2007,
   regNo: "0103550035631",
-  phone: "02-000-0000",
-  mobile: "080-000-0000",
-  email: "sales@veerapongpackaging.com",
+  phone: "081-686-1818",
+  mobile: "061-780-1818",
+  email: "Vrp.nu4289@gmail.com",
+  emails: ["Vrp.nu4289@gmail.com", "Vrp_nu@hotmail.com", "Sirikwan.ruangsri@gmail.com"],
   lineId: "@vrppackaging",
   siteUrl: "https://www.veerapongpackaging.com",
+  contacts: [
+    {
+      phone: "081-686-1818",
+      name: {
+        th: "คุณภูษิต ฮะภูริวัฒน์",
+        en: "Phusit Haphuriwat",
+        ja: "プシット・ハプリワット",
+        zh: "普西·哈普里瓦",
+      } satisfies Localized,
+    },
+    {
+      phone: "061-780-1818",
+      name: {
+        th: "คุณศิริขวัญ ฮะภูริวัฒน์",
+        en: "Sirikwan Haphuriwat",
+        ja: "シリクワン・ハプリワット",
+        zh: "西丽宽·哈普里瓦",
+      } satisfies Localized,
+    },
+  ],
   name: {
     th: "ห้างหุ้นส่วนจำกัด วีรพงษ์ แพคเกจจิ้ง",
     en: "Veerapong Packaging Ltd., Part.",
@@ -25,10 +46,10 @@ export const company = {
     zh: "Veerapong Packaging",
   } satisfies Localized,
   address: {
-    th: "12/34 ถนนมหาเจริญ แขวงหนองแขม เขตหนองแขม กรุงเทพมหานคร 10160",
-    en: "12/34 Mahacharoen Rd., Nong Khaem, Bangkok 10160, Thailand",
-    ja: "12/34 Mahacharoen Rd., Nong Khaem, バンコク 10160, タイ",
-    zh: "泰国曼谷市农凯区马哈乍伦路12/34号 邮编10160",
+    th: "12/34 ถนนมาเจริญ แขวงหนองแขม เขตหนองแขม กรุงเทพมหานคร 10160 (สำนักงานใหญ่)",
+    en: "12/34 Ma Charoen Rd., Nong Khaem, Bangkok 10160, Thailand (Head Office)",
+    ja: "12/34 Ma Charoen Rd., Nong Khaem, バンコク 10160, タイ（本社）",
+    zh: "泰国曼谷市农凯区玛乍伦路12/34号 邮编10160（总部）",
   } satisfies Localized,
 } as const;
 
