@@ -23,9 +23,10 @@ export interface ProductCategory {
   useCases: Localized<string[]>;
 }
 
-// DRAFT CONTENT — product line-up drafted from the company's business
-// registration (wholesale of industrial packaging, TSIC 46694) and its
-// automotive customer base. Review and adjust before going live.
+// Product line-up. Bubble + PP Board content confirmed by the owners
+// (July 2026): the company manufactures PP Board boxes in-house and sells
+// EPE foam / EVA / air bubble protective packaging. Other categories are
+// still drafts — review before going live.
 export const productCategories: ProductCategory[] = [
   {
     slug: "foam",
@@ -135,65 +136,93 @@ export const productCategories: ProductCategory[] = [
       zh: "气泡缓冲包装",
     },
     tagline: {
-      th: "ห่อหุ้มสินค้าเปราะบางทุกขนาด",
-      en: "Wrap protection for fragile goods of any size",
-      ja: "あらゆるサイズの壊れ物を保護",
-      zh: "保护各种尺寸的易碎品",
+      th: "สั่งผลิตตามขนาดชิ้นงาน ทั้งงานแผ่นและงานถุง",
+      en: "Made to your part size — as sheets or bags",
+      ja: "部品サイズに合わせて受注生産 — シートでも袋でも",
+      zh: "按工件尺寸定制 — 片材或袋装",
     },
     description: {
-      th: "แผ่นพลาสติกกันกระแทกแบบฟองอากาศ (Air Bubble) เกรดอุตสาหกรรม ทั้งแบบม้วนใหญ่สำหรับสายการผลิต แบบซองสำเร็จรูป และแบบเคลือบลามิเนตเสริมความแข็งแรง ปกป้องสินค้าเปราะบางจากแรงสั่นสะเทือนตลอดเส้นทางขนส่ง",
-      en: "Industrial-grade air bubble film in jumbo rolls for production lines, ready-made pouches, and laminated variants for extra strength. Shields fragile goods from vibration door to door.",
-      ja: "生産ライン向けジャンボロール、既製ポーチ、強度を高めたラミネートタイプなど、産業グレードのエアキャップ。輸送中の振動から壊れ物をしっかり守ります。",
-      zh: "工业级气泡膜，提供生产线用大卷、成品气泡袋以及强度更高的复合款式，全程保护易碎品免受振动损伤。",
+      th: "แอร์บับเบิ้ล (พลาสติกกันกระแทก) เม็ดฟองอากาศสีขาวใส มองเห็นสินค้าภายใน น้ำหนักเบา ใช้งานง่าย กันฝุ่น กันน้ำ ทนต่อสารเคมีและเชื้อรา และช่วยยืดอายุการเกิดสนิมของชิ้นงานโลหะ สั่งผลิตตามขนาดชิ้นงานของลูกค้าได้ทั้งงานแผ่นและงานถุง พร้อมชนิดป้องกันไฟฟ้าสถิต (Anti-static) สำหรับชิ้นส่วนอิเล็กทรอนิกส์ที่ไวต่อประจุไฟฟ้า",
+      en: "Air bubble cushioning in clear film — you can see the product inside. Lightweight and easy to use, it resists dust, water, chemicals and mould, and helps delay rust on metal parts. Made to order to your part size as sheets or bags, with an anti-static (ESD) grade for static-sensitive electronics.",
+      ja: "透明なエアキャップ（気泡緩衝材）。中身が見え、軽量で扱いやすく、防塵・防水・耐薬品・防カビ性に優れ、金属部品のサビ防止にも役立ちます。部品サイズに合わせてシート・袋のどちらでも受注生産可能。静電気に敏感な電子部品向けの帯電防止（ESD）タイプもご用意しています。",
+      zh: "透明气泡缓冲膜——可直接看见内部产品。轻便易用，防尘防水，耐化学品与霉菌，并有助于延缓金属件生锈。可按工件尺寸定制片材或袋装，另有防静电（ESD）型号，适用于对静电敏感的电子元件。",
     },
     items: [
       {
         name: { th: "บับเบิ้ลม้วน", en: "Bubble Rolls", ja: "エアキャップロール", zh: "气泡卷材" },
         desc: {
-          th: "หน้ากว้าง 65–130 ซม. ยาว 50–100 ม. ฟอง 10 มม.",
-          en: "65–130 cm wide, 50–100 m long, 10 mm bubbles",
-          ja: "幅65〜130cm、長さ50〜100m、気泡径10mm",
-          zh: "宽65–130厘米，长50–100米，气泡直径10毫米",
+          th: "หน้ากว้าง 65–130 ซม. ยาว 50–100 ม. สีขาวใสมาตรฐาน หรือสีอื่นตามสั่ง",
+          en: "65–130 cm wide, 50–100 m rolls — standard clear, colours to order",
+          ja: "幅65〜130cm、長さ50〜100m。標準は透明、カラーも対応",
+          zh: "宽65–130厘米、长50–100米，标准透明色，可定制颜色",
         },
       },
       {
-        name: { th: "ซองบับเบิ้ล", en: "Bubble Pouches", ja: "エアキャップ袋", zh: "气泡袋" },
+        name: { th: "งานแผ่นตัดตามขนาด", en: "Cut-to-size Sheets", ja: "サイズカットシート", zh: "按尺寸裁切片材" },
         desc: {
-          th: "ซองสำเร็จรูปหลายขนาด แพ็กสินค้าได้รวดเร็ว",
-          en: "Ready-made pouches in many sizes for fast packing",
-          ja: "多サイズの既製袋でスピーディーに梱包",
-          zh: "多种规格成品袋，包装快捷",
+          th: "ตัดตามขนาดชิ้นงานของลูกค้า พร้อมใช้เข้าไลน์แพ็กทันที",
+          en: "Sheets cut to your part size, ready for the packing line",
+          ja: "部品サイズに合わせてカット、梱包ラインですぐ使えます",
+          zh: "按工件尺寸裁切，包装线即取即用",
         },
       },
       {
-        name: { th: "บับเบิ้ลลามิเนต", en: "Laminated Bubble", ja: "ラミネートエアキャップ", zh: "复合气泡膜" },
+        name: { th: "ซองบับเบิ้ล (งานถุง)", en: "Bubble Bags", ja: "エアキャップ袋", zh: "气泡袋" },
         desc: {
-          th: "เคลือบ PE/ฟอยล์ เพิ่มความเหนียวและกันความชื้น",
-          en: "PE/foil lamination for extra toughness and moisture barrier",
-          ja: "PE・アルミ箔ラミネートで強度と防湿性を向上",
-          zh: "PE/铝箔复合，更坚韧且防潮",
+          th: "สั่งผลิตถุงตามขนาดชิ้นงาน ใส่สินค้าได้รวดเร็ว เหมาะกับงานจำนวนมาก",
+          en: "Made-to-size bags for fast insertion — ideal for high volumes",
+          ja: "サイズオーダーの袋で素早く梱包、大量向けに最適",
+          zh: "按尺寸定制袋装，装件快捷，适合大批量",
+        },
+      },
+      {
+        name: { th: "บับเบิ้ลกันไฟฟ้าสถิต (Anti-static)", en: "Anti-static Bubble (ESD)", ja: "帯電防止エアキャップ（ESD）", zh: "防静电气泡膜（ESD）" },
+        desc: {
+          th: "สำหรับแผงวงจร ฮาร์ดดิสก์ ชิ้นส่วนโทรศัพท์ และอุปกรณ์ที่ไวต่อประจุไฟฟ้า",
+          en: "For circuit boards, hard drives, phone parts and static-sensitive devices",
+          ja: "基板・HDD・携帯部品など静電気に敏感な機器向け",
+          zh: "适用于电路板、硬盘、手机零件等对静电敏感的设备",
         },
       },
     ],
     specs: [
       {
+        label: { th: "สี", en: "Colour", ja: "色", zh: "颜色" },
+        value: {
+          th: "ขาวใส (มาตรฐาน) / สีอื่นตามสั่ง",
+          en: "Clear (standard) / colours to order",
+          ja: "透明（標準）／カラー対応",
+          zh: "透明（标准）/ 可定制颜色",
+        },
+      },
+      {
         label: { th: "ขนาดฟอง", en: "Bubble size", ja: "気泡径", zh: "气泡直径" },
         value: { th: "10 มม. (มาตรฐาน)", en: "10 mm (standard)", ja: "10mm（標準）", zh: "10毫米（标准）" },
       },
       {
-        label: { th: "หน้ากว้าง", en: "Width", ja: "幅", zh: "宽度" },
-        value: { th: "65 / 130 ซม. หรือสั่งตัด", en: "65 / 130 cm or cut to order", ja: "65／130cm、指定幅も可", zh: "65/130厘米，可按需裁切" },
+        label: { th: "รูปแบบ", en: "Formats", ja: "形態", zh: "形式" },
+        value: {
+          th: "ม้วน / งานแผ่นตัดตามขนาด / งานถุงสั่งผลิต",
+          en: "Rolls / cut-to-size sheets / made-to-order bags",
+          ja: "ロール／サイズカットシート／オーダー袋",
+          zh: "卷材 / 按尺寸裁切片材 / 定制袋",
+        },
       },
       {
-        label: { th: "ความยาวม้วน", en: "Roll length", ja: "ロール長", zh: "卷长" },
-        value: { th: "50–100 ม.", en: "50–100 m", ja: "50〜100m", zh: "50–100米" },
+        label: { th: "คุณสมบัติ", en: "Properties", ja: "特性", zh: "特性" },
+        value: {
+          th: "กันกระแทก กันฝุ่น กันน้ำ ทนสารเคมี-เชื้อรา ชะลอสนิม / มีชนิดกัน ESD",
+          en: "Shock-, dust- and water-resistant; withstands chemicals & mould; delays rust; ESD grade available",
+          ja: "衝撃・防塵・防水、耐薬品・防カビ、防錆補助、ESDタイプあり",
+          zh: "抗冲击、防尘防水、耐化学品与霉菌、缓锈，备有防静电型",
+        },
       },
     ],
     useCases: {
-      th: ["ห่อชิ้นงานโลหะและพลาสติก", "แพ็กสินค้า e-commerce", "กันสั่นสะเทือนชิ้นส่วนอิเล็กทรอนิกส์"],
-      en: ["Wrapping metal and plastic parts", "E-commerce order packing", "Vibration protection for electronics"],
-      ja: ["金属・樹脂部品の梱包", "EC商品の梱包", "電子部品の防振"],
-      zh: ["包裹金属和塑料工件", "电商订单包装", "电子元件防振"],
+      th: ["ห่อกรอบรูป เซรามิค เฟอร์นิเจอร์ และสินค้าเปราะบาง", "บรรจุแผงวงจร ฮาร์ดดิสก์ไดรฟ์ และชิ้นส่วนอิเล็กทรอนิกส์ (ชนิดกัน ESD)", "สั่งผลิตถุง/แผ่นตามขนาดชิ้นงานเข้าสายการผลิต"],
+      en: ["Wrapping picture frames, ceramics, furniture and fragile goods", "Packing circuit boards, hard drives and electronics (ESD grade)", "Made-to-size bags/sheets feeding production lines"],
+      ja: ["額縁・陶磁器・家具など壊れ物の梱包", "基板・HDD・電子部品の梱包（ESDタイプ）", "生産ライン向けサイズオーダーの袋・シート"],
+      zh: ["包裹相框、陶瓷、家具等易碎品", "包装电路板、硬盘及电子元件（防静电型）", "按工件尺寸定制袋/片材直供产线"],
     },
   },
   {
@@ -208,67 +237,95 @@ export const productCategories: ProductCategory[] = [
       zh: "中空板（PP瓦楞板）",
     },
     tagline: {
-      th: "กล่องและไส้กั้นหมุนเวียนสำหรับสายการผลิต",
-      en: "Returnable boxes & dividers for production lines",
-      ja: "生産ライン向け通い箱・仕切り",
-      zh: "生产线用可循环周转箱与隔板",
+      th: "สินค้าหลักผลิตเอง — กล่องและไส้กั้นหมุนเวียนสำหรับสายการผลิต",
+      en: "Manufactured in-house — returnable boxes & dividers",
+      ja: "自社製造 — 生産ライン向け通い箱・仕切り",
+      zh: "自主生产 — 生产线用周转箱与隔板",
     },
     description: {
-      th: "แผ่นพลาสติกลูกฟูก PP น้ำหนักเบา ทนทาน กันน้ำ ใช้ซ้ำได้หลายรอบ ผลิตเป็นกล่องหมุนเวียน (Returnable Box) ไส้กั้น (Partition) และถาดรองชิ้นงานตามสเปกโรงงาน เป็นมาตรฐานที่โรงงานยานยนต์อย่างโตโยต้าและฮิตาชิใช้หมุนเวียนชิ้นส่วนในซัพพลายเชน",
-      en: "Lightweight, durable, waterproof PP corrugated sheets fabricated into returnable boxes, partitions, and part trays to factory spec. The workhorse standard for circulating parts in automotive supply chains such as Toyota's and Hitachi's.",
-      ja: "軽量・高耐久・防水のPPプラダンを、工場仕様の通い箱・仕切り・部品トレイに加工。トヨタや日立をはじめとする自動車サプライチェーンで部品循環の標準として使われています。",
-      zh: "轻质、耐用、防水的PP中空板，可按工厂规格加工成周转箱、隔板和零件托盘。是丰田、日立等汽车供应链中零部件周转的标准选择。",
+      th: "สินค้าหลักที่เราผลิตเอง — แผ่นและกล่องพลาสติกลูกฟูก (PP Board / Future Board) ผลิตจากพลาสติก PP แข็งแรงไม่ฉีกขาดง่าย กันน้ำ 100% เช็ดล้างแล้วนำกลับมาใช้ซ้ำได้หลายรอบ ทนทั้งสารเคมีและน้ำมัน แผ่นมาตรฐาน 1300×2450 มม. ความหนา 2–10 มม. มีให้เลือกถึง 14 สี ตัดตามขนาดที่ต้องการ และขึ้นรูปเป็นกล่องได้หลายแบบตามลักษณะงาน",
+      en: "Our flagship in-house product — PP corrugated sheets and boxes (PP Board / Future Board). Tough polypropylene that won't tear like cardboard: 100% waterproof, washable and reusable trip after trip, resistant to chemicals and oils. Standard 1300×2450 mm sheets in 2–10 mm thickness and 14 colours, cut to any size and fabricated into boxes to suit the job.",
+      ja: "当社の主力自社製造製品 — プラダン（PPボード／フューチャーボード）のシートと箱。丈夫なPP製で紙のように破れず、100%防水、洗浄して何度でも再利用可能。薬品や油にも強い素材です。標準シート1300×2450mm、厚さ2〜10mm、14色展開。ご希望サイズにカットし、用途に合わせた箱に加工します。",
+      zh: "我们的核心自产产品——中空板（PP Board / Future Board）板材与箱子。坚韧的PP塑料不像纸箱易撕裂：100%防水、可清洗反复使用、耐化学品和油污。标准板材1300×2450毫米，厚度2–10毫米，多达14种颜色，可任意裁切并按用途加工成各类箱型。",
     },
     items: [
       {
-        name: { th: "แผ่น PP Board", en: "PP Board Sheets", ja: "プラダンシート", zh: "中空板板材" },
+        name: { th: "แผ่น PP Board ตัดตามขนาด", en: "Cut-to-size PP Board Sheets", ja: "プラダンシート（サイズカット）", zh: "按尺寸裁切中空板" },
         desc: {
-          th: "ความหนา 2–10 มม. หลายสี ตัดตามขนาด",
-          en: "2–10 mm thick, multiple colours, cut to size",
-          ja: "厚さ2〜10mm、多色展開、サイズカット対応",
-          zh: "厚度2–10毫米，多种颜色，可按尺寸裁切",
+          th: "แผ่นมาตรฐาน 1300×2450 มม. หนา 2 / 3 / 4 / 5 / 10 มม. เลือกได้ 14 สี",
+          en: "Standard 1300×2450 mm, in 2 / 3 / 4 / 5 / 10 mm and 14 colours",
+          ja: "標準1300×2450mm、厚さ2／3／4／5／10mm、14色から選択",
+          zh: "标准1300×2450毫米，厚2/3/4/5/10毫米，14色可选",
         },
       },
       {
-        name: { th: "กล่องหมุนเวียน", en: "Returnable Boxes", ja: "通い箱", zh: "周转箱" },
+        name: { th: "กล่องฝาชน / ฝาเกย", en: "Carton-style Boxes", ja: "A式・かぶせ蓋タイプの箱", zh: "对口盖 / 天地盖箱" },
         desc: {
-          th: "พับประกอบได้ ใช้ซ้ำหลายร้อยรอบ ลดต้นทุนบรรจุภัณฑ์",
-          en: "Foldable, reusable for hundreds of trips, cutting packaging cost",
-          ja: "折りたたみ式で数百回再利用でき、梱包コストを削減",
-          zh: "可折叠，可重复使用数百次，降低包装成本",
+          th: "ทรงเดียวกับกล่องกระดาษที่คุ้นเคย แต่แข็งแรงกว่าและกันน้ำ 100%",
+          en: "The familiar carton shape — but far stronger and fully waterproof",
+          ja: "見慣れた段ボール形状のまま、より頑丈で100%防水",
+          zh: "外形与常见纸箱相同，但更坚固且100%防水",
         },
       },
       {
-        name: { th: "ไส้กั้น / Partition", en: "Partitions & Dividers", ja: "仕切り・間仕切り", zh: "隔板 / 分格" },
+        name: { th: "กล่องหูหิ้ว / มีช่องมือจับ", en: "Boxes with Hand Holes", ja: "持ち手付きボックス", zh: "带提手孔箱" },
         desc: {
-          th: "ออกแบบช่องตามชิ้นงาน กันชิ้นส่วนเสียดสีกัน",
-          en: "Cell layouts designed around your parts to stop part-on-part contact",
-          ja: "部品形状に合わせたセル設計で部品同士の接触を防止",
-          zh: "按零件设计格位，防止零件相互摩擦",
+          th: "เหมาะกับกล่องเอกสาร กล่องเครื่องมือ และงานที่ต้องเคลื่อนย้ายบ่อย",
+          en: "For document storage, tool boxes and anything moved often",
+          ja: "書類箱・工具箱など、頻繁に持ち運ぶ用途に",
+          zh: "适合文件箱、工具箱及需要经常搬运的场合",
         },
       },
       {
-        name: { th: "ถาดรองชิ้นงาน (พร้อมโฟม)", en: "Part Trays (foam-lined)", ja: "部品トレイ（フォーム付き）", zh: "零件托盘（带泡沫内衬）" },
+        name: { th: "กล่องพับได้ (Collapsible)", en: "Collapsible Boxes", ja: "折りたたみボックス", zh: "可折叠箱" },
         desc: {
-          th: "ผสาน PP Board กับโฟมตัดขึ้นรูป ล็อกชิ้นงานทุกตำแหน่ง",
-          en: "PP board combined with die-cut foam to lock every part in place",
-          ja: "プラダンと抜き加工フォームを組み合わせ、部品を確実に固定",
-          zh: "中空板结合模切泡沫，牢固定位每个零件",
+          th: "พับแบนเมื่อไม่ใช้งาน ประหยัดพื้นที่ขนส่งขากลับ เหมาะกับงานหมุนเวียน",
+          en: "Folds flat when empty — saves return-trip space in closed-loop logistics",
+          ja: "空の時は折りたたんで返送スペースを節約、循環利用に最適",
+          zh: "空箱折叠压平，节省回程运输空间，适合循环使用",
+        },
+      },
+      {
+        name: { th: "กล่องพร้อมไส้กั้น (Partition)", en: "Boxes with Partitions", ja: "仕切り付きボックス", zh: "带隔板箱" },
+        desc: {
+          th: "กั้นช่องด้านในกันชิ้นส่วนกระแทกกันเอง มาตรฐานโรงงานผลิตชิ้นส่วน",
+          en: "Internal dividers stop part-on-part contact — the parts-plant standard",
+          ja: "内部仕切りで部品同士の接触を防止、部品工場の定番仕様",
+          zh: "内部分格防止零件互相碰撞——零部件工厂的标准配置",
         },
       },
     ],
     specs: [
       {
+        label: { th: "ขนาดแผ่นมาตรฐาน", en: "Standard sheet", ja: "標準シートサイズ", zh: "标准板材尺寸" },
+        value: {
+          th: "1300 × 2450 มม. (ตัดตามขนาดได้)",
+          en: "1300 × 2450 mm (cut to size)",
+          ja: "1300×2450mm（サイズカット可）",
+          zh: "1300×2450毫米（可裁切）",
+        },
+      },
+      {
         label: { th: "ความหนา", en: "Thickness", ja: "厚さ", zh: "厚度" },
-        value: { th: "2 / 3 / 5 / 10 มม.", en: "2 / 3 / 5 / 10 mm", ja: "2／3／5／10mm", zh: "2/3/5/10毫米" },
+        value: { th: "2 / 3 / 4 / 5 / 10 มม.", en: "2 / 3 / 4 / 5 / 10 mm", ja: "2／3／4／5／10mm", zh: "2/3/4/5/10毫米" },
       },
       {
-        label: { th: "น้ำหนักแผ่น", en: "Grammage", ja: "坪量", zh: "克重" },
-        value: { th: "250–2,500 กรัม/ตร.ม.", en: "250–2,500 g/m²", ja: "250〜2,500g/m²", zh: "250–2,500克/平方米" },
+        label: { th: "สี", en: "Colours", ja: "色", zh: "颜色" },
+        value: {
+          th: "14 สี รวมแบบโปร่งแสง",
+          en: "14 colours, incl. translucent",
+          ja: "全14色（半透明を含む）",
+          zh: "14种颜色（含半透明）",
+        },
       },
       {
-        label: { th: "อายุใช้งาน", en: "Service life", ja: "使用寿命", zh: "使用寿命" },
-        value: { th: "ใช้ซ้ำได้ 100+ รอบ", en: "100+ reuse cycles", ja: "100回以上の再利用", zh: "可重复使用100次以上" },
+        label: { th: "คุณสมบัติ", en: "Properties", ja: "特性", zh: "特性" },
+        value: {
+          th: "แข็งแรงไม่ฉีกขาด กันน้ำ 100% ล้างแล้วใช้ซ้ำได้ ทนสารเคมี-น้ำมัน",
+          en: "Tear-resistant, 100% waterproof, washable & reusable, chemical/oil-resistant",
+          ja: "破れにくい・100%防水・洗って再利用可・耐薬品／耐油",
+          zh: "抗撕裂、100%防水、可洗可重复使用、耐化学品与油污",
+        },
       },
       {
         label: { th: "ตัวเลือกเสริม", en: "Options", ja: "オプション", zh: "可选项" },

@@ -30,6 +30,11 @@ export default async function HomePage({
   const t = await getTranslations();
   const l = locale as Locale;
 
+  // Products showcased in the hero — flagship PP Board first
+  const heroShowcase = ["pp-board", "bubble", "boxes"]
+    .map((slug) => productCategories.find((c) => c.slug === slug))
+    .filter((c) => c !== undefined);
+
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -93,23 +98,64 @@ export default async function HomePage({
             </div>
           </div>
 
-          {/* Trust chip floating over the warehouse photo */}
-          <div className="hidden justify-end lg:flex">
-            <div className="max-w-xs rounded-2xl border border-white/15 bg-navy-950/60 p-6 backdrop-blur-md">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold-500 text-navy-950">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 2l8 3v6c0 5.2-3.4 9.3-8 11-4.6-1.7-8-5.8-8-11V5l8-3z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-                  <path d="M8.5 12l2.5 2.5 4.5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <p className="mt-4 text-sm font-semibold leading-relaxed text-slate-200">
-                {t("trust.subtitle")}
-              </p>
-              <div className="mt-4 flex gap-6 text-lg font-black tracking-widest text-slate-400">
-                <span>TOYOTA</span>
-                <span>HITACHI</span>
-              </div>
-            </div>
+          {/* Product photo collage — show what we sell, first thing */}
+          <div className="hidden grid-cols-2 gap-4 lg:grid">
+            <Link
+              href={`/products/${heroShowcase[0].slug}`}
+              className="group relative row-span-2 h-[430px] overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/20"
+            >
+              <Image
+                src={heroShowcase[0].image}
+                alt={heroShowcase[0].name[l]}
+                fill
+                priority
+                sizes="(max-width: 1024px) 0px, 25vw"
+                className="object-cover transition duration-500 group-hover:scale-105"
+              />
+              <span className="absolute bottom-3 left-3 rounded-full bg-navy-950/75 px-3.5 py-1.5 text-xs font-bold text-white backdrop-blur">
+                {heroShowcase[0].name[l]}
+              </span>
+            </Link>
+            {heroShowcase.slice(1).map((c) => (
+              <Link
+                key={c.slug}
+                href={`/products/${c.slug}`}
+                className="group relative h-[207px] overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/20"
+              >
+                <Image
+                  src={c.image}
+                  alt={c.name[l]}
+                  fill
+                  sizes="(max-width: 1024px) 0px, 25vw"
+                  className="object-cover transition duration-500 group-hover:scale-105"
+                />
+                <span className="absolute bottom-3 left-3 rounded-full bg-navy-950/75 px-3.5 py-1.5 text-xs font-bold text-white backdrop-blur">
+                  {c.name[l]}
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile: product strip right under the CTAs */}
+          <div className="grid grid-cols-3 gap-3 lg:hidden">
+            {heroShowcase.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/products/${c.slug}`}
+                className="relative h-28 overflow-hidden rounded-xl ring-1 ring-white/20"
+              >
+                <Image
+                  src={c.image}
+                  alt={c.name[l]}
+                  fill
+                  sizes="33vw"
+                  className="object-cover"
+                />
+                <span className="absolute inset-x-0 bottom-0 bg-navy-950/70 px-2 py-1 text-center text-[10px] font-bold text-white backdrop-blur">
+                  {c.name[l]}
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
 
@@ -130,42 +176,6 @@ export default async function HomePage({
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── Trust bar (floating logo marquee) ────────────── */}
-      <section className="border-b border-slate-100 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6">
-          <h2 className="text-sm font-bold uppercase tracking-widest text-slate-400">
-            {t("trust.title")}
-          </h2>
-          <p className="mt-2 text-sm text-slate-500">{t("trust.subtitle")}</p>
-          <div className="relative mt-8 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_18%,black_82%,transparent)]">
-            <div className="flex w-max animate-marquee">
-              {[0, 1].map((half) => (
-                <div
-                  key={half}
-                  aria-hidden={half === 1}
-                  className="flex items-center gap-24 pr-24"
-                >
-                  {Array.from({ length: 3 }).flatMap((_, r) =>
-                    trustBrands.map((b, i) => (
-                      <span
-                        key={`${r}-${b}`}
-                        className="animate-floaty text-3xl font-black tracking-widest text-slate-300 transition hover:text-navy-900"
-                        style={{
-                          animationDelay: `${((r * trustBrands.length + i) % 5) * 0.7}s`,
-                        }}
-                      >
-                        {b}
-                      </span>
-                    )),
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-          <p className="mt-4 text-xs text-slate-400">{t("trust.note")}</p>
         </div>
       </section>
 
@@ -268,6 +278,42 @@ export default async function HomePage({
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Trust bar (floating logo marquee) ────────────── */}
+      <section className="border-y border-slate-100 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6">
+          <h2 className="text-sm font-bold uppercase tracking-widest text-slate-400">
+            {t("trust.title")}
+          </h2>
+          <p className="mt-2 text-sm text-slate-500">{t("trust.subtitle")}</p>
+          <div className="relative mt-8 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_18%,black_82%,transparent)]">
+            <div className="flex w-max animate-marquee">
+              {[0, 1].map((half) => (
+                <div
+                  key={half}
+                  aria-hidden={half === 1}
+                  className="flex items-center gap-24 pr-24"
+                >
+                  {Array.from({ length: 3 }).flatMap((_, r) =>
+                    trustBrands.map((b, i) => (
+                      <span
+                        key={`${r}-${b}`}
+                        className="animate-floaty text-3xl font-black tracking-widest text-slate-300 transition hover:text-navy-900"
+                        style={{
+                          animationDelay: `${((r * trustBrands.length + i) % 5) * 0.7}s`,
+                        }}
+                      >
+                        {b}
+                      </span>
+                    )),
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          <p className="mt-4 text-xs text-slate-400">{t("trust.note")}</p>
         </div>
       </section>
 
