@@ -19,7 +19,7 @@ export default function JsonLd({ locale }: { locale: Locale }) {
         description: `Industrial packaging wholesaler with ${yearsInBusiness}+ years of experience serving automotive supply chains.`,
         address: {
           "@type": "PostalAddress",
-          streetAddress: "12/34 Ma Charoen Rd.",
+          streetAddress: "12/34 Macharoen Road",
           addressLocality: "Nong Khaem",
           addressRegion: "Bangkok",
           postalCode: "10160",
@@ -37,7 +37,7 @@ export default function JsonLd({ locale }: { locale: Locale }) {
         priceRange: "฿฿",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "12/34 Ma Charoen Rd.",
+          streetAddress: "12/34 Macharoen Road",
           addressLocality: "Nong Khaem",
           addressRegion: "Bangkok",
           postalCode: "10160",

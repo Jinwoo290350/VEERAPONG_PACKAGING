@@ -1,20 +1,22 @@
+import Image from "next/image";
+
 export default function Logo({ dark = false }: { dark?: boolean }) {
   return (
     <span className="flex items-center gap-2.5">
-      <svg
-        width="36"
-        height="36"
-        viewBox="0 0 40 40"
-        aria-hidden="true"
-        className="shrink-0"
+      {/* Company VrP puzzle logo — on dark backgrounds it sits in a white chip */}
+      <span
+        className={`flex h-11 w-11 shrink-0 items-center justify-center ${
+          dark ? "rounded-xl bg-white p-1" : ""
+        }`}
       >
-        <rect x="2" y="2" width="36" height="36" rx="8" fill="#122a4a" />
-        {/* isometric box mark */}
-        <path d="M20 8l10 5.5v11L20 30l-10-5.5v-11L20 8z" fill="#1d3a62" />
-        <path d="M20 8l10 5.5L20 19l-10-5.5L20 8z" fill="#f0a421" />
-        <path d="M20 19v11l10-5.5v-11L20 19z" fill="#f6b83d" opacity="0.55" />
-        <path d="M20 19v11l-10-5.5v-11L20 19z" fill="#f0a421" opacity="0.3" />
-      </svg>
+        <Image
+          src="/logo.svg"
+          alt="VrP Packaging logo"
+          width={44}
+          height={44}
+          className="h-full w-full object-contain"
+        />
+      </span>
       <span className="leading-tight">
         <span
           className={`block text-[15px] font-extrabold tracking-wide ${dark ? "text-white" : "text-navy-900"}`}

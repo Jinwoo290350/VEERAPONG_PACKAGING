@@ -45,54 +45,51 @@ export default async function CategoryPage({
 
   return (
     <>
-      {/* Header */}
-      <section className={`bg-gradient-to-br ${cat.accent} text-white`}>
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 sm:px-6 lg:grid-cols-2">
+      {/* Header — light catalog style so the product photo stands out */}
+      <section className="border-b border-slate-100 bg-gradient-to-b from-navy-50/70 to-white">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2">
           <div>
             <Link
               href="/products"
-              className="text-sm font-semibold text-white/80 transition hover:text-white"
+              className="text-sm font-semibold text-slate-500 transition hover:text-gold-600"
             >
               ← {t("backToProducts")}
             </Link>
-            <h1 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+            <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl">
               {cat.name[l]}
             </h1>
-            <p className="mt-2 text-lg font-medium text-white/85">
+            <p className="mt-2 text-lg font-semibold text-gold-700">
               {cat.tagline[l]}
             </p>
-            <p className="mt-4 max-w-xl leading-relaxed text-white/80">
+            <p className="mt-4 max-w-xl leading-relaxed text-slate-600">
               {cat.description[l]}
             </p>
             <Link
               href="/contact"
-              className="mt-7 inline-block rounded-full bg-white px-7 py-3 font-bold text-navy-950 shadow-lg transition hover:bg-gold-50"
+              className="mt-7 inline-block rounded-full bg-gold-500 px-7 py-3 font-bold text-navy-950 shadow-lg shadow-gold-500/25 transition hover:bg-gold-400"
             >
               {t("enquire")}
             </Link>
           </div>
-          <div className="hidden justify-center lg:flex">
-            {cat.isPhoto ? (
-              <div className="relative h-80 w-full max-w-md overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/20">
+
+          {/* Product photo in a clean white frame — visible on all screens */}
+          <div className="w-full max-w-lg lg:justify-self-end">
+            <div className="rounded-3xl border border-slate-100 bg-white p-3 shadow-xl shadow-navy-900/5">
+              <div
+                className={`relative h-64 overflow-hidden rounded-2xl sm:h-80 ${
+                  cat.isPhoto ? "bg-slate-50" : `bg-gradient-to-br ${cat.accent}`
+                }`}
+              >
                 <Image
                   src={cat.image}
                   alt={cat.name[l]}
                   fill
-                  sizes="28rem"
-                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className={cat.isPhoto ? "object-cover" : "object-contain p-8"}
                   priority
                 />
               </div>
-            ) : (
-              <Image
-                src={cat.image}
-                alt={cat.name[l]}
-                width={440}
-                height={300}
-                className="w-full max-w-md drop-shadow-2xl"
-                priority
-              />
-            )}
+            </div>
           </div>
         </div>
       </section>

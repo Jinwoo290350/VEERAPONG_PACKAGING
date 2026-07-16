@@ -35,7 +35,7 @@ export const company = {
   ],
   name: {
     th: "ห้างหุ้นส่วนจำกัด วีรพงษ์ แพคเกจจิ้ง",
-    en: "Veerapong Packaging Ltd., Part.",
+    en: "Veerapong Packaging Limited Partnership",
     ja: "ウィーラポン・パッケージング社",
     zh: "威拉蓬包装有限合伙公司",
   } satisfies Localized,
@@ -47,8 +47,8 @@ export const company = {
   } satisfies Localized,
   address: {
     th: "12/34 ถนนมาเจริญ แขวงหนองแขม เขตหนองแขม กรุงเทพมหานคร 10160 (สำนักงานใหญ่)",
-    en: "12/34 Ma Charoen Rd., Nong Khaem, Bangkok 10160, Thailand (Head Office)",
-    ja: "12/34 Ma Charoen Rd., Nong Khaem, バンコク 10160, タイ（本社）",
+    en: "12/34 Macharoen Road, Nong Khaem, Bangkok 10160, Thailand (Head Office)",
+    ja: "12/34 Macharoen Road, Nong Khaem, バンコク 10160, タイ（本社）",
     zh: "泰国曼谷市农凯区玛乍伦路12/34号 邮编10160（总部）",
   } satisfies Localized,
 } as const;
