@@ -205,6 +205,14 @@
     "q5": "What information do you need for a quote?",
     "a5": "Part dimensions and weight, monthly volume, and any special requirements (ESD-safe, export, etc.). We reply with a proposal within 24 business hours."
   },
+  "viewer": {
+    "title": "See it in 360°",
+    "subtitle": "Drag to spin the product, then pull the layers apart to see the die-cut structure inside",
+    "hint": "Drag to rotate",
+    "explode": "Explode the layers",
+    "collapse": "Reassemble",
+    "caption": "Example: die-cut EPE foam insert locking a part in place"
+  },
   "notFound": {
     "title": "Page not found",
     "backHome": "Back to home"

@@ -46,19 +46,19 @@ export const productCategories: ProductCategory[] = [
       zh: "EPE / PU / EVA，按工件裁切成型",
     },
     description: {
-      th: "โฟมโพลีเอทิลีน (EPE) โฟมโพลียูรีเทน (PU) และโฟม EVA คุณภาพสูง สำหรับปกป้องชิ้นงานจากแรงกระแทกและรอยขีดข่วนระหว่างการขนส่ง มีทั้งแบบแผ่น แบบม้วน และตัดขึ้นรูปตามแบบชิ้นงานของลูกค้า เหมาะสำหรับชิ้นส่วนยานยนต์ อิเล็กทรอนิกส์ และเครื่องใช้ไฟฟ้า",
-      en: "High-grade polyethylene (EPE), polyurethane (PU) and EVA foam that protects parts from impact and abrasion in transit. Available as sheets, rolls, and CNC/die-cut inserts made to your part drawings — ideal for automotive components, electronics, and appliances.",
-      ja: "輸送中の衝撃や擦り傷から部品を守る高品質なポリエチレンフォーム（EPE）、ポリウレタンフォーム（PU）、EVAフォーム。シート・ロール・部品図面に合わせた抜き加工インサートをご用意。自動車部品、電子機器、家電に最適です。",
-      zh: "高品质聚乙烯泡沫（EPE）、聚氨酯泡沫（PU）和EVA泡沫，在运输过程中保护工件免受冲击和刮伤。提供片材、卷材以及按客户图纸定制的模切内衬，适用于汽车零部件、电子产品和家电。",
+      th: "โฟม EPE เนื้อเหนียว นุ่ม คืนตัวได้ดี ปกป้องชิ้นงานจากแรงกระแทกและรอยขีดข่วน น้ำหนักเบาช่วยประหยัดค่าขนส่งพัสดุ มีความหนาตั้งแต่ 1 มม. ไปจนถึงหลายนิ้ว ทำได้ทั้งแบบแผ่น แบบม้วน และตัดขึ้นรูปตามแบบชิ้นงาน (Die-cut) พร้อมสูตรผสมสารป้องกันไฟฟ้าสถิต (Anti-static) สำหรับงานแผงวงจรและอุปกรณ์อิเล็กทรอนิกส์ รวมถึงโฟม PU และ EVA สำหรับงานที่ต้องการความนุ่มหรือความทนทานเป็นพิเศษ",
+      en: "Tough, soft EPE foam with excellent recovery — protects parts from impact and scratches while its light weight cuts shipping cost. From 1 mm up to several inches thick, as sheets, rolls, or die-cut inserts made to your part drawings, with an anti-static blend for circuit boards and electronics. PU and EVA foam also available for extra-soft or heavy-duty jobs.",
+      ja: "粘りがあり柔らかく復元性に優れたEPEフォーム。衝撃や擦り傷から部品を守り、軽量なので輸送コストも削減できます。厚さ1mmから数インチまで、シート・ロール・部品図面に合わせた抜き加工（ダイカット）に対応。基板や電子機器向けの帯電防止（Anti-Static）配合もご用意。特に柔らかさや耐久性が必要な用途にはPU・EVAフォームも供給します。",
+      zh: "EPE泡沫韧性好、质地柔软、回弹性佳——保护工件免受冲击和刮伤，重量轻还能节省运费。厚度从1毫米到数英寸，可做片材、卷材或按图纸模切成型，并有防静电（Anti-Static）配方适用于电路板和电子设备。另供应PU、EVA泡沫，满足超软或高耐用需求。",
     },
     items: [
       {
-        name: { th: "แผ่นโฟม EPE", en: "EPE Foam Sheets", ja: "EPEフォームシート", zh: "EPE泡沫板" },
+        name: { th: "แผ่น / ม้วนโฟม EPE", en: "EPE Foam Sheets & Rolls", ja: "EPEフォームシート・ロール", zh: "EPE泡沫片材/卷材" },
         desc: {
-          th: "ความหนา 0.5–100 มม. น้ำหนักเบา ไม่ดูดซับน้ำ นำกลับมาใช้ซ้ำได้",
-          en: "0.5–100 mm thick, lightweight, water-resistant and reusable",
-          ja: "厚さ0.5〜100mm、軽量・耐水・再利用可能",
-          zh: "厚度0.5–100毫米，轻质防水，可重复使用",
+          th: "เนื้อเหนียว นุ่ม คืนตัวดี หนา 1 มม. ถึงหลายนิ้ว น้ำหนักเบาลดค่าขนส่ง",
+          en: "Tough, soft, resilient — 1 mm to several inches, light enough to cut shipping cost",
+          ja: "粘り・柔らかさ・復元性を兼備。厚さ1mm〜数インチ、軽量で送料も削減",
+          zh: "韧软兼备、回弹好，厚1毫米至数英寸，轻量省运费",
         },
       },
       {
@@ -80,12 +80,12 @@ export const productCategories: ProductCategory[] = [
         },
       },
       {
-        name: { th: "โปรไฟล์โฟมกันขอบ", en: "Foam Edge Profiles", ja: "エッジ保護フォーム", zh: "泡沫护角护边条" },
+        name: { th: "โฟมกันไฟฟ้าสถิต (Anti-static)", en: "Anti-static Foam", ja: "帯電防止フォーム", zh: "防静电泡沫" },
         desc: {
-          th: "ป้องกันขอบและมุมชิ้นงาน ใส่-ถอดง่าย",
-          en: "U/L edge protection that slips on and off easily",
-          ja: "U字・L字型のエッジ保護材、着脱が簡単",
-          zh: "U型/L型护边，安装拆卸方便",
+          th: "ผสมสารป้องกันไฟฟ้าสถิต สำหรับแผงวงจรและอุปกรณ์อิเล็กทรอนิกส์",
+          en: "Anti-static blend for circuit boards and electronic devices",
+          ja: "帯電防止剤配合、基板・電子機器向け",
+          zh: "添加防静电剂，适用于电路板和电子设备",
         },
       },
     ],
@@ -96,7 +96,12 @@ export const productCategories: ProductCategory[] = [
       },
       {
         label: { th: "ความหนา", en: "Thickness", ja: "厚さ", zh: "厚度" },
-        value: { th: "0.5–100 มม.", en: "0.5–100 mm", ja: "0.5〜100mm", zh: "0.5–100毫米" },
+        value: {
+          th: "1 มม. – หลายนิ้ว",
+          en: "1 mm – several inches",
+          ja: "1mm〜数インチ",
+          zh: "1毫米至数英寸",
+        },
       },
       {
         label: { th: "รูปแบบ", en: "Formats", ja: "形態", zh: "形式" },
@@ -110,10 +115,10 @@ export const productCategories: ProductCategory[] = [
       {
         label: { th: "คุณสมบัติ", en: "Properties", ja: "特性", zh: "特性" },
         value: {
-          th: "กันกระแทก กันความชื้น รีไซเคิลได้",
-          en: "Shock-absorbing, moisture-resistant, recyclable",
-          ja: "衝撃吸収・防湿・リサイクル可能",
-          zh: "抗冲击、防潮、可回收",
+          th: "เหนียว นุ่ม คืนตัวดี น้ำหนักเบา กันความชื้น / สูตรกัน ESD",
+          en: "Tough, soft, resilient, lightweight, moisture-resistant / ESD blend available",
+          ja: "粘り・柔軟・復元性・軽量・防湿／ESD配合あり",
+          zh: "坚韧柔软回弹好、轻量防潮 / 备有防静电配方",
         },
       },
     ],

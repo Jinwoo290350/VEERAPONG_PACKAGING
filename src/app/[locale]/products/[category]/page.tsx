@@ -7,6 +7,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { getCategory, productCategories } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
+import FoamShowcase3D from "@/components/FoamShowcase3D";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -40,6 +41,7 @@ export default async function CategoryPage({
   if (!cat) notFound();
   const t = await getTranslations("products");
   const tf = await getTranslations("featured");
+  const tv = await getTranslations("viewer");
   const l = locale as Locale;
   const others = productCategories.filter((c) => c.slug !== cat.slug).slice(0, 3);
 
@@ -93,6 +95,28 @@ export default async function CategoryPage({
           </div>
         </div>
       </section>
+
+      {/* Interactive 3D showcase — foam (pattern reusable for other categories) */}
+      {cat.slug === "foam" && (
+        <section className="thai-weave-light border-b border-slate-100 bg-navy-50/40">
+          <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6">
+            <h2 className="text-2xl font-extrabold tracking-tight text-navy-950 sm:text-3xl">
+              {tv("title")}
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-slate-500">{tv("subtitle")}</p>
+            <div className="mt-8">
+              <FoamShowcase3D
+                labels={{
+                  hint: tv("hint"),
+                  explode: tv("explode"),
+                  collapse: tv("collapse"),
+                  caption: tv("caption"),
+                }}
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Items + specs */}
       <section className="bg-white">
