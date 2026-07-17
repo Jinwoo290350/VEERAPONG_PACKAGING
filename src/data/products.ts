@@ -80,6 +80,15 @@ export const productCategories: ProductCategory[] = [
         },
       },
       {
+        name: { th: "ถุงโฟม EPE", en: "EPE Foam Bags", ja: "EPEフォーム袋", zh: "EPE泡沫袋" },
+        desc: {
+          th: "ผลิตขนาดตามสินค้าของลูกค้า สวมห่อชิ้นงานได้ทันที แพ็กเร็ว",
+          en: "Made to your product's size — slips straight on for fast packing",
+          ja: "製品サイズに合わせて製作、被せるだけでスピード梱包",
+          zh: "按您的产品尺寸定制，直接套上即可快速包装",
+        },
+      },
+      {
         name: { th: "โฟมกันไฟฟ้าสถิต (Anti-static)", en: "Anti-static Foam", ja: "帯電防止フォーム", zh: "防静电泡沫" },
         desc: {
           th: "ผสมสารป้องกันไฟฟ้าสถิต สำหรับแผงวงจรและอุปกรณ์อิเล็กทรอนิกส์",
@@ -106,10 +115,10 @@ export const productCategories: ProductCategory[] = [
       {
         label: { th: "รูปแบบ", en: "Formats", ja: "形態", zh: "形式" },
         value: {
-          th: "แผ่น / ม้วน / ตัดขึ้นรูปตามแบบ",
-          en: "Sheet / roll / custom die-cut",
-          ja: "シート／ロール／カスタム抜き加工",
-          zh: "片材 / 卷材 / 定制模切",
+          th: "แผ่น / ม้วน / ถุง / ตัดขึ้นรูปตามแบบ",
+          en: "Sheet / roll / bag / custom die-cut",
+          ja: "シート／ロール／袋／カスタム抜き加工",
+          zh: "片材 / 卷材 / 袋 / 定制模切",
         },
       },
       {

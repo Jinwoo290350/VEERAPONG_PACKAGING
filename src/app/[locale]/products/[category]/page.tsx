@@ -111,6 +111,7 @@ export default async function CategoryPage({
                   explode: tv("explode"),
                   collapse: tv("collapse"),
                   caption: tv("caption"),
+                  layers: [tv("layer1"), tv("layer2"), tv("layer3")],
                 }}
               />
             </div>

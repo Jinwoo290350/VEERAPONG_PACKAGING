@@ -211,7 +211,10 @@
     "hint": "Drag to rotate",
     "explode": "Explode the layers",
     "collapse": "Reassemble",
-    "caption": "Example: die-cut EPE foam insert locking a part in place"
+    "caption": "Example: die-cut EPE foam insert locking a part in place",
+    "layer1": "Top foam — die-cut openings shaped to your part",
+    "layer2": "Your part — locked snugly in the foam cavity",
+    "layer3": "Base foam — absorbs shocks from every direction"
   },
   "notFound": {
     "title": "Page not found",

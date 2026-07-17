@@ -7,16 +7,18 @@ interface Labels {
   explode: string;
   collapse: string;
   caption: string;
+  layers: [string, string, string];
 }
 
 // Sheet geometry (px in 3D space)
 const W = 280; // width  (x)
 const D = 190; // depth  (z)
-const T = 30; // sheet thickness (y)
-const LAYERS = 4;
+const T = 46; // sheet thickness (y) — chunky like a real EPE block
+const LAYERS = 3;
+const REST_ROT = { x: -22, y: -30 };
 
 export default function FoamShowcase3D({ labels }: { labels: Labels }) {
-  const [rot, setRot] = useState({ x: -24, y: -32 });
+  const [rot, setRot] = useState(REST_ROT);
   const [exploded, setExploded] = useState(false);
   const [dragging, setDragging] = useState(false);
   const interacted = useRef(false);
@@ -36,12 +38,16 @@ export default function FoamShowcase3D({ labels }: { labels: Labels }) {
     return () => cancelAnimationFrame(frame.current);
   }, []);
 
-  function onPointerDown(e: React.PointerEvent) {
+  function stopAutoSpin() {
     interacted.current = true;
     cancelAnimationFrame(frame.current);
+  }
+
+  function onPointerDown(e: React.PointerEvent) {
+    stopAutoSpin();
     setDragging(true);
     last.current = { x: e.clientX, y: e.clientY };
-    (e.target as HTMLElement).setPointerCapture(e.pointerId);
+    (e.target as HTMLElement).setPointerCapture?.(e.pointerId);
   }
 
   function onPointerMove(e: React.PointerEvent) {
@@ -55,14 +61,23 @@ export default function FoamShowcase3D({ labels }: { labels: Labels }) {
     }));
   }
 
-  const gap = exploded ? 58 : 3;
+  function toggleExplode() {
+    stopAutoSpin();
+    // Snap back to the reference angle so the layer labels line up
+    setRot(REST_ROT);
+    setExploded((v) => !v);
+  }
+
+  const gap = exploded ? 78 : 4;
+  // Label vertical anchors matching the exploded layer positions
+  const labelTops = ["13%", "44%", "75%"];
 
   return (
     <div className="mx-auto max-w-xl">
       <div
         role="img"
         aria-label={labels.caption}
-        className={`relative mx-auto h-[380px] touch-none select-none sm:h-[420px] ${dragging ? "cursor-grabbing" : "cursor-grab"}`}
+        className={`relative mx-auto h-[400px] touch-none select-none sm:h-[440px] ${dragging ? "cursor-grabbing" : "cursor-grab"}`}
         style={{ perspective: "1300px" }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -72,13 +87,14 @@ export default function FoamShowcase3D({ labels }: { labels: Labels }) {
         {/* floor shadow */}
         <div
           aria-hidden="true"
-          className="absolute left-1/2 top-[76%] h-14 w-72 -translate-x-1/2 rounded-[50%] bg-navy-950/15 blur-xl"
+          className="absolute left-1/2 top-[78%] h-14 w-72 -translate-x-1/2 rounded-[50%] bg-navy-950/15 blur-xl"
         />
         <div
           className="absolute left-1/2 top-1/2"
           style={{
             transform: `translate(-50%, -50%) rotateX(${rot.x}deg) rotateY(${rot.y}deg)`,
             transformStyle: "preserve-3d",
+            transition: dragging ? "none" : "transform 0.7s ease-in-out",
           }}
         >
           {Array.from({ length: LAYERS }).map((_, i) => (
@@ -90,6 +106,26 @@ export default function FoamShowcase3D({ labels }: { labels: Labels }) {
             />
           ))}
         </div>
+
+        {/* Layer callouts — appear when exploded */}
+        {labels.layers.map((text, i) => (
+          <div
+            key={i}
+            className={`absolute right-0 flex max-w-[45%] items-center gap-2 transition-all duration-500 sm:max-w-[38%] ${
+              exploded ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"
+            }`}
+            style={{ top: labelTops[i], transitionDelay: `${i * 120 + 250}ms` }}
+            aria-hidden={!exploded}
+          >
+            <span className="h-px w-6 shrink-0 bg-gold-500 sm:w-10" />
+            <span className="rounded-xl border border-gold-200 bg-white/95 px-3 py-2 text-left text-[11px] font-semibold leading-snug text-navy-900 shadow-md backdrop-blur sm:text-xs">
+              <span className="mr-1.5 inline-flex h-4 w-4 items-center justify-center rounded-full bg-gold-500 text-[10px] font-black text-navy-950">
+                {i + 1}
+              </span>
+              {text}
+            </span>
+          </div>
+        ))}
       </div>
 
       <div className="mt-2 flex flex-col items-center gap-3">
@@ -101,11 +137,7 @@ export default function FoamShowcase3D({ labels }: { labels: Labels }) {
         </p>
         <button
           type="button"
-          onClick={() => {
-            interacted.current = true;
-            cancelAnimationFrame(frame.current);
-            setExploded((v) => !v);
-          }}
+          onClick={toggleExplode}
           className="rounded-full bg-navy-950 px-6 py-2.5 text-sm font-bold text-gold-400 shadow-lg shadow-navy-950/20 transition hover:bg-navy-800"
         >
           {exploded ? labels.collapse : labels.explode}
@@ -118,11 +150,20 @@ export default function FoamShowcase3D({ labels }: { labels: Labels }) {
 
 /* ── one EPE sheet as a 3D cuboid ─────────────────────────── */
 
+// EPE side walls: soft pearly ridges like extruded foam
 const sideTexture: React.CSSProperties = {
-  // horizontal EPE ridges
   backgroundImage:
-    "repeating-linear-gradient(0deg, #d7dee4 0 3px, #eef1f4 3px 10px)",
-  backgroundColor: "#eef1f4",
+    "repeating-linear-gradient(0deg, #e6ebef 0 4px, #f7f9fa 4px 13px)",
+  backgroundColor: "#f7f9fa",
+  borderRadius: 12,
+};
+
+// EPE top: near-white with faint wide waves + soft sheen
+const topTexture: React.CSSProperties = {
+  backgroundImage:
+    "radial-gradient(ellipse at 30% 25%, rgba(255,255,255,0.9), transparent 55%), repeating-linear-gradient(100deg, rgba(176,192,203,0.16) 0 16px, rgba(255,255,255,0) 16px 38px)",
+  backgroundColor: "#fafcfd",
+  borderRadius: 14,
 };
 
 function FoamSheet({
@@ -143,16 +184,16 @@ function FoamSheet({
       }}
     >
       {/* top */}
-      <Face w={W} h={D} transform={`rotateX(90deg) translateZ(${T / 2}px)`} style={{ background: "#f4f7f9" }}>
+      <Face w={W} h={D} transform={`rotateX(90deg) translateZ(${T / 2}px)`} style={topTexture}>
         {topLayer && (
           <>
             <div
               className="absolute left-[19%] top-1/2 h-[86px] w-[86px] -translate-y-1/2 rounded-full"
-              style={{ background: "#c3cdd5", boxShadow: "inset 0 10px 16px rgba(10,27,51,0.3)" }}
+              style={{ background: "#cfd9e0", boxShadow: "inset 0 12px 18px rgba(10,27,51,0.28)" }}
             />
             <div
               className="absolute right-[13%] top-1/2 h-[58px] w-[108px] -translate-y-1/2 rounded-2xl"
-              style={{ background: "#c3cdd5", boxShadow: "inset 0 10px 16px rgba(10,27,51,0.3)" }}
+              style={{ background: "#cfd9e0", boxShadow: "inset 0 12px 18px rgba(10,27,51,0.28)" }}
             />
           </>
         )}
@@ -167,12 +208,12 @@ function FoamSheet({
               fill="#e0181f"
               opacity="0.9"
             />
-            <circle cx="12" cy="12" r="4" fill="#f4f7f9" />
+            <circle cx="12" cy="12" r="4" fill="#fafcfd" />
           </svg>
         )}
       </Face>
       {/* bottom */}
-      <Face w={W} h={D} transform={`rotateX(-90deg) translateZ(${T / 2}px)`} style={{ background: "#dde4e9" }} />
+      <Face w={W} h={D} transform={`rotateX(-90deg) translateZ(${T / 2}px)`} style={{ background: "#e3e9ed", borderRadius: 14 }} />
       {/* front / back */}
       <Face w={W} h={T} transform={`translateZ(${D / 2}px)`} style={sideTexture} />
       <Face w={W} h={T} transform={`rotateY(180deg) translateZ(${D / 2}px)`} style={sideTexture} />
@@ -198,7 +239,7 @@ function Face({
 }) {
   return (
     <div
-      className="absolute left-1/2 top-1/2 overflow-hidden rounded-md"
+      className="absolute left-1/2 top-1/2 overflow-hidden"
       style={{
         width: w,
         height: h,
