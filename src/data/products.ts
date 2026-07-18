@@ -14,6 +14,9 @@ export interface ProductCategory {
   slug: string;
   image: string;
   isPhoto?: boolean; // true = real photo (cover crop), false/absent = illustration
+  // Carousel photos; missing files are filtered out at render time, so drop
+  // images into public/ under these paths and they appear automatically.
+  gallery?: string[];
   accent: string; // tailwind gradient classes for the card header
   name: Localized;
   tagline: Localized;
@@ -32,6 +35,13 @@ export const productCategories: ProductCategory[] = [
     slug: "foam",
     image: "/photos/foam.jpg",
     isPhoto: true,
+    gallery: [
+      "/photos/foam/foam-1.jpg",
+      "/photos/foam/foam-2.jpg",
+      "/photos/foam/foam-3.jpg",
+      "/photos/foam/foam-4.jpg",
+      "/photos/foam/foam-5.jpg",
+    ],
     accent: "from-sky-500 to-blue-700",
     name: {
       th: "โฟมกันกระแทก",

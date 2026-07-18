@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { existsSync } from "fs";
+import path from "path";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -8,6 +10,7 @@ import { getCategory, productCategories } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 import FoamShowcase3D from "@/components/FoamShowcase3D";
+import ProductGallery from "@/components/ProductGallery";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -44,6 +47,10 @@ export default async function CategoryPage({
   const tv = await getTranslations("viewer");
   const l = locale as Locale;
   const others = productCategories.filter((c) => c.slug !== cat.slug).slice(0, 3);
+  // Only show gallery photos whose files actually exist in /public
+  const galleryImages = (cat.gallery ?? []).filter((img) =>
+    existsSync(path.join(process.cwd(), "public", img)),
+  );
 
   return (
     <>
@@ -114,6 +121,23 @@ export default async function CategoryPage({
                   layers: [tv("layer1"), tv("layer2"), tv("layer3")],
                 }}
               />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Product photo carousel */}
+      {galleryImages.length > 0 && (
+        <section className="border-b border-slate-100 bg-white">
+          <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6">
+            <h2 className="text-2xl font-extrabold tracking-tight text-navy-950 sm:text-3xl">
+              {tv("galleryTitle")}
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-slate-500">
+              {tv("gallerySubtitle")}
+            </p>
+            <div className="mt-8">
+              <ProductGallery images={galleryImages} alt={cat.name[l]} />
             </div>
           </div>
         </section>

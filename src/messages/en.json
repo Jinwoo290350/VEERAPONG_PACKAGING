@@ -214,7 +214,9 @@
     "caption": "Example: die-cut EPE foam insert locking a part in place",
     "layer1": "Top foam — die-cut openings shaped to your part",
     "layer2": "Your part — locked snugly in the foam cavity",
-    "layer3": "Base foam — absorbs shocks from every direction"
+    "layer3": "Base foam — absorbs shocks from every direction",
+    "galleryTitle": "Product gallery",
+    "gallerySubtitle": "Swipe through the photos, or let them slide automatically"
   },
   "notFound": {
     "title": "Page not found",
