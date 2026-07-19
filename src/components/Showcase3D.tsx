@@ -247,6 +247,14 @@ const foamTop: CSSProperties = {
     "radial-gradient(ellipse at 30% 25%, rgba(255,255,255,0.9), transparent 55%), repeating-linear-gradient(100deg, rgba(176,192,203,0.16) 0 16px, rgba(255,255,255,0) 16px 38px)",
   backgroundColor: "#fafcfd",
   borderRadius: 14,
+  boxShadow:
+    "inset 0 2px 5px rgba(255,255,255,0.85), inset 0 -4px 10px rgba(148,170,185,0.3)",
+};
+
+const foamCavity: CSSProperties = {
+  background: "#cfd9e0",
+  boxShadow:
+    "inset 0 14px 20px rgba(10,27,51,0.35), inset 0 3px 6px rgba(10,27,51,0.28)",
 };
 
 function FoamScene({ exploded }: { exploded: boolean }) {
@@ -268,11 +276,11 @@ function FoamScene({ exploded }: { exploded: boolean }) {
               <>
                 <div
                   className="absolute left-[19%] top-1/2 h-[86px] w-[86px] -translate-y-1/2 rounded-full"
-                  style={{ background: "#cfd9e0", boxShadow: "inset 0 12px 18px rgba(10,27,51,0.28)" }}
+                  style={foamCavity}
                 />
                 <div
                   className="absolute right-[13%] top-1/2 h-[58px] w-[108px] -translate-y-1/2 rounded-2xl"
-                  style={{ background: "#cfd9e0", boxShadow: "inset 0 12px 18px rgba(10,27,51,0.28)" }}
+                  style={foamCavity}
                 />
               </>
             ) : i === 1 ? (
@@ -289,19 +297,40 @@ function FoamScene({ exploded }: { exploded: boolean }) {
 
 const BUB_W = 280;
 const BUB_D = 190;
-const BUB_T = 16;
+const BUB_T = 18;
 
-const bubbleTop: CSSProperties = {
-  backgroundImage:
-    "radial-gradient(circle, rgba(148,178,196,0.5) 5px, rgba(255,255,255,0) 6.5px)",
-  backgroundSize: "20px 20px",
-  backgroundColor: "#f2f7fa",
+// Glossy raised bubbles: bright highlight top-left, shaded rim bottom-right
+const bubbleBumps = (hi: string, mid: string, rim: string, base: string): CSSProperties => ({
+  backgroundImage: `radial-gradient(circle at 34% 30%, ${hi} 0px, ${hi} 3px, ${mid} 8px, ${rim} 11px, rgba(0,0,0,0.08) 12px, transparent 13.5px)`,
+  backgroundSize: "28px 28px",
+  backgroundColor: base,
   borderRadius: 12,
-};
+  boxShadow: "inset 0 1px 3px rgba(255,255,255,0.7)",
+});
+
+// White bubble film + pink anti-static grade for the top sheet
+const bubbleTopWhite = bubbleBumps(
+  "rgba(255,255,255,0.98)",
+  "rgba(205,226,238,0.9)",
+  "rgba(138,170,190,0.6)",
+  "#eef4f8",
+);
+const bubbleTopPink = bubbleBumps(
+  "rgba(255,246,244,0.98)",
+  "rgba(244,205,197,0.92)",
+  "rgba(206,138,128,0.6)",
+  "#f8e5e1",
+);
 
 const bubbleSide: CSSProperties = {
   backgroundImage: "repeating-linear-gradient(90deg, #dce6ec 0 6px, #eef4f7 6px 14px)",
   backgroundColor: "#eef4f7",
+  borderRadius: 8,
+};
+
+const bubbleSidePink: CSSProperties = {
+  backgroundImage: "repeating-linear-gradient(90deg, #ecd2cc 0 6px, #f8e8e4 6px 14px)",
+  backgroundColor: "#f8e8e4",
   borderRadius: 8,
 };
 
@@ -316,9 +345,9 @@ function BubbleScene({ exploded }: { exploded: boolean }) {
           d={BUB_D}
           t={BUB_T}
           yOffset={(i - 1) * (BUB_T + gap)}
-          topStyle={bubbleTop}
-          sideStyle={bubbleSide}
-          bottomStyle={{ background: "#e2ebf0", borderRadius: 12 }}
+          topStyle={i === 0 ? bubbleTopPink : bubbleTopWhite}
+          sideStyle={i === 0 ? bubbleSidePink : bubbleSide}
+          bottomStyle={{ background: i === 0 ? "#efd8d2" : "#e2ebf0", borderRadius: 12 }}
           topChildren={
             i === 1 ? (
               <PartGear className="absolute left-1/2 top-1/2 h-[84px] w-[84px] -translate-x-1/2 -translate-y-1/2" />

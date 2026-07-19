@@ -37,7 +37,12 @@ export default async function HomePage({
   const marqueeItems = marqueeSlugs
     .map((slug) => productCategories.find((c) => c.slug === slug))
     .filter((c) => c !== undefined)
-    .map((c) => ({ slug: c.slug, name: c.name[l], image: marqueeImages[c.slug] ?? c.image }));
+    .map((c) => ({
+      slug: c.slug,
+      name: c.name[l],
+      image: marqueeImages[c.slug] ?? c.image,
+      accent: c.accent,
+    }));
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -70,6 +75,10 @@ export default async function HomePage({
           className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/85 to-navy-900/50"
         />
         <div aria-hidden="true" className="thai-weave absolute inset-0" />
+        {/* vivid colour glows */}
+        <div aria-hidden="true" className="absolute -left-24 top-6 h-96 w-96 rounded-full bg-gold-500/25 blur-3xl" />
+        <div aria-hidden="true" className="absolute right-[-4rem] top-24 h-80 w-80 rounded-full bg-sky-500/25 blur-3xl" />
+        <div aria-hidden="true" className="absolute bottom-[-3rem] left-1/3 h-72 w-72 rounded-full bg-rose-500/20 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:py-32">
           <div className="mx-auto max-w-3xl text-center">
             <p className="inline-flex items-center gap-2 rounded-full border border-gold-500/40 bg-gold-500/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-gold-300">
@@ -78,7 +87,7 @@ export default async function HomePage({
             </p>
             <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
               {t("hero.title")}{" "}
-              <span className="bg-gradient-to-r from-gold-300 to-gold-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-gold-300 via-orange-400 to-rose-400 bg-clip-text text-transparent">
                 {t("hero.titleHighlight")}
               </span>{" "}
               {t("hero.titleEnd")}
@@ -107,13 +116,15 @@ export default async function HomePage({
         <div className="relative border-t border-white/10 bg-navy-950/60">
           <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-8 text-center sm:px-6 lg:grid-cols-4">
             {[
-              [`${yearsInBusiness}+`, t("hero.statYears")],
-              ["100+", t("hero.statClients")],
-              ["6", t("hero.statCategories")],
-              ["100%", t("hero.statDelivery")],
-            ].map(([num, label]) => (
+              [`${yearsInBusiness}+`, t("hero.statYears"), "from-gold-300 to-orange-400"],
+              ["100+", t("hero.statClients"), "from-sky-300 to-cyan-400"],
+              ["6", t("hero.statCategories"), "from-emerald-300 to-teal-400"],
+              ["100%", t("hero.statDelivery"), "from-rose-300 to-pink-400"],
+            ].map(([num, label, grad]) => (
               <div key={label}>
-                <p className="text-3xl font-extrabold text-gold-400">{num}</p>
+                <p className={`bg-gradient-to-r ${grad} bg-clip-text text-3xl font-extrabold text-transparent`}>
+                  {num}
+                </p>
                 <p className="mt-1 text-xs font-medium text-slate-400 sm:text-sm">
                   {label}
                 </p>
@@ -134,17 +145,19 @@ export default async function HomePage({
                     key={item.slug}
                     href={`/products/${item.slug}`}
                     tabIndex={half === 1 ? -1 : undefined}
-                    className="group relative h-44 w-64 shrink-0 overflow-hidden rounded-2xl shadow-md ring-1 ring-slate-100 sm:h-52 sm:w-80"
+                    className={`group shrink-0 rounded-[20px] bg-gradient-to-br p-[3px] shadow-lg ${item.accent}`}
                   >
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      fill
-                      sizes="20rem"
-                      className="object-cover transition duration-500 group-hover:scale-105"
-                    />
-                    <span className="absolute bottom-2.5 left-3 rounded-full bg-navy-950/75 px-3 py-1 text-[11px] font-bold text-white backdrop-blur">
-                      {item.name}
+                    <span className="relative block h-44 w-64 overflow-hidden rounded-[17px] sm:h-52 sm:w-80">
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        fill
+                        sizes="20rem"
+                        className="object-cover transition duration-500 group-hover:scale-105"
+                      />
+                      <span className="absolute bottom-2.5 left-3 rounded-full bg-navy-950/75 px-3 py-1 text-[11px] font-bold text-white backdrop-blur">
+                        {item.name}
+                      </span>
                     </span>
                   </Link>
                 ))}

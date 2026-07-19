@@ -48,7 +48,7 @@ function buildSystemPrompt(locale: string) {
 
 COMPANY FACTS
 - Founded: 6 November 2007 (${yearsInBusiness}+ years in business). Registration no. ${company.regNo}.
-- Business: manufacturer and distributor of corrugated plastic boxes (PP Board) and protective packaging — EPE foam, EVA, air bubble.
+- Business: manufacturer and distributor of corrugated plastic boxes (PP Board) and protective packaging — EPE foam, EVA, air bubble. Also offers printing services for all kinds of media (รับพิมพ์สื่อสิ่งพิมพ์ทุกชนิด).
 - Address: ${company.address.en} (Thai: ${company.address.th})
 - Phone: ${company.contacts.map((c) => `${c.phone} (${c.name.th})`).join(" / ")} · Email: ${company.email} · LINE: ${company.lineId}
 - Hours: Mon–Sat 8:00–17:30 (Thailand time).

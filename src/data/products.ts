@@ -33,7 +33,8 @@ export interface ProductCategory {
 export const productCategories: ProductCategory[] = [
   {
     slug: "foam",
-    image: "/products/foam.svg",
+    image: "/products/foam-cover.svg",
+    isPhoto: true, // full-bleed cover art (SVG has its own backdrop)
     gallery: [
       "/photos/foam/foam-1.jpg",
       "/photos/foam/foam-2.jpg",
