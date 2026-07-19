@@ -8,7 +8,11 @@ import { yearsInBusiness } from "@/data/company";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 
-const trustBrands = ["TOYOTA", "HITACHI"];
+// Product photos sliding in the marquee under the hero
+const marqueeSlugs = ["pp-board", "bubble", "boxes", "film-tape", "custom"];
+const marqueeImages: Record<string, string> = {
+  custom: "/photos/custom.jpg", // custom's card uses an illustration; marquee uses its photo
+};
 
 export async function generateMetadata({
   params,
@@ -30,10 +34,10 @@ export default async function HomePage({
   const t = await getTranslations();
   const l = locale as Locale;
 
-  // Products showcased in the hero — flagship PP Board first
-  const heroShowcase = ["pp-board", "bubble", "boxes"]
+  const marqueeItems = marqueeSlugs
     .map((slug) => productCategories.find((c) => c.slug === slug))
-    .filter((c) => c !== undefined);
+    .filter((c) => c !== undefined)
+    .map((c) => ({ slug: c.slug, name: c.name[l], image: marqueeImages[c.slug] ?? c.image }));
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -66,8 +70,8 @@ export default async function HomePage({
           className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/85 to-navy-900/50"
         />
         <div aria-hidden="true" className="thai-weave absolute inset-0" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-24 sm:px-6 lg:grid-cols-2 lg:py-36">
-          <div>
+        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:py-32">
+          <div className="mx-auto max-w-3xl text-center">
             <p className="inline-flex items-center gap-2 rounded-full border border-gold-500/40 bg-gold-500/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-gold-300">
               <span className="h-1.5 w-1.5 rounded-full bg-gold-400" />
               {t("hero.badge")}
@@ -79,10 +83,10 @@ export default async function HomePage({
               </span>{" "}
               {t("hero.titleEnd")}
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
               {t("hero.subtitle")}
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
                 href="/products"
                 className="rounded-full bg-gold-500 px-7 py-3 font-bold text-navy-950 shadow-lg shadow-gold-500/25 transition hover:bg-gold-400"
@@ -96,66 +100,6 @@ export default async function HomePage({
                 {t("hero.ctaContact")}
               </Link>
             </div>
-          </div>
-
-          {/* Product photo collage — show what we sell, first thing */}
-          <div className="hidden grid-cols-2 gap-4 lg:grid">
-            <Link
-              href={`/products/${heroShowcase[0].slug}`}
-              className="group relative row-span-2 h-[430px] overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/20"
-            >
-              <Image
-                src={heroShowcase[0].image}
-                alt={heroShowcase[0].name[l]}
-                fill
-                priority
-                sizes="(max-width: 1024px) 0px, 25vw"
-                className="object-cover transition duration-500 group-hover:scale-105"
-              />
-              <span className="absolute bottom-3 left-3 rounded-full bg-navy-950/75 px-3.5 py-1.5 text-xs font-bold text-white backdrop-blur">
-                {heroShowcase[0].name[l]}
-              </span>
-            </Link>
-            {heroShowcase.slice(1).map((c) => (
-              <Link
-                key={c.slug}
-                href={`/products/${c.slug}`}
-                className="group relative h-[207px] overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/20"
-              >
-                <Image
-                  src={c.image}
-                  alt={c.name[l]}
-                  fill
-                  sizes="(max-width: 1024px) 0px, 25vw"
-                  className="object-cover transition duration-500 group-hover:scale-105"
-                />
-                <span className="absolute bottom-3 left-3 rounded-full bg-navy-950/75 px-3.5 py-1.5 text-xs font-bold text-white backdrop-blur">
-                  {c.name[l]}
-                </span>
-              </Link>
-            ))}
-          </div>
-
-          {/* Mobile: product strip right under the CTAs */}
-          <div className="grid grid-cols-3 gap-3 lg:hidden">
-            {heroShowcase.map((c) => (
-              <Link
-                key={c.slug}
-                href={`/products/${c.slug}`}
-                className="relative h-28 overflow-hidden rounded-xl ring-1 ring-white/20"
-              >
-                <Image
-                  src={c.image}
-                  alt={c.name[l]}
-                  fill
-                  sizes="33vw"
-                  className="object-cover"
-                />
-                <span className="absolute inset-x-0 bottom-0 bg-navy-950/70 px-2 py-1 text-center text-[10px] font-bold text-white backdrop-blur">
-                  {c.name[l]}
-                </span>
-              </Link>
-            ))}
           </div>
         </div>
 
@@ -173,6 +117,37 @@ export default async function HomePage({
                 <p className="mt-1 text-xs font-medium text-slate-400 sm:text-sm">
                   {label}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Sliding product showcase ─────────────────────── */}
+      <section className="border-b border-slate-100 bg-white py-10">
+        <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+          <div className="flex w-max animate-marquee">
+            {[0, 1].map((half) => (
+              <div key={half} aria-hidden={half === 1} className="flex gap-6 pr-6">
+                {marqueeItems.map((item) => (
+                  <Link
+                    key={item.slug}
+                    href={`/products/${item.slug}`}
+                    tabIndex={half === 1 ? -1 : undefined}
+                    className="group relative h-44 w-64 shrink-0 overflow-hidden rounded-2xl shadow-md ring-1 ring-slate-100 sm:h-52 sm:w-80"
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      sizes="20rem"
+                      className="object-cover transition duration-500 group-hover:scale-105"
+                    />
+                    <span className="absolute bottom-2.5 left-3 rounded-full bg-navy-950/75 px-3 py-1 text-[11px] font-bold text-white backdrop-blur">
+                      {item.name}
+                    </span>
+                  </Link>
+                ))}
               </div>
             ))}
           </div>
@@ -278,42 +253,6 @@ export default async function HomePage({
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── Trust bar (floating logo marquee) ────────────── */}
-      <section className="border-y border-slate-100 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 text-center sm:px-6">
-          <h2 className="text-sm font-bold uppercase tracking-widest text-slate-400">
-            {t("trust.title")}
-          </h2>
-          <p className="mt-2 text-sm text-slate-500">{t("trust.subtitle")}</p>
-          <div className="relative mt-8 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_18%,black_82%,transparent)]">
-            <div className="flex w-max animate-marquee">
-              {[0, 1].map((half) => (
-                <div
-                  key={half}
-                  aria-hidden={half === 1}
-                  className="flex items-center gap-24 pr-24"
-                >
-                  {Array.from({ length: 3 }).flatMap((_, r) =>
-                    trustBrands.map((b, i) => (
-                      <span
-                        key={`${r}-${b}`}
-                        className="animate-floaty text-3xl font-black tracking-widest text-slate-300 transition hover:text-navy-900"
-                        style={{
-                          animationDelay: `${((r * trustBrands.length + i) % 5) * 0.7}s`,
-                        }}
-                      >
-                        {b}
-                      </span>
-                    )),
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-          <p className="mt-4 text-xs text-slate-400">{t("trust.note")}</p>
         </div>
       </section>
 

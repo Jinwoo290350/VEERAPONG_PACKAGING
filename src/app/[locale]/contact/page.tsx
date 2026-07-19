@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { company } from "@/data/company";
@@ -49,7 +50,7 @@ export default async function ContactPage({
     },
     {
       title: t("lineTitle"),
-      lines: [{ text: company.lineId }],
+      lines: [{ text: company.lineId, href: company.lineUrl }],
       icon: "M12 4C7 4 3 7.3 3 11.4c0 3.7 3.2 6.7 7.5 7.3.3 0 .7.2.8.5l.2 1.6c0 .5.5.7.9.5 2.4-1.4 6-4.1 7.6-6.4 1-1.3 1.5-2.7 1.5-3.5C21.5 7.3 17 4 12 4z",
     },
     {
@@ -115,7 +116,27 @@ export default async function ContactPage({
               ))}
             </ul>
 
-            <div className="mt-8 overflow-hidden rounded-2xl border border-slate-100 shadow-sm">
+            {/* LINE QR — scan to add */}
+            <a
+              href={company.lineUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 flex items-center gap-5 rounded-2xl border border-[#06C755]/30 bg-[#06C755]/5 p-4 transition hover:border-[#06C755]/60"
+            >
+              <Image
+                src="/line-qr.png"
+                alt={`LINE QR — ${company.lineId}`}
+                width={112}
+                height={112}
+                className="h-28 w-28 shrink-0 rounded-xl border border-slate-100 bg-white"
+              />
+              <div>
+                <p className="font-bold text-navy-900">{t("lineQr")}</p>
+                <p className="mt-1 text-sm text-slate-500">LINE ID: {company.lineId}</p>
+              </div>
+            </a>
+
+            <div className="mt-6 overflow-hidden rounded-2xl border border-slate-100 shadow-sm">
               <iframe
                 title={t("mapTitle")}
                 src={`https://www.google.com/maps?q=${encodeURIComponent(company.address.en)}&output=embed`}

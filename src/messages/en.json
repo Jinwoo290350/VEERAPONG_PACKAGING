@@ -157,7 +157,8 @@
     "lineTitle": "LINE Official",
     "hoursTitle": "Business hours",
     "hours": "Mon–Sat 8:00–17:30",
-    "mapTitle": "Map"
+    "mapTitle": "Map",
+    "lineQr": "Scan to add us on LINE"
   },
   "footer": {
     "tagline": "Industrial packaging wholesale specialists, trusted in world-class automotive supply chains since 2007.",
@@ -206,17 +207,29 @@
     "a5": "Part dimensions and weight, monthly volume, and any special requirements (ESD-safe, export, etc.). We reply with a proposal within 24 business hours."
   },
   "viewer": {
-    "title": "See it in 360°",
-    "subtitle": "Drag to spin the product, then pull the layers apart to see the die-cut structure inside",
-    "hint": "Drag to rotate",
+    "hint": "Drag to rotate 360°",
     "explode": "Explode the layers",
     "collapse": "Reassemble",
-    "caption": "Example: die-cut EPE foam insert locking a part in place",
-    "layer1": "Top foam — die-cut openings shaped to your part",
-    "layer2": "Your part — locked snugly in the foam cavity",
-    "layer3": "Base foam — absorbs shocks from every direction",
     "galleryTitle": "Product gallery",
-    "gallerySubtitle": "Swipe through the photos, or let them slide automatically"
+    "gallerySubtitle": "Swipe through the photos, or let them slide automatically",
+    "foam": {
+      "caption": "Die-cut EPE foam insert locking a part in place",
+      "l1": "Top foam — die-cut openings shaped to your part",
+      "l2": "Your part — locked snugly in the foam cavity",
+      "l3": "Base foam — absorbs shocks from every direction"
+    },
+    "ppboard": {
+      "caption": "Our in-house PP Board box with partition",
+      "l1": "Partition — lifts out, stops part-on-part contact",
+      "l2": "PP corrugated walls — strong and 100% waterproof",
+      "l3": "Box floor — load-bearing, reusable for hundreds of trips"
+    },
+    "bubble": {
+      "caption": "Multi-layer bubble wrap made to your product's size",
+      "l1": "Top bubble layer — guards against scratches and dust",
+      "l2": "Your product — cushioned between air-bubble layers",
+      "l3": "Bottom bubble layer — absorbs vibration"
+    }
   },
   "notFound": {
     "title": "Page not found",

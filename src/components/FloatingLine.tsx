@@ -6,7 +6,7 @@ export default function FloatingLine() {
 
   return (
     <a
-      href={`https://line.me/R/ti/p/${encodeURIComponent(company.lineId)}`}
+      href={company.lineUrl}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={t("lineLabel")}

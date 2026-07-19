@@ -33,8 +33,7 @@ export interface ProductCategory {
 export const productCategories: ProductCategory[] = [
   {
     slug: "foam",
-    image: "/photos/foam.jpg",
-    isPhoto: true,
+    image: "/products/foam.svg",
     gallery: [
       "/photos/foam/foam-1.jpg",
       "/photos/foam/foam-2.jpg",

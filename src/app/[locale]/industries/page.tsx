@@ -66,10 +66,6 @@ export default async function IndustriesPage({
                   <p className="mt-4 leading-relaxed text-slate-300">
                     {t("automotiveDesc")}
                   </p>
-                  <div className="mt-6 flex gap-10 text-2xl font-black tracking-widest text-slate-500">
-                    <span>TOYOTA</span>
-                    <span>HITACHI</span>
-                  </div>
                 </div>
                 <div className="relative hidden h-64 overflow-hidden rounded-2xl ring-1 ring-white/15 lg:block">
                   <Image

@@ -9,8 +9,15 @@ import { routing, type Locale } from "@/i18n/routing";
 import { getCategory, productCategories } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
-import FoamShowcase3D from "@/components/FoamShowcase3D";
+import Showcase3D, { type ShowcaseVariant } from "@/components/Showcase3D";
 import ProductGallery from "@/components/ProductGallery";
+
+// Categories with an interactive 3D model in the header instead of a photo
+const showcaseVariants: Record<string, ShowcaseVariant> = {
+  foam: "foam",
+  "pp-board": "ppboard",
+  bubble: "bubble",
+};
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -81,50 +88,44 @@ export default async function CategoryPage({
             </Link>
           </div>
 
-          {/* Product photo in a clean white frame — visible on all screens */}
+          {/* Right side: interactive 3D model, or product photo in a clean frame */}
           <div className="w-full max-w-lg lg:justify-self-end">
-            <div className="rounded-3xl border border-slate-100 bg-white p-3 shadow-xl shadow-navy-900/5">
-              <div
-                className={`relative h-64 overflow-hidden rounded-2xl sm:h-80 ${
-                  cat.isPhoto ? "bg-slate-50" : `bg-gradient-to-br ${cat.accent}`
-                }`}
-              >
-                <Image
-                  src={cat.image}
-                  alt={cat.name[l]}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className={cat.isPhoto ? "object-cover" : "object-contain p-8"}
-                  priority
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Interactive 3D showcase — foam (pattern reusable for other categories) */}
-      {cat.slug === "foam" && (
-        <section className="thai-weave-light border-b border-slate-100 bg-navy-50/40">
-          <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6">
-            <h2 className="text-2xl font-extrabold tracking-tight text-navy-950 sm:text-3xl">
-              {tv("title")}
-            </h2>
-            <p className="mx-auto mt-3 max-w-xl text-slate-500">{tv("subtitle")}</p>
-            <div className="mt-8">
-              <FoamShowcase3D
+            {showcaseVariants[cat.slug] ? (
+              <Showcase3D
+                variant={showcaseVariants[cat.slug]}
                 labels={{
                   hint: tv("hint"),
                   explode: tv("explode"),
                   collapse: tv("collapse"),
-                  caption: tv("caption"),
-                  layers: [tv("layer1"), tv("layer2"), tv("layer3")],
+                  caption: tv(`${showcaseVariants[cat.slug]}.caption`),
+                  layers: [
+                    tv(`${showcaseVariants[cat.slug]}.l1`),
+                    tv(`${showcaseVariants[cat.slug]}.l2`),
+                    tv(`${showcaseVariants[cat.slug]}.l3`),
+                  ],
                 }}
               />
-            </div>
+            ) : (
+              <div className="rounded-3xl border border-slate-100 bg-white p-3 shadow-xl shadow-navy-900/5">
+                <div
+                  className={`relative h-64 overflow-hidden rounded-2xl sm:h-80 ${
+                    cat.isPhoto ? "bg-slate-50" : `bg-gradient-to-br ${cat.accent}`
+                  }`}
+                >
+                  <Image
+                    src={cat.image}
+                    alt={cat.name[l]}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className={cat.isPhoto ? "object-cover" : "object-contain p-8"}
+                    priority
+                  />
+                </div>
+              </div>
+            )}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       {/* Product photo carousel */}
       {galleryImages.length > 0 && (

@@ -11,7 +11,8 @@ export const company = {
   mobile: "061-780-1818",
   email: "Vrp.nu4289@gmail.com",
   emails: ["Vrp.nu4289@gmail.com", "Vrp_nu@hotmail.com", "Sirikwan.ruangsri@gmail.com"],
-  lineId: "@vrppackaging",
+  lineId: "nu0816861818",
+  lineUrl: "https://line.me/ti/p/~nu0816861818",
   siteUrl: "https://www.veerapongpackaging.com",
   contacts: [
     {
