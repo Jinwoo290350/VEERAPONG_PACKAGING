@@ -50,7 +50,7 @@ export default function ProductGallery({
       onMouseLeave={() => setPaused(false)}
     >
       <div
-        className="overflow-hidden rounded-3xl border border-slate-100 bg-white p-2 shadow-xl shadow-navy-900/5"
+        className="overflow-hidden rounded-3xl border border-slate-100 bg-white p-2 shadow-xl shadow-forest-900/5"
         onPointerDown={onPointerDown}
         onPointerUp={onPointerUp}
         onPointerCancel={() => (drag.current.active = false)}
@@ -83,7 +83,7 @@ export default function ProductGallery({
             type="button"
             aria-label="Previous"
             onClick={() => go(idx - 1)}
-            className="absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-navy-950/60 text-white opacity-0 backdrop-blur transition hover:bg-navy-950/85 group-hover:opacity-100"
+            className="absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-forest-950/60 text-white opacity-0 backdrop-blur transition hover:bg-forest-950/85 group-hover:opacity-100"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -93,7 +93,7 @@ export default function ProductGallery({
             type="button"
             aria-label="Next"
             onClick={() => go(idx + 1)}
-            className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-navy-950/60 text-white opacity-0 backdrop-blur transition hover:bg-navy-950/85 group-hover:opacity-100"
+            className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-forest-950/60 text-white opacity-0 backdrop-blur transition hover:bg-forest-950/85 group-hover:opacity-100"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -109,7 +109,7 @@ export default function ProductGallery({
                 aria-label={`Slide ${i + 1}`}
                 onClick={() => go(i)}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  i === idx ? "w-7 bg-gold-500" : "w-2 bg-slate-300 hover:bg-slate-400"
+                  i === idx ? "w-7 bg-forest-600" : "w-2 bg-slate-300 hover:bg-slate-400"
                 }`}
               />
             ))}

@@ -62,19 +62,19 @@ export default async function CategoryPage({
   return (
     <>
       {/* Header — light catalog style so the product photo stands out */}
-      <section className="border-b border-slate-100 bg-gradient-to-b from-navy-50/70 to-white">
+      <section className="border-b border-slate-100 bg-gradient-to-b from-forest-50/70 to-white">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2">
           <div>
             <Link
               href="/products"
-              className="text-sm font-semibold text-slate-500 transition hover:text-gold-600"
+              className="text-sm font-semibold text-slate-500 transition hover:text-amber-600"
             >
               ← {t("backToProducts")}
             </Link>
-            <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl">
+            <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-forest-950 sm:text-4xl">
               {cat.name[l]}
             </h1>
-            <p className="mt-2 text-lg font-semibold text-gold-700">
+            <p className="mt-2 text-lg font-semibold text-forest-700">
               {cat.tagline[l]}
             </p>
             <p className="mt-4 max-w-xl leading-relaxed text-slate-600">
@@ -82,7 +82,7 @@ export default async function CategoryPage({
             </p>
             <Link
               href="/contact"
-              className="mt-7 inline-block rounded-full bg-gold-500 px-7 py-3 font-bold text-navy-950 shadow-lg shadow-gold-500/25 transition hover:bg-gold-400"
+              className="mt-7 inline-block rounded-full bg-forest-700 px-7 py-3 font-bold text-white shadow-lg shadow-forest-900/20 transition hover:bg-forest-800"
             >
               {t("enquire")}
             </Link>
@@ -106,7 +106,7 @@ export default async function CategoryPage({
                 }}
               />
             ) : (
-              <div className="rounded-3xl border border-slate-100 bg-white p-3 shadow-xl shadow-navy-900/5">
+              <div className="rounded-3xl border border-slate-100 bg-white p-3 shadow-xl shadow-forest-900/5">
                 <div
                   className={`relative h-64 overflow-hidden rounded-2xl sm:h-80 ${
                     cat.isPhoto ? "bg-white" : `bg-gradient-to-br ${cat.accent}`
@@ -131,7 +131,7 @@ export default async function CategoryPage({
       {galleryImages.length > 0 && (
         <section className="border-b border-slate-100 bg-white">
           <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6">
-            <h2 className="text-2xl font-extrabold tracking-tight text-navy-950 sm:text-3xl">
+            <h2 className="text-2xl font-extrabold tracking-tight text-forest-950 sm:text-3xl">
               {tv("galleryTitle")}
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-slate-500">
@@ -148,21 +148,21 @@ export default async function CategoryPage({
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-5">
           <div className="lg:col-span-3">
-            <h2 className="text-2xl font-extrabold text-navy-950">
+            <h2 className="text-2xl font-extrabold text-forest-950">
               {t("itemsTitle")}
             </h2>
             <div className="mt-6 space-y-4">
               {cat.items.map((item, i) => (
                 <Reveal key={i} delay={i * 80}>
                   <div className="rounded-2xl border border-slate-100 bg-slate-50/50 p-5">
-                    <h3 className="font-bold text-navy-900">{item.name[l]}</h3>
+                    <h3 className="font-bold text-forest-900">{item.name[l]}</h3>
                     <p className="mt-1 text-sm text-slate-500">{item.desc[l]}</p>
                   </div>
                 </Reveal>
               ))}
             </div>
 
-            <h2 className="mt-12 text-2xl font-extrabold text-navy-950">
+            <h2 className="mt-12 text-2xl font-extrabold text-forest-950">
               {t("useCasesTitle")}
             </h2>
             <ul className="mt-5 space-y-3">
@@ -174,7 +174,7 @@ export default async function CategoryPage({
                     viewBox="0 0 20 20"
                     fill="none"
                     aria-hidden="true"
-                    className="mt-0.5 shrink-0 text-gold-500"
+                    className="mt-0.5 shrink-0 text-amber-500"
                   >
                     <circle cx="10" cy="10" r="9" fill="currentColor" opacity="0.15" />
                     <path d="M6 10.5l2.5 2.5L14 7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -187,14 +187,14 @@ export default async function CategoryPage({
 
           <div className="lg:col-span-2">
             <div className="sticky top-24 overflow-hidden rounded-2xl border border-slate-100 shadow-sm">
-              <div className="bg-navy-950 px-6 py-4">
+              <div className="bg-forest-950 px-6 py-4">
                 <h2 className="font-bold text-white">{t("specsTitle")}</h2>
               </div>
               <table className="w-full text-sm">
                 <tbody>
                   {cat.specs.map((s, i) => (
                     <tr key={i} className={i % 2 ? "bg-slate-50" : "bg-white"}>
-                      <th className="w-2/5 px-6 py-3.5 text-left align-top font-semibold text-navy-900">
+                      <th className="w-2/5 px-6 py-3.5 text-left align-top font-semibold text-forest-900">
                         {s.label[l]}
                       </th>
                       <td className="px-6 py-3.5 text-slate-600">{s.value[l]}</td>
@@ -202,10 +202,10 @@ export default async function CategoryPage({
                   ))}
                 </tbody>
               </table>
-              <div className="border-t border-slate-100 bg-gold-50 px-6 py-4">
+              <div className="border-t border-slate-100 bg-forest-50 px-6 py-4">
                 <Link
                   href="/contact"
-                  className="text-sm font-bold text-gold-700 transition hover:text-gold-800"
+                  className="text-sm font-bold text-forest-700 transition hover:text-forest-800"
                 >
                   {t("enquire")} →
                 </Link>
@@ -216,9 +216,9 @@ export default async function CategoryPage({
       </section>
 
       {/* Other categories */}
-      <section className="bg-navy-50/50">
+      <section className="bg-forest-50/50">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-          <h2 className="text-2xl font-extrabold text-navy-950">
+          <h2 className="text-2xl font-extrabold text-forest-950">
             {t("otherCategories")}
           </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

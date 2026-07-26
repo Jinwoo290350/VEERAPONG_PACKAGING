@@ -28,7 +28,7 @@ export default async function ProductsPage({
 
   return (
     <>
-      <section className="thai-weave bg-navy-950 text-white">
+      <section className="thai-weave bg-forest-950 text-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
             {t("title")}

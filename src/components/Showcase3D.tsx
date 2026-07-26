@@ -93,7 +93,7 @@ export default function Showcase3D({
         {/* floor shadow */}
         <div
           aria-hidden="true"
-          className="absolute left-1/2 top-[78%] h-14 w-72 -translate-x-1/2 rounded-[50%] bg-navy-950/15 blur-xl"
+          className="absolute left-1/2 top-[78%] h-14 w-72 -translate-x-1/2 rounded-[50%] bg-forest-950/15 blur-xl"
         />
         <div
           className="absolute left-1/2 top-1/2"
@@ -118,9 +118,9 @@ export default function Showcase3D({
             style={{ top: LABEL_TOPS[variant][i], transitionDelay: `${i * 120 + 250}ms` }}
             aria-hidden={!exploded}
           >
-            <span className="h-px w-6 shrink-0 bg-gold-500 sm:w-10" />
-            <span className="rounded-xl border border-gold-200 bg-white/95 px-3 py-2 text-left text-[11px] font-semibold leading-snug text-navy-900 shadow-md backdrop-blur sm:text-xs">
-              <span className="mr-1.5 inline-flex h-4 w-4 items-center justify-center rounded-full bg-gold-500 text-[10px] font-black text-navy-950">
+            <span className="h-px w-6 shrink-0 bg-amber-500 sm:w-10" />
+            <span className="rounded-xl border border-amber-200 bg-white/95 px-3 py-2 text-left text-[11px] font-semibold leading-snug text-forest-900 shadow-md backdrop-blur sm:text-xs">
+              <span className="mr-1.5 inline-flex h-4 w-4 items-center justify-center rounded-full bg-amber-500 text-[10px] font-black text-forest-950">
                 {i + 1}
               </span>
               {text}
@@ -139,7 +139,7 @@ export default function Showcase3D({
         <button
           type="button"
           onClick={toggleExplode}
-          className="rounded-full bg-navy-950 px-6 py-2.5 text-sm font-bold text-gold-400 shadow-lg shadow-navy-950/20 transition hover:bg-navy-800"
+          className="rounded-full bg-forest-950 px-6 py-2.5 text-sm font-bold text-amber-400 shadow-lg shadow-forest-950/20 transition hover:bg-forest-800"
         >
           {exploded ? labels.collapse : labels.explode}
         </button>

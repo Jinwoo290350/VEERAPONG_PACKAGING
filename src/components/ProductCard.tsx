@@ -15,7 +15,7 @@ export default function ProductCard({
   return (
     <Link
       href={`/products/${category.slug}`}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-navy-900/10"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-forest-900/10"
     >
       {/* Clean catalog-style photo frame — no colour overlay hiding the product */}
       <div className="p-3 pb-0">
@@ -44,13 +44,13 @@ export default function ProductCard({
         </div>
       </div>
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="text-lg font-bold text-navy-900">
+        <h3 className="text-lg font-bold text-forest-900">
           {category.name[locale]}
         </h3>
         <p className="mt-1.5 flex-1 text-sm leading-relaxed text-slate-500">
           {category.tagline[locale]}
         </p>
-        <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-gold-600 transition group-hover:gap-2.5">
+        <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-amber-600 transition group-hover:gap-2.5">
           {exploreLabel}
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M2 8h11M9 3.5L13.5 8 9 12.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

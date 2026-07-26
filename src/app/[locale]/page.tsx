@@ -11,15 +11,15 @@ import Reveal from "@/components/Reveal";
 // Every real product photo we have, sliding under the hero.
 // `key` maps to messages under `showcase.*` for the caption.
 const marqueePhotos = [
-  { key: "ppBoxSet", image: "/photos/pp-board/pp-box-partition-set.png", slug: "pp-board", accent: "from-indigo-500 to-violet-700" },
-  { key: "epeRoll", image: "/photos/foam/epe-foam-roll.png", slug: "foam", accent: "from-sky-500 to-blue-700" },
-  { key: "bubbleRoll", image: "/photos/bubble/air-bubble-rolls.jpg", slug: "bubble", accent: "from-cyan-500 to-teal-600" },
-  { key: "ppSheets", image: "/photos/pp-board/pp-board-sheets.jpg", slug: "pp-board", accent: "from-indigo-500 to-violet-700" },
-  { key: "bubbleBags", image: "/photos/bubble/bubble-bags-antistatic.jpg", slug: "bubble", accent: "from-cyan-500 to-teal-600" },
-  { key: "ppBoxPartition", image: "/photos/pp-board/pp-box-with-partition.png", slug: "pp-board", accent: "from-indigo-500 to-violet-700" },
-  { key: "partitionPe", image: "/photos/foam/partition-pp-pe-foam.png", slug: "custom", accent: "from-rose-500 to-red-700" },
-  { key: "ppBoxHandles", image: "/photos/boxes/pp-box-handles.png", slug: "boxes", accent: "from-amber-500 to-orange-600" },
-  { key: "partitionEva", image: "/photos/foam/partition-pp-eva-foam.png", slug: "custom", accent: "from-rose-500 to-red-700" },
+  { key: "ppBoxSet", image: "/photos/pp-board/pp-box-partition-set.png", slug: "pp-board" },
+  { key: "epeRoll", image: "/photos/foam/epe-foam-roll.png", slug: "foam" },
+  { key: "bubbleRoll", image: "/photos/bubble/air-bubble-rolls.jpg", slug: "bubble" },
+  { key: "ppSheets", image: "/photos/pp-board/pp-board-sheets.jpg", slug: "pp-board" },
+  { key: "bubbleBags", image: "/photos/bubble/bubble-bags-antistatic.jpg", slug: "bubble" },
+  { key: "ppBoxPartition", image: "/photos/pp-board/pp-box-with-partition.png", slug: "pp-board" },
+  { key: "partitionPe", image: "/photos/foam/partition-pp-pe-foam.png", slug: "custom" },
+  { key: "ppBoxHandles", image: "/photos/boxes/pp-box-handles.png", slug: "boxes" },
+  { key: "partitionEva", image: "/photos/foam/partition-pp-eva-foam.png", slug: "custom" },
 ];
 
 export async function generateMetadata({
@@ -64,35 +64,32 @@ export default async function HomePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-navy-950 text-white">
+      <section className="relative overflow-hidden bg-forest-950 text-white">
         <Image
           src="/photos/hero.jpg"
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-center opacity-25 [filter:grayscale(0.6)]"
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/85 to-navy-900/50"
+          className="absolute inset-0 bg-gradient-to-b from-forest-950/90 via-forest-950/80 to-forest-950/95"
         />
         <div aria-hidden="true" className="thai-weave absolute inset-0" />
-        {/* vivid colour glows */}
-        <div aria-hidden="true" className="absolute -left-24 top-6 h-96 w-96 rounded-full bg-gold-500/25 blur-3xl" />
-        <div aria-hidden="true" className="absolute right-[-4rem] top-24 h-80 w-80 rounded-full bg-sky-500/25 blur-3xl" />
-        <div aria-hidden="true" className="absolute bottom-[-3rem] left-1/3 h-72 w-72 rounded-full bg-rose-500/20 blur-3xl" />
+        {/* subtle brand-green depth, one warm highlight */}
+        <div aria-hidden="true" className="absolute -left-24 top-0 h-96 w-96 rounded-full bg-forest-500/20 blur-3xl" />
+        <div aria-hidden="true" className="absolute right-[-5rem] bottom-0 h-80 w-80 rounded-full bg-amber-500/10 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:py-32">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="inline-flex items-center gap-2 rounded-full border border-gold-500/40 bg-gold-500/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-gold-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-gold-400" />
+            <p className="inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-amber-500/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-amber-300">
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
               {t("hero.badge")}
             </p>
             <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
               {t("hero.title")}{" "}
-              <span className="bg-gradient-to-r from-gold-300 via-orange-400 to-rose-400 bg-clip-text text-transparent">
-                {t("hero.titleHighlight")}
-              </span>{" "}
+              <span className="text-amber-400">{t("hero.titleHighlight")}</span>{" "}
               {t("hero.titleEnd")}
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
@@ -101,13 +98,13 @@ export default async function HomePage({
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
                 href="/products"
-                className="rounded-full bg-gold-500 px-7 py-3 font-bold text-navy-950 shadow-lg shadow-gold-500/25 transition hover:bg-gold-400"
+                className="rounded-full bg-amber-500 px-7 py-3 font-bold text-forest-950 shadow-lg shadow-amber-500/25 transition hover:bg-amber-400"
               >
                 {t("hero.ctaProducts")}
               </Link>
               <Link
                 href="/contact"
-                className="rounded-full border border-white/25 px-7 py-3 font-bold text-white transition hover:border-gold-400 hover:text-gold-300"
+                className="rounded-full border border-white/25 px-7 py-3 font-bold text-white transition hover:border-amber-400 hover:text-amber-300"
               >
                 {t("hero.ctaContact")}
               </Link>
@@ -116,18 +113,16 @@ export default async function HomePage({
         </div>
 
         {/* Stats */}
-        <div className="relative border-t border-white/10 bg-navy-950/60">
+        <div className="relative border-t border-white/10 bg-forest-950/60">
           <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-8 text-center sm:px-6 lg:grid-cols-4">
             {[
-              [`${yearsInBusiness}+`, t("hero.statYears"), "from-gold-300 to-orange-400"],
-              ["100+", t("hero.statClients"), "from-sky-300 to-cyan-400"],
-              ["6", t("hero.statCategories"), "from-emerald-300 to-teal-400"],
-              ["100%", t("hero.statDelivery"), "from-rose-300 to-pink-400"],
-            ].map(([num, label, grad]) => (
+              [`${yearsInBusiness}+`, t("hero.statYears")],
+              ["100+", t("hero.statClients")],
+              ["6", t("hero.statCategories")],
+              ["100%", t("hero.statDelivery")],
+            ].map(([num, label]) => (
               <div key={label}>
-                <p className={`bg-gradient-to-r ${grad} bg-clip-text text-3xl font-extrabold text-transparent`}>
-                  {num}
-                </p>
+                <p className="text-3xl font-extrabold text-forest-300">{num}</p>
                 <p className="mt-1 text-xs font-medium text-slate-400 sm:text-sm">
                   {label}
                 </p>
@@ -148,9 +143,9 @@ export default async function HomePage({
                     key={item.key}
                     href={`/products/${item.slug}`}
                     tabIndex={half === 1 ? -1 : undefined}
-                    className={`group shrink-0 rounded-[20px] bg-gradient-to-br p-[3px] shadow-lg ${item.accent}`}
+                    className="group shrink-0 rounded-[20px] border border-slate-200/80 bg-white p-2 shadow-sm transition hover:border-forest-300 hover:shadow-md"
                   >
-                    <span className="relative block h-44 w-64 overflow-hidden rounded-[17px] bg-white sm:h-52 sm:w-80">
+                    <span className="relative block h-44 w-64 overflow-hidden rounded-2xl bg-white sm:h-52 sm:w-80">
                       <Image
                         src={item.image}
                         alt={item.name}
@@ -158,7 +153,7 @@ export default async function HomePage({
                         sizes="20rem"
                         className="object-contain p-2 transition duration-500 group-hover:scale-105"
                       />
-                      <span className="absolute bottom-2.5 left-3 rounded-full bg-navy-950/75 px-3 py-1 text-[11px] font-bold text-white backdrop-blur">
+                      <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-950/80 to-transparent px-3 pb-2 pt-6 text-left text-[11px] font-bold text-white">
                         {item.name}
                       </span>
                     </span>
@@ -171,10 +166,10 @@ export default async function HomePage({
       </section>
 
       {/* ── Why us ───────────────────────────────────────── */}
-      <section className="thai-weave-light bg-navy-50/50">
+      <section className="thai-weave-light bg-forest-50/50">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <Reveal className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-forest-950 sm:text-4xl">
               {t("whyUs.title")}
             </h2>
             <p className="mt-3 text-slate-500">{t("whyUs.subtitle")}</p>
@@ -190,10 +185,10 @@ export default async function HomePage({
             ).map(([key, Icon], i) => (
               <Reveal key={key} delay={i * 100}>
                 <div className="h-full rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-gold-400">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-forest-900 text-amber-400">
                     <Icon />
                   </div>
-                  <h3 className="mt-4 font-bold text-navy-900">
+                  <h3 className="mt-4 font-bold text-forest-900">
                     {t(`whyUs.${key}Title`)}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-slate-500">
@@ -210,7 +205,7 @@ export default async function HomePage({
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <Reveal className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-forest-950 sm:text-4xl">
               {t("process.title")}
             </h2>
             <p className="mt-3 text-slate-500">{t("process.subtitle")}</p>
@@ -222,13 +217,13 @@ export default async function HomePage({
                   {i < 3 && (
                     <span
                       aria-hidden="true"
-                      className="absolute left-14 top-7 hidden h-0.5 w-[calc(100%-2rem)] bg-gradient-to-r from-gold-400 to-transparent lg:block"
+                      className="absolute left-14 top-7 hidden h-0.5 w-[calc(100%-2rem)] bg-gradient-to-r from-amber-400 to-transparent lg:block"
                     />
                   )}
-                  <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-navy-950 text-xl font-black text-gold-400 shadow-lg shadow-navy-950/20">
+                  <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-forest-950 text-xl font-black text-amber-400 shadow-lg shadow-forest-950/20">
                     {n}
                   </span>
-                  <h3 className="mt-5 font-bold text-navy-900">
+                  <h3 className="mt-5 font-bold text-forest-900">
                     {t(`process.step${n}Title`)}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-slate-500">
@@ -246,14 +241,14 @@ export default async function HomePage({
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <Reveal className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <h2 className="text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl">
+              <h2 className="text-3xl font-extrabold tracking-tight text-forest-950 sm:text-4xl">
                 {t("featured.title")}
               </h2>
               <p className="mt-3 text-slate-500">{t("featured.subtitle")}</p>
             </div>
             <Link
               href="/products"
-              className="text-sm font-bold text-gold-600 transition hover:text-gold-700"
+              className="text-sm font-bold text-forest-700 transition hover:text-forest-800"
             >
               {t("featured.viewAll")} →
             </Link>
@@ -273,10 +268,10 @@ export default async function HomePage({
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────── */}
-      <section className="thai-weave-light bg-navy-50/50">
+      <section className="thai-weave-light bg-forest-50/50">
         <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
           <Reveal className="text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight text-forest-950 sm:text-4xl">
               {t("faq.title")}
             </h2>
             <p className="mt-3 text-slate-500">{t("faq.subtitle")}</p>
@@ -287,14 +282,14 @@ export default async function HomePage({
                 key={n}
                 className="group rounded-2xl border border-slate-100 bg-white shadow-sm open:shadow-md"
               >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-4 font-bold text-navy-900 [&::-webkit-details-marker]:hidden">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-4 font-bold text-forest-900 [&::-webkit-details-marker]:hidden">
                   {t(`faq.q${n}`)}
                   <svg
                     width="14"
                     height="14"
                     viewBox="0 0 14 14"
                     aria-hidden="true"
-                    className="shrink-0 text-gold-600 transition group-open:rotate-180"
+                    className="shrink-0 text-amber-600 transition group-open:rotate-180"
                   >
                     <path d="M2 5l5 5 5-5" stroke="currentColor" strokeWidth="2.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -309,13 +304,13 @@ export default async function HomePage({
       </section>
 
       {/* ── CTA ──────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-navy-950">
+      <section className="relative overflow-hidden bg-forest-950">
         <Image
           src="/photos/hero.jpg"
           alt=""
           fill
           sizes="100vw"
-          className="object-cover opacity-20"
+          className="object-cover opacity-15 [filter:grayscale(0.6)]"
         />
         <div aria-hidden="true" className="thai-weave absolute inset-0" />
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6">
@@ -329,7 +324,7 @@ export default async function HomePage({
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="inline-block rounded-full bg-gold-500 px-8 py-3.5 font-bold text-navy-950 shadow-lg shadow-gold-500/25 transition hover:bg-gold-400"
+                className="inline-block rounded-full bg-amber-500 px-8 py-3.5 font-bold text-forest-950 shadow-lg shadow-amber-500/25 transition hover:bg-amber-400"
               >
                 {t("cta.button")}
               </Link>

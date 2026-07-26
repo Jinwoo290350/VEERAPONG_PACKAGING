@@ -49,7 +49,7 @@ export default function LanguageSwitcher() {
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="listbox"
         aria-expanded={open}
-        className="flex items-center gap-1.5 rounded-full border border-navy-200 px-3 py-1.5 text-sm font-semibold text-navy-800 transition hover:border-gold-500 hover:text-gold-700"
+        className="flex items-center gap-1.5 rounded-full border border-forest-200 px-3 py-1.5 text-sm font-semibold text-forest-800 transition hover:border-amber-500 hover:text-amber-700"
       >
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
@@ -76,8 +76,8 @@ export default function LanguageSwitcher() {
                 role="option"
                 aria-selected={l === locale}
                 onClick={() => switchTo(l)}
-                className={`flex w-full items-center justify-between px-4 py-2 text-sm transition hover:bg-navy-50 ${
-                  l === locale ? "font-bold text-gold-700" : "text-slate-700"
+                className={`flex w-full items-center justify-between px-4 py-2 text-sm transition hover:bg-forest-50 ${
+                  l === locale ? "font-bold text-amber-700" : "text-slate-700"
                 }`}
               >
                 {localeNames[l]}

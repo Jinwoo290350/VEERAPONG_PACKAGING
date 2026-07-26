@@ -12,7 +12,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="thai-weave bg-navy-950 text-slate-300">
+    <footer className="thai-weave bg-forest-950 text-slate-300">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <Logo dark />
@@ -22,7 +22,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-gold-400">
+          <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-amber-400">
             {t("quickLinks")}
           </h3>
           <ul className="space-y-2 text-sm">
@@ -36,7 +36,7 @@ export default function Footer() {
               ] as const
             ).map(([href, key]) => (
               <li key={key}>
-                <Link href={href} className="transition hover:text-gold-400">
+                <Link href={href} className="transition hover:text-amber-400">
                   {tNav(key)}
                 </Link>
               </li>
@@ -45,7 +45,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-gold-400">
+          <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-amber-400">
             {t("productsTitle")}
           </h3>
           <ul className="space-y-2 text-sm">
@@ -53,7 +53,7 @@ export default function Footer() {
               <li key={c.slug}>
                 <Link
                   href={`/products/${c.slug}`}
-                  className="transition hover:text-gold-400"
+                  className="transition hover:text-amber-400"
                 >
                   {c.name[locale]}
                 </Link>
@@ -63,18 +63,18 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-gold-400">
+          <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-amber-400">
             {t("contactTitle")}
           </h3>
           <ul className="space-y-3 text-sm text-slate-400">
             <li>{company.address[locale]}</li>
             <li>
-              <a href={`tel:${company.phone.replace(/-/g, "")}`} className="transition hover:text-gold-400">
+              <a href={`tel:${company.phone.replace(/-/g, "")}`} className="transition hover:text-amber-400">
                 {company.phone}
               </a>
             </li>
             <li>
-              <a href={`mailto:${company.email}`} className="transition hover:text-gold-400">
+              <a href={`mailto:${company.email}`} className="transition hover:text-amber-400">
                 {company.email}
               </a>
             </li>

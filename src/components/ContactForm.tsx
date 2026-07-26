@@ -35,13 +35,13 @@ export default function ContactForm() {
   }
 
   const inputCls =
-    "w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20";
+    "w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20";
 
   return (
     <form onSubmit={submit} className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
-          <span className="mb-1.5 block text-sm font-semibold text-navy-900">
+          <span className="mb-1.5 block text-sm font-semibold text-forest-900">
             {t("nameLabel")} *
           </span>
           <input
@@ -53,7 +53,7 @@ export default function ContactForm() {
           />
         </label>
         <label className="block">
-          <span className="mb-1.5 block text-sm font-semibold text-navy-900">
+          <span className="mb-1.5 block text-sm font-semibold text-forest-900">
             {t("companyLabel")}
           </span>
           <input
@@ -64,7 +64,7 @@ export default function ContactForm() {
           />
         </label>
         <label className="block">
-          <span className="mb-1.5 block text-sm font-semibold text-navy-900">
+          <span className="mb-1.5 block text-sm font-semibold text-forest-900">
             {t("emailLabel")} *
           </span>
           <input
@@ -77,7 +77,7 @@ export default function ContactForm() {
           />
         </label>
         <label className="block">
-          <span className="mb-1.5 block text-sm font-semibold text-navy-900">
+          <span className="mb-1.5 block text-sm font-semibold text-forest-900">
             {t("phoneLabel")}
           </span>
           <input
@@ -90,7 +90,7 @@ export default function ContactForm() {
         </label>
       </div>
       <label className="block">
-        <span className="mb-1.5 block text-sm font-semibold text-navy-900">
+        <span className="mb-1.5 block text-sm font-semibold text-forest-900">
           {t("messageLabel")} *
         </span>
         <textarea
@@ -104,7 +104,7 @@ export default function ContactForm() {
       </label>
       <button
         type="submit"
-        className="w-full rounded-xl bg-gold-500 px-6 py-3.5 font-bold text-navy-950 shadow-sm transition hover:bg-gold-400 sm:w-auto sm:px-10"
+        className="w-full rounded-xl bg-forest-700 px-6 py-3.5 font-bold text-white shadow-sm transition hover:bg-forest-800 sm:w-auto sm:px-10"
       >
         {t("submit")}
       </button>

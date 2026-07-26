@@ -41,7 +41,7 @@ export default async function IndustriesPage({
 
   return (
     <>
-      <section className="thai-weave bg-navy-950 text-white">
+      <section className="thai-weave bg-forest-950 text-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
             {t("title")}
@@ -54,10 +54,10 @@ export default async function IndustriesPage({
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           {/* Automotive — hero card */}
           <Reveal>
-            <div className="thai-weave overflow-hidden rounded-3xl bg-navy-950 text-white">
+            <div className="thai-weave overflow-hidden rounded-3xl bg-forest-950 text-white">
               <div className="grid items-center gap-8 p-8 sm:p-12 lg:grid-cols-2">
                 <div>
-                  <span className="rounded-full bg-gold-500 px-4 py-1 text-xs font-extrabold uppercase tracking-wider text-navy-950">
+                  <span className="rounded-full bg-amber-500 px-4 py-1 text-xs font-extrabold uppercase tracking-wider text-forest-950">
                     {t("automotiveBadge")}
                   </span>
                   <h2 className="mt-5 text-3xl font-extrabold">
@@ -75,7 +75,7 @@ export default async function IndustriesPage({
                     sizes="(max-width: 1024px) 0px, 40vw"
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-950/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-forest-950/50 to-transparent" />
                 </div>
               </div>
             </div>
@@ -86,12 +86,12 @@ export default async function IndustriesPage({
             {sectors.map((s, i) => (
               <Reveal key={s} delay={(i % 3) * 100}>
                 <div className="h-full rounded-2xl border border-slate-100 bg-white p-7 shadow-sm transition hover:shadow-lg">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-50 text-navy-800">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-forest-50 text-forest-800">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                       <path d={sectorIcons[s]} stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <h3 className="mt-4 text-lg font-bold text-navy-900">
+                  <h3 className="mt-4 text-lg font-bold text-forest-900">
                     {t(`${s}Title`)}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-slate-500">
@@ -103,14 +103,14 @@ export default async function IndustriesPage({
 
             {/* CTA card */}
             <Reveal delay={200}>
-              <div className="flex h-full flex-col justify-center rounded-2xl bg-gradient-to-br from-gold-500 to-gold-600 p-7 text-navy-950">
+              <div className="flex h-full flex-col justify-center rounded-2xl bg-gradient-to-br from-forest-700 to-forest-900 p-7 text-white">
                 <h3 className="text-lg font-extrabold">{t("ctaTitle")}</h3>
                 <p className="mt-2 text-sm font-medium leading-relaxed">
                   {t("ctaDesc")}
                 </p>
                 <Link
                   href="/contact"
-                  className="mt-5 inline-block w-fit rounded-full bg-navy-950 px-6 py-2.5 text-sm font-bold text-white transition hover:bg-navy-800"
+                  className="mt-5 inline-block w-fit rounded-full bg-forest-950 px-6 py-2.5 text-sm font-bold text-white transition hover:bg-forest-800"
                 >
                   {t("ctaButton")}
                 </Link>

@@ -62,7 +62,7 @@ export default async function ContactPage({
 
   return (
     <>
-      <section className="thai-weave bg-navy-950 text-white">
+      <section className="thai-weave bg-forest-950 text-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
             {t("title")}
@@ -74,7 +74,7 @@ export default async function ContactPage({
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-5">
           <div className="lg:col-span-3">
-            <h2 className="text-2xl font-extrabold text-navy-950">
+            <h2 className="text-2xl font-extrabold text-forest-950">
               {t("formTitle")}
             </h2>
             <div className="mt-6">
@@ -83,25 +83,25 @@ export default async function ContactPage({
           </div>
 
           <div className="lg:col-span-2">
-            <h2 className="text-2xl font-extrabold text-navy-950">
+            <h2 className="text-2xl font-extrabold text-forest-950">
               {t("infoTitle")}
             </h2>
             <ul className="mt-6 space-y-5">
               {infoRows.map((row) => (
                 <li key={row.title} className="flex gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-navy-950 text-gold-400">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-forest-950 text-amber-400">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                       <path d={row.icon} stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
                   <div>
-                    <p className="text-sm font-bold text-navy-900">{row.title}</p>
+                    <p className="text-sm font-bold text-forest-900">{row.title}</p>
                     {row.lines.map((line) =>
                       line.href ? (
                         <a
                           key={line.text}
                           href={line.href}
-                          className="block text-sm text-slate-600 transition hover:text-gold-600"
+                          className="block text-sm text-slate-600 transition hover:text-amber-600"
                         >
                           {line.text}
                         </a>
@@ -131,7 +131,7 @@ export default async function ContactPage({
                 className="h-28 w-28 shrink-0 rounded-xl border border-slate-100 bg-white"
               />
               <div>
-                <p className="font-bold text-navy-900">{t("lineQr")}</p>
+                <p className="font-bold text-forest-900">{t("lineQr")}</p>
                 <p className="mt-1 text-sm text-slate-500">LINE ID: {company.lineId}</p>
               </div>
             </a>

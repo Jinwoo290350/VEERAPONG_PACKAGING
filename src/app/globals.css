@@ -1,29 +1,30 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand palette — deep navy (industrial trust) + Thai gold accent */
-  --color-navy-50: #f0f5fa;
-  --color-navy-100: #dbe7f3;
-  --color-navy-200: #b8cfe7;
-  --color-navy-300: #8bb0d6;
-  --color-navy-400: #5a8cc2;
-  --color-navy-500: #3a6fae;
-  --color-navy-600: #2b5892;
-  --color-navy-700: #234677;
-  --color-navy-800: #1d3a62;
-  --color-navy-900: #122a4a;
-  --color-navy-950: #0a1b33;
+  /* Brand palette — taken from the VP logo: forest greens + one warm accent */
+  --color-forest-50: #f1f8f3;
+  --color-forest-100: #dcefe2;
+  --color-forest-200: #bbdfc8;
+  --color-forest-300: #8ac7a2;
+  --color-forest-400: #52a976;
+  --color-forest-500: #2f9e5e; /* logo mid green */
+  --color-forest-600: #23834c;
+  --color-forest-700: #1c6a3e;
+  --color-forest-800: #185634;
+  --color-forest-900: #14472c; /* logo dark green */
+  --color-forest-950: #0a2a1a;
 
-  --color-gold-50: #fdf8ec;
-  --color-gold-100: #faedcb;
-  --color-gold-200: #f5da92;
-  --color-gold-300: #f1c65c;
-  --color-gold-400: #f6b83d;
-  --color-gold-500: #f0a421;
-  --color-gold-600: #d98a0e;
-  --color-gold-700: #b46f0b;
-  --color-gold-800: #925a10;
-  --color-gold-900: #784a12;
+  /* Warm accent — the orange rule under PACKAGING in the logo */
+  --color-amber-50: #fff6ed;
+  --color-amber-100: #ffe9d6;
+  --color-amber-200: #fed0aa;
+  --color-amber-300: #fdb175;
+  --color-amber-400: #fa8c3e;
+  --color-amber-500: #f4701a;
+  --color-amber-600: #e05710;
+  --color-amber-700: #ba410f;
+  --color-amber-800: #943614;
+  --color-amber-900: #782f14;
 
   --font-sans: var(--font-inter), var(--font-noto-thai), ui-sans-serif,
     system-ui, -apple-system, "Noto Sans JP", "Hiragino Kaku Gothic ProN",
@@ -44,7 +45,7 @@ body {
 }
 
 .thai-weave-light {
-  background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23122a4a' stroke-opacity='0.04' stroke-width='2'%3E%3Cpath d='M0 12h20M28 12h20M12 0v20M12 28v20M0 36h20M28 36h20M36 0v20M36 28v20'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2314472c' stroke-opacity='0.045' stroke-width='2'%3E%3Cpath d='M0 12h20M28 12h20M12 0v20M12 28v20M0 36h20M28 36h20M36 0v20M36 28v20'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* Scroll-reveal animation */

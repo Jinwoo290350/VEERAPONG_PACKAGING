@@ -40,7 +40,7 @@ export const productCategories: ProductCategory[] = [
       "/photos/foam/partition-pp-pe-foam.png",
       "/photos/foam/partition-pp-eva-foam.png",
     ],
-    accent: "from-sky-500 to-blue-700",
+    accent: "from-forest-500 to-forest-700",
     name: {
       th: "โฟมกันกระแทก",
       en: "Protective Foam",
@@ -154,7 +154,7 @@ export const productCategories: ProductCategory[] = [
       "/photos/bubble/air-bubble-rolls.jpg",
       "/photos/bubble/bubble-bags-antistatic.jpg",
     ],
-    accent: "from-cyan-500 to-teal-600",
+    accent: "from-forest-400 to-forest-600",
     name: {
       th: "พลาสติกกันกระแทก (บับเบิ้ล)",
       en: "Air Bubble Packaging",
@@ -260,7 +260,7 @@ export const productCategories: ProductCategory[] = [
       "/photos/pp-board/pp-board-sheets.jpg",
       "/photos/pp-board/pp-box-with-partition.png",
     ],
-    accent: "from-indigo-500 to-violet-700",
+    accent: "from-forest-600 to-forest-800",
     name: {
       th: "แผ่นพลาสติกลูกฟูก (PP Board)",
       en: "Corrugated Plastic (PP Board)",
@@ -380,7 +380,7 @@ export const productCategories: ProductCategory[] = [
     image: "/photos/boxes/pp-box-handles.png",
     isPhoto: true,
     gallery: ["/photos/boxes/pp-box-handles.png", "/photos/boxes.jpg"],
-    accent: "from-amber-500 to-orange-600",
+    accent: "from-amber-500 to-amber-700",
     name: {
       th: "กล่องและลังอุตสาหกรรม",
       en: "Industrial Boxes & Crates",
@@ -451,9 +451,10 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "film-tape",
-    image: "/photos/film-tape.jpg",
+    image: "/photos/film-tape/stretch-film-rolls.jpg",
     isPhoto: true,
-    accent: "from-emerald-500 to-green-700",
+    gallery: ["/photos/film-tape/stretch-film-rolls.jpg"],
+    accent: "from-forest-500 to-forest-800",
     name: {
       th: "ฟิล์ม เทป และสายรัด",
       en: "Films, Tapes & Strapping",
@@ -531,7 +532,7 @@ export const productCategories: ProductCategory[] = [
       "/photos/foam/partition-pp-pe-foam.png",
       "/photos/pp-board/pp-box-with-partition.png",
     ],
-    accent: "from-rose-500 to-red-700",
+    accent: "from-forest-700 to-forest-900",
     name: {
       th: "งานออกแบบตามชิ้นงาน",
       en: "Custom Packaging Design",

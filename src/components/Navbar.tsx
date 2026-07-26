@@ -37,8 +37,8 @@ export default function Navbar() {
                 href={l.href}
                 className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
                   isActive(l.href)
-                    ? "bg-navy-50 text-navy-900"
-                    : "text-slate-600 hover:text-navy-900"
+                    ? "bg-forest-50 text-forest-900"
+                    : "text-slate-600 hover:text-forest-900"
                 }`}
               >
                 {t(l.key)}
@@ -51,7 +51,7 @@ export default function Navbar() {
           <LanguageSwitcher />
           <Link
             href="/contact"
-            className="hidden rounded-full bg-gold-500 px-5 py-2 text-sm font-bold text-navy-950 shadow-sm transition hover:bg-gold-400 sm:block"
+            className="hidden rounded-full bg-forest-700 px-5 py-2 text-sm font-bold text-white shadow-sm transition hover:bg-forest-800 sm:block"
           >
             {t("getQuote")}
           </Link>
@@ -60,7 +60,7 @@ export default function Navbar() {
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={open}
-            className="flex h-10 w-10 items-center justify-center rounded-full text-navy-900 lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-forest-900 lg:hidden"
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               {open ? (
@@ -83,7 +83,7 @@ export default function Navbar() {
                   onClick={() => setOpen(false)}
                   className={`block rounded-xl px-4 py-2.5 text-sm font-semibold ${
                     isActive(l.href)
-                      ? "bg-navy-50 text-navy-900"
+                      ? "bg-forest-50 text-forest-900"
                       : "text-slate-600"
                   }`}
                 >
@@ -95,7 +95,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="block rounded-xl bg-gold-500 px-4 py-2.5 text-center text-sm font-bold text-navy-950"
+                className="block rounded-xl bg-forest-700 px-4 py-2.5 text-center text-sm font-bold text-white"
               >
                 {t("getQuote")}
               </Link>
