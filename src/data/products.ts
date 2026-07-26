@@ -14,6 +14,9 @@ export interface ProductCategory {
   slug: string;
   image: string;
   isPhoto?: boolean; // true = real photo (cover crop), false/absent = illustration
+  // Photo shot on a dark backdrop — keep it inside a dark frame instead of
+  // blending it into the white card surface.
+  darkPhoto?: boolean;
   // Carousel photos; missing files are filtered out at render time, so drop
   // images into public/ under these paths and they appear automatically.
   gallery?: string[];
@@ -602,6 +605,12 @@ export const productCategories: ProductCategory[] = [
     },
   },
 ];
+
+// Photos shot on a dark studio backdrop — rendered inside a dark frame instead
+// of being blended into a white card.
+export const darkBackdropPhotos = new Set([
+  "/photos/bubble/bubble-bags-antistatic.jpg",
+]);
 
 export function getCategory(slug: string) {
   return productCategories.find((c) => c.slug === slug);

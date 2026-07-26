@@ -3,7 +3,7 @@ import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { productCategories } from "@/data/products";
+import { darkBackdropPhotos, productCategories } from "@/data/products";
 import { yearsInBusiness } from "@/data/company";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
@@ -145,13 +145,19 @@ export default async function HomePage({
                     tabIndex={half === 1 ? -1 : undefined}
                     className="group shrink-0 rounded-[20px] border border-slate-200/80 bg-white p-2 shadow-sm transition hover:border-forest-300 hover:shadow-md"
                   >
-                    <span className="relative block h-44 w-64 overflow-hidden rounded-2xl bg-white sm:h-52 sm:w-80">
+                    <span
+                      className={`relative block h-44 w-64 overflow-hidden rounded-2xl sm:h-52 sm:w-80 ${
+                        darkBackdropPhotos.has(item.image) ? "bg-forest-950" : "bg-white"
+                      }`}
+                    >
                       <Image
                         src={item.image}
                         alt={item.name}
                         fill
                         sizes="20rem"
-                        className="object-contain p-2 transition duration-500 group-hover:scale-105"
+                        className={`object-contain p-2 transition duration-500 group-hover:scale-105 ${
+                          darkBackdropPhotos.has(item.image) ? "" : "mix-blend-multiply"
+                        }`}
                       />
                       <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-950/80 to-transparent px-3 pb-2 pt-6 text-left text-[11px] font-bold text-white">
                         {item.name}

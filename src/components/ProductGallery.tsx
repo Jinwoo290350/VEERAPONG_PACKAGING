@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { darkBackdropPhotos } from "@/data/products";
 
 // Auto-advancing, swipeable photo carousel. Reusable for any category.
 export default function ProductGallery({
@@ -60,18 +61,24 @@ export default function ProductGallery({
             className="flex h-full transition-transform duration-700 ease-[cubic-bezier(.22,.8,.25,1)]"
             style={{ transform: `translateX(-${idx * 100}%)` }}
           >
-            {images.map((src, i) => (
-              <div key={src} className="relative h-full w-full shrink-0">
-                <Image
-                  src={src}
-                  alt={`${alt} ${i + 1}`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 48rem"
-                  className="object-contain"
-                  priority={i === 0}
-                />
-              </div>
-            ))}
+            {images.map((src, i) => {
+              const dark = darkBackdropPhotos.has(src);
+              return (
+                <div
+                  key={src}
+                  className={`relative h-full w-full shrink-0 ${dark ? "bg-forest-950" : ""}`}
+                >
+                  <Image
+                    src={src}
+                    alt={`${alt} ${i + 1}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 48rem"
+                    className={`object-contain ${dark ? "" : "mix-blend-multiply"}`}
+                    priority={i === 0}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

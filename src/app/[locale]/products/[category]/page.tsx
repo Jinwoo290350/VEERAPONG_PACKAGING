@@ -117,7 +117,11 @@ export default async function CategoryPage({
                     alt={cat.name[l]}
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
-                    className={cat.isPhoto ? "object-contain p-3" : "object-contain p-8"}
+                    className={
+                      cat.isPhoto
+                        ? `object-contain p-3 ${cat.darkPhoto ? "" : "mix-blend-multiply"}`
+                        : "object-contain p-8"
+                    }
                     priority
                   />
                 </div>
