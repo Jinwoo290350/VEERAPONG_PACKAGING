@@ -14,7 +14,7 @@ const marqueePhotos = [
   { key: "ppBoxSet", image: "/photos/pp-board/pp-box-partition-set.png", slug: "pp-board" },
   { key: "epeRoll", image: "/photos/foam/epe-foam-roll.png", slug: "foam" },
   { key: "bubbleRoll", image: "/photos/bubble/air-bubble-rolls.jpg", slug: "bubble" },
-  { key: "ppSheets", image: "/photos/pp-board/pp-board-sheets.jpg", slug: "pp-board" },
+  { key: "ppSheets", image: "/photos/pp-board/pp-board-sheets.png", slug: "pp-board" },
   { key: "bubbleBags", image: "/photos/bubble/bubble-bags-antistatic.jpg", slug: "bubble" },
   { key: "ppBoxPartition", image: "/photos/pp-board/pp-box-with-partition.png", slug: "pp-board" },
   { key: "partitionPe", image: "/photos/foam/partition-pp-pe-foam.png", slug: "custom" },

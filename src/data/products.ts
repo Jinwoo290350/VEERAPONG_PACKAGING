@@ -260,7 +260,7 @@ export const productCategories: ProductCategory[] = [
     isPhoto: true,
     gallery: [
       "/photos/pp-board/pp-box-partition-set.png",
-      "/photos/pp-board/pp-board-sheets.jpg",
+      "/photos/pp-board/pp-board-sheets.png",
       "/photos/pp-board/pp-box-with-partition.png",
     ],
     accent: "from-forest-600 to-forest-800",
