@@ -33,14 +33,12 @@ export interface ProductCategory {
 export const productCategories: ProductCategory[] = [
   {
     slug: "foam",
-    image: "/products/foam-cover.svg",
-    isPhoto: true, // full-bleed cover art (SVG has its own backdrop)
+    image: "/photos/foam/epe-foam-roll.png",
+    isPhoto: true,
     gallery: [
-      "/photos/foam/foam-1.jpg",
-      "/photos/foam/foam-2.jpg",
-      "/photos/foam/foam-3.jpg",
-      "/photos/foam/foam-4.jpg",
-      "/photos/foam/foam-5.jpg",
+      "/photos/foam/epe-foam-roll.png",
+      "/photos/foam/partition-pp-pe-foam.png",
+      "/photos/foam/partition-pp-eva-foam.png",
     ],
     accent: "from-sky-500 to-blue-700",
     name: {
@@ -150,8 +148,12 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "bubble",
-    image: "/photos/bubble.jpg",
+    image: "/photos/bubble/air-bubble-rolls.jpg",
     isPhoto: true,
+    gallery: [
+      "/photos/bubble/air-bubble-rolls.jpg",
+      "/photos/bubble/bubble-bags-antistatic.jpg",
+    ],
     accent: "from-cyan-500 to-teal-600",
     name: {
       th: "พลาสติกกันกระแทก (บับเบิ้ล)",
@@ -251,8 +253,13 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "pp-board",
-    image: "/photos/pp-board.jpg",
+    image: "/photos/pp-board/pp-box-partition-set.png",
     isPhoto: true,
+    gallery: [
+      "/photos/pp-board/pp-box-partition-set.png",
+      "/photos/pp-board/pp-board-sheets.jpg",
+      "/photos/pp-board/pp-box-with-partition.png",
+    ],
     accent: "from-indigo-500 to-violet-700",
     name: {
       th: "แผ่นพลาสติกลูกฟูก (PP Board)",
@@ -370,8 +377,9 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "boxes",
-    image: "/photos/boxes.jpg",
+    image: "/photos/boxes/pp-box-handles.png",
     isPhoto: true,
+    gallery: ["/photos/boxes/pp-box-handles.png", "/photos/boxes.jpg"],
     accent: "from-amber-500 to-orange-600",
     name: {
       th: "กล่องและลังอุตสาหกรรม",
@@ -516,7 +524,13 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "custom",
-    image: "/products/custom.svg",
+    image: "/photos/foam/partition-pp-eva-foam.png",
+    isPhoto: true,
+    gallery: [
+      "/photos/foam/partition-pp-eva-foam.png",
+      "/photos/foam/partition-pp-pe-foam.png",
+      "/photos/pp-board/pp-box-with-partition.png",
+    ],
     accent: "from-rose-500 to-red-700",
     name: {
       th: "งานออกแบบตามชิ้นงาน",

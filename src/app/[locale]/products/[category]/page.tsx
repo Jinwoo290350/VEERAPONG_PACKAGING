@@ -109,7 +109,7 @@ export default async function CategoryPage({
               <div className="rounded-3xl border border-slate-100 bg-white p-3 shadow-xl shadow-navy-900/5">
                 <div
                   className={`relative h-64 overflow-hidden rounded-2xl sm:h-80 ${
-                    cat.isPhoto ? "bg-slate-50" : `bg-gradient-to-br ${cat.accent}`
+                    cat.isPhoto ? "bg-white" : `bg-gradient-to-br ${cat.accent}`
                   }`}
                 >
                   <Image
@@ -117,7 +117,7 @@ export default async function CategoryPage({
                     alt={cat.name[l]}
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
-                    className={cat.isPhoto ? "object-cover" : "object-contain p-8"}
+                    className={cat.isPhoto ? "object-contain p-3" : "object-contain p-8"}
                     priority
                   />
                 </div>

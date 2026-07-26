@@ -206,6 +206,17 @@
     "q5": "What information do you need for a quote?",
     "a5": "Part dimensions and weight, monthly volume, and any special requirements (ESD-safe, export, etc.). We reply with a proposal within 24 business hours."
   },
+  "showcase": {
+    "ppBoxSet": "PP Board boxes with partitions and lids",
+    "epeRoll": "EPE foam rolls in multiple colours",
+    "bubbleRoll": "Air bubble rolls — many colours and sizes",
+    "ppSheets": "PP Board sheets in 14 colours, cut to size",
+    "bubbleBags": "Bubble bags & anti-static pouches, made to size",
+    "ppBoxPartition": "PP Board box with cell partitions for your parts",
+    "partitionPe": "PP partition wrapped in PE foam, scratch-free",
+    "ppBoxHandles": "PP Board crate with hand holds, for closed-loop use",
+    "partitionEva": "PP partition wrapped in EVA foam, made to order"
+  },
   "viewer": {
     "hint": "Drag to rotate 360°",
     "explode": "Explode the layers",

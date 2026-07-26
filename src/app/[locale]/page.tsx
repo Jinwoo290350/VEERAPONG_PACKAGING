@@ -8,11 +8,19 @@ import { yearsInBusiness } from "@/data/company";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 
-// Product photos sliding in the marquee under the hero
-const marqueeSlugs = ["pp-board", "bubble", "boxes", "film-tape", "custom"];
-const marqueeImages: Record<string, string> = {
-  custom: "/photos/custom.jpg", // custom's card uses an illustration; marquee uses its photo
-};
+// Every real product photo we have, sliding under the hero.
+// `key` maps to messages under `showcase.*` for the caption.
+const marqueePhotos = [
+  { key: "ppBoxSet", image: "/photos/pp-board/pp-box-partition-set.png", slug: "pp-board", accent: "from-indigo-500 to-violet-700" },
+  { key: "epeRoll", image: "/photos/foam/epe-foam-roll.png", slug: "foam", accent: "from-sky-500 to-blue-700" },
+  { key: "bubbleRoll", image: "/photos/bubble/air-bubble-rolls.jpg", slug: "bubble", accent: "from-cyan-500 to-teal-600" },
+  { key: "ppSheets", image: "/photos/pp-board/pp-board-sheets.jpg", slug: "pp-board", accent: "from-indigo-500 to-violet-700" },
+  { key: "bubbleBags", image: "/photos/bubble/bubble-bags-antistatic.jpg", slug: "bubble", accent: "from-cyan-500 to-teal-600" },
+  { key: "ppBoxPartition", image: "/photos/pp-board/pp-box-with-partition.png", slug: "pp-board", accent: "from-indigo-500 to-violet-700" },
+  { key: "partitionPe", image: "/photos/foam/partition-pp-pe-foam.png", slug: "custom", accent: "from-rose-500 to-red-700" },
+  { key: "ppBoxHandles", image: "/photos/boxes/pp-box-handles.png", slug: "boxes", accent: "from-amber-500 to-orange-600" },
+  { key: "partitionEva", image: "/photos/foam/partition-pp-eva-foam.png", slug: "custom", accent: "from-rose-500 to-red-700" },
+];
 
 export async function generateMetadata({
   params,
@@ -34,15 +42,10 @@ export default async function HomePage({
   const t = await getTranslations();
   const l = locale as Locale;
 
-  const marqueeItems = marqueeSlugs
-    .map((slug) => productCategories.find((c) => c.slug === slug))
-    .filter((c) => c !== undefined)
-    .map((c) => ({
-      slug: c.slug,
-      name: c.name[l],
-      image: marqueeImages[c.slug] ?? c.image,
-      accent: c.accent,
-    }));
+  const marqueeItems = marqueePhotos.map((p) => ({
+    ...p,
+    name: t(`showcase.${p.key}`),
+  }));
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -142,18 +145,18 @@ export default async function HomePage({
               <div key={half} aria-hidden={half === 1} className="flex gap-6 pr-6">
                 {marqueeItems.map((item) => (
                   <Link
-                    key={item.slug}
+                    key={item.key}
                     href={`/products/${item.slug}`}
                     tabIndex={half === 1 ? -1 : undefined}
                     className={`group shrink-0 rounded-[20px] bg-gradient-to-br p-[3px] shadow-lg ${item.accent}`}
                   >
-                    <span className="relative block h-44 w-64 overflow-hidden rounded-[17px] sm:h-52 sm:w-80">
+                    <span className="relative block h-44 w-64 overflow-hidden rounded-[17px] bg-white sm:h-52 sm:w-80">
                       <Image
                         src={item.image}
                         alt={item.name}
                         fill
                         sizes="20rem"
-                        className="object-cover transition duration-500 group-hover:scale-105"
+                        className="object-contain p-2 transition duration-500 group-hover:scale-105"
                       />
                       <span className="absolute bottom-2.5 left-3 rounded-full bg-navy-950/75 px-3 py-1 text-[11px] font-bold text-white backdrop-blur">
                         {item.name}

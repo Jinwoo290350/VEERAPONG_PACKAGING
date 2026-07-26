@@ -21,7 +21,7 @@ export default function ProductCard({
       <div className="p-3 pb-0">
         <div
           className={`relative h-48 overflow-hidden rounded-xl ring-1 ring-slate-100 ${
-            category.isPhoto ? "bg-slate-50" : `bg-gradient-to-br ${category.accent}`
+            category.isPhoto ? "bg-white" : `bg-gradient-to-br ${category.accent}`
           }`}
         >
           {category.isPhoto ? (
@@ -30,7 +30,7 @@ export default function ProductCard({
               alt={category.name[locale]}
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              className="object-cover transition duration-500 group-hover:scale-105"
+              className="object-contain p-2 transition duration-500 group-hover:scale-105"
             />
           ) : (
             <Image

@@ -55,7 +55,7 @@ export default function ProductGallery({
         onPointerUp={onPointerUp}
         onPointerCancel={() => (drag.current.active = false)}
       >
-        <div className="relative h-72 overflow-hidden rounded-2xl bg-slate-50 sm:h-[420px]">
+        <div className="relative h-72 overflow-hidden rounded-2xl bg-white sm:h-[420px]">
           <div
             className="flex h-full transition-transform duration-700 ease-[cubic-bezier(.22,.8,.25,1)]"
             style={{ transform: `translateX(-${idx * 100}%)` }}
@@ -67,7 +67,7 @@ export default function ProductGallery({
                   alt={`${alt} ${i + 1}`}
                   fill
                   sizes="(max-width: 768px) 100vw, 48rem"
-                  className="object-cover"
+                  className="object-contain"
                   priority={i === 0}
                 />
               </div>
