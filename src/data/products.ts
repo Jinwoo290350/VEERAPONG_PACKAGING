@@ -155,7 +155,7 @@ export const productCategories: ProductCategory[] = [
     isPhoto: true,
     gallery: [
       "/photos/bubble/air-bubble-rolls.jpg",
-      "/photos/bubble/bubble-bags-antistatic.jpg",
+      "/photos/bubble/bubble-bags-antistatic.png",
     ],
     accent: "from-forest-400 to-forest-600",
     name: {
@@ -607,10 +607,9 @@ export const productCategories: ProductCategory[] = [
 ];
 
 // Photos shot on a dark studio backdrop — rendered inside a dark frame instead
-// of being blended into a white card.
-export const darkBackdropPhotos = new Set([
-  "/photos/bubble/bubble-bags-antistatic.jpg",
-]);
+// of being blended into a white card. (All current photos are cut-outs or shot
+// on white, so this is empty; keep it for future supplier photos.)
+export const darkBackdropPhotos = new Set<string>();
 
 export function getCategory(slug: string) {
   return productCategories.find((c) => c.slug === slug);
