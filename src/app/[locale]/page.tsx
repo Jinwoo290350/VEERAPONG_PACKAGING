@@ -1,25 +1,27 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { localeAlternates } from "@/lib/metadata";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { darkBackdropPhotos, productCategories } from "@/data/products";
 import { yearsInBusiness } from "@/data/company";
+import { blurFor } from "@/data/blur";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 
 // Every real product photo we have, sliding under the hero.
 // `key` maps to messages under `showcase.*` for the caption.
 const marqueePhotos = [
-  { key: "ppBoxSet", image: "/photos/pp-board/pp-box-partition-set.png", slug: "pp-board" },
+  { key: "ppBoxSet", image: "/photos/pp-board/pp-box-partition-set.jpg", slug: "pp-board" },
   { key: "epeRoll", image: "/photos/foam/epe-foam-roll.png", slug: "foam" },
   { key: "bubbleRoll", image: "/photos/bubble/air-bubble-rolls.jpg", slug: "bubble" },
   { key: "ppSheets", image: "/photos/pp-board/pp-board-sheets.png", slug: "pp-board" },
   { key: "bubbleBags", image: "/photos/bubble/bubble-bags-antistatic.png", slug: "bubble" },
-  { key: "ppBoxPartition", image: "/photos/pp-board/pp-box-with-partition.png", slug: "pp-board" },
-  { key: "partitionPe", image: "/photos/foam/partition-pp-pe-foam.png", slug: "custom" },
-  { key: "ppBoxHandles", image: "/photos/boxes/pp-box-handles.png", slug: "boxes" },
-  { key: "partitionEva", image: "/photos/foam/partition-pp-eva-foam.png", slug: "custom" },
+  { key: "ppBoxPartition", image: "/photos/pp-board/pp-box-with-partition.jpg", slug: "pp-board" },
+  { key: "partitionPe", image: "/photos/foam/partition-pp-pe-foam.jpg", slug: "custom" },
+  { key: "ppBoxHandles", image: "/photos/boxes/pp-box-handles.jpg", slug: "boxes" },
+  { key: "partitionEva", image: "/photos/foam/partition-pp-eva-foam.jpg", slug: "custom" },
 ];
 
 export async function generateMetadata({
@@ -29,7 +31,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.home" });
-  return { title: t("title"), description: t("description") };
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: localeAlternates(locale),
+  };
 }
 
 export default async function HomePage({
@@ -68,6 +74,8 @@ export default async function HomePage({
         <Image
           src="/photos/hero.jpg"
           alt=""
+          placeholder="blur"
+          blurDataURL={blurFor("/photos/hero.jpg")}
           fill
           priority
           sizes="100vw"
@@ -154,7 +162,8 @@ export default async function HomePage({
                         src={item.image}
                         alt={item.name}
                         fill
-                        sizes="20rem"
+                        loading="lazy"
+                        sizes="(max-width: 640px) 16rem, 20rem"
                         className={`object-contain p-2 transition duration-500 group-hover:scale-105 ${
                           darkBackdropPhotos.has(item.image) ? "" : "mix-blend-multiply"
                         }`}
@@ -314,6 +323,8 @@ export default async function HomePage({
         <Image
           src="/photos/hero.jpg"
           alt=""
+          placeholder="blur"
+          blurDataURL={blurFor("/photos/hero.jpg")}
           fill
           sizes="100vw"
           className="object-cover opacity-15 [filter:grayscale(0.6)]"

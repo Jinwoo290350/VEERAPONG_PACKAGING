@@ -40,8 +40,8 @@ export const productCategories: ProductCategory[] = [
     isPhoto: true,
     gallery: [
       "/photos/foam/epe-foam-roll.png",
-      "/photos/foam/partition-pp-pe-foam.png",
-      "/photos/foam/partition-pp-eva-foam.png",
+      "/photos/foam/partition-pp-pe-foam.jpg",
+      "/photos/foam/partition-pp-eva-foam.jpg",
     ],
     accent: "from-forest-500 to-forest-700",
     name: {
@@ -256,12 +256,12 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "pp-board",
-    image: "/photos/pp-board/pp-box-partition-set.png",
+    image: "/photos/pp-board/pp-box-partition-set.jpg",
     isPhoto: true,
     gallery: [
-      "/photos/pp-board/pp-box-partition-set.png",
+      "/photos/pp-board/pp-box-partition-set.jpg",
       "/photos/pp-board/pp-board-sheets.png",
-      "/photos/pp-board/pp-box-with-partition.png",
+      "/photos/pp-board/pp-box-with-partition.jpg",
     ],
     accent: "from-forest-600 to-forest-800",
     name: {
@@ -380,9 +380,9 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "boxes",
-    image: "/photos/boxes/pp-box-handles.png",
+    image: "/photos/boxes/pp-box-handles.jpg",
     isPhoto: true,
-    gallery: ["/photos/boxes/pp-box-handles.png", "/photos/boxes.jpg"],
+    gallery: ["/photos/boxes/pp-box-handles.jpg", "/photos/boxes.jpg"],
     accent: "from-amber-500 to-amber-700",
     name: {
       th: "กล่องและลังอุตสาหกรรม",
@@ -528,12 +528,12 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "custom",
-    image: "/photos/foam/partition-pp-eva-foam.png",
+    image: "/photos/foam/partition-pp-eva-foam.jpg",
     isPhoto: true,
     gallery: [
-      "/photos/foam/partition-pp-eva-foam.png",
-      "/photos/foam/partition-pp-pe-foam.png",
-      "/photos/pp-board/pp-box-with-partition.png",
+      "/photos/foam/partition-pp-eva-foam.jpg",
+      "/photos/foam/partition-pp-pe-foam.jpg",
+      "/photos/pp-board/pp-box-with-partition.jpg",
     ],
     accent: "from-forest-700 to-forest-900",
     name: {

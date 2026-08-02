@@ -1,16 +1,25 @@
 import type { Metadata } from "next";
 import { existsSync } from "fs";
 import path from "path";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { localeAlternates } from "@/lib/metadata";
 import { Link } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
+import { company } from "@/data/company";
 import { getCategory, productCategories } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
-import Showcase3D, { type ShowcaseVariant } from "@/components/Showcase3D";
-import ProductGallery from "@/components/ProductGallery";
+import type { ShowcaseVariant } from "@/components/Showcase3D";
+
+// Both are interactive and heavy; load them alongside the page rather than
+// blocking first paint. The 3D viewer reserves its height to avoid layout shift.
+const Showcase3D = dynamic(() => import("@/components/Showcase3D"), {
+  loading: () => <div className="h-[380px] sm:h-[420px]" aria-hidden="true" />,
+});
+const ProductGallery = dynamic(() => import("@/components/ProductGallery"));
 
 // Categories with an interactive 3D model in the header instead of a photo
 const showcaseVariants: Record<string, ShowcaseVariant> = {
@@ -34,9 +43,18 @@ export async function generateMetadata({
   const cat = getCategory(category);
   if (!cat) return {};
   const l = locale as Locale;
+  const description = `${cat.tagline[l]} — ${cat.description[l].slice(0, 120)}`;
   return {
     title: cat.name[l],
-    description: `${cat.tagline[l]} — ${cat.description[l].slice(0, 140)}`,
+    description,
+    alternates: localeAlternates(locale, `/products/${cat.slug}`),
+    // Share this category's own photo, not the generic site card
+    openGraph: {
+      title: cat.name[l],
+      description,
+      images: [{ url: cat.image, alt: cat.name[l] }],
+    },
+    twitter: { card: "summary_large_image", images: [cat.image] },
   };
 }
 
@@ -59,8 +77,43 @@ export default async function CategoryPage({
     existsSync(path.join(process.cwd(), "public", img)),
   );
 
+  // Per-page structured data: the product itself + where it sits in the site
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        name: cat.name[l],
+        description: cat.description[l],
+        image: `${company.siteUrl}${cat.image}`,
+        category: t("title"),
+        brand: { "@type": "Organization", name: company.name[l] },
+        manufacturer: { "@id": `${company.siteUrl}/#organization` },
+        offers: {
+          "@type": "Offer",
+          availability: "https://schema.org/InStock",
+          priceCurrency: "THB",
+          url: `${company.siteUrl}/${locale}/products/${cat.slug}`,
+          seller: { "@id": `${company.siteUrl}/#organization` },
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: company.shortName[l], item: `${company.siteUrl}/${locale}` },
+          { "@type": "ListItem", position: 2, name: t("title"), item: `${company.siteUrl}/${locale}/products` },
+          { "@type": "ListItem", position: 3, name: cat.name[l] },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
       {/* Header — light catalog style so the product photo stands out */}
       <section className="border-b border-slate-100 bg-gradient-to-b from-forest-50/70 to-white">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2">
@@ -142,7 +195,12 @@ export default async function CategoryPage({
               {tv("gallerySubtitle")}
             </p>
             <div className="mt-8">
-              <ProductGallery images={galleryImages} alt={cat.name[l]} />
+              <ProductGallery
+                images={galleryImages}
+                alt={cat.name[l]}
+                // Only the 3D-header pages have no priority image above it
+                eager={Boolean(showcaseVariants[cat.slug])}
+              />
             </div>
           </div>
         </section>

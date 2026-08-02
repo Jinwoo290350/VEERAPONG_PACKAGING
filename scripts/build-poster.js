@@ -18,15 +18,15 @@ const SANS = "'Helvetica Neue',Arial,sans-serif";
 
 // The same nine photos that slide in the website marquee
 const products = [
-  { file: "public/photos/pp-board/pp-box-partition-set.png", th: "กล่อง PP Board + ไส้กั้น" },
+  { file: "public/photos/pp-board/pp-box-partition-set.jpg", th: "กล่อง PP Board + ไส้กั้น" },
   { file: "public/photos/pp-board/pp-board-sheets.png", th: "แผ่น PP Board 14 สี" },
   { file: "public/photos/foam/epe-foam-roll.png", th: "ม้วนโฟม EPE" },
   { file: "public/photos/bubble/air-bubble-rolls.jpg", th: "ม้วนแอร์บับเบิ้ล" },
   { file: "public/photos/bubble/bubble-bags-antistatic.png", th: "ถุงบับเบิ้ล / กัน ESD" },
-  { file: "public/photos/pp-board/pp-box-with-partition.png", th: "กล่องไส้กั้นแบ่งช่อง" },
-  { file: "public/photos/boxes/pp-box-handles.png", th: "ลัง PP Board หูหิ้ว" },
-  { file: "public/photos/foam/partition-pp-pe-foam.png", th: "ไส้กั้น PP หุ้มโฟม PE" },
-  { file: "public/photos/foam/partition-pp-eva-foam.png", th: "ไส้กั้น PP หุ้มโฟม EVA" },
+  { file: "public/photos/pp-board/pp-box-with-partition.jpg", th: "กล่องไส้กั้นแบ่งช่อง" },
+  { file: "public/photos/boxes/pp-box-handles.jpg", th: "ลัง PP Board หูหิ้ว" },
+  { file: "public/photos/foam/partition-pp-pe-foam.jpg", th: "ไส้กั้น PP หุ้มโฟม PE" },
+  { file: "public/photos/foam/partition-pp-eva-foam.jpg", th: "ไส้กั้น PP หุ้มโฟม EVA" },
 ];
 
 // Circle grid: 3 × 3

@@ -5,12 +5,16 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { darkBackdropPhotos } from "@/data/products";
 
 // Auto-advancing, swipeable photo carousel. Reusable for any category.
+// `eager` marks the first slide as the page's LCP image — only pass it when the
+// page header has no priority image of its own (i.e. the 3D showcase pages).
 export default function ProductGallery({
   images,
   alt,
+  eager = false,
 }: {
   images: string[];
   alt: string;
+  eager?: boolean;
 }) {
   const [idx, setIdx] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -74,7 +78,7 @@ export default function ProductGallery({
                     fill
                     sizes="(max-width: 768px) 100vw, 48rem"
                     className={`object-contain ${dark ? "" : "mix-blend-multiply"}`}
-                    priority={i === 0}
+                    priority={eager && i === 0}
                   />
                 </div>
               );

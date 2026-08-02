@@ -13,7 +13,15 @@ export const company = {
   emails: ["Vrp.nu4289@gmail.com", "Vrp_nu@hotmail.com", "Sirikwan.ruangsri@gmail.com"],
   lineId: "nu0816861818",
   lineUrl: "https://line.me/ti/p/~nu0816861818",
-  siteUrl: "https://www.veerapongpackaging.com",
+  // Canonical origin for sitemap, canonical tags, OG images and JSON-LD.
+  // Set NEXT_PUBLIC_SITE_URL in Vercel once a custom domain exists; until then
+  // Vercel's stable production URL is used (VERCEL_URL changes per preview, so
+  // it must not be used here).
+  siteUrl:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "http://localhost:3000"),
   contacts: [
     {
       phone: "081-686-1818",

@@ -1,25 +1,34 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import dynamic from "next/dynamic";
 import { Inter, Noto_Sans_Thai } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { routing, type Locale } from "@/i18n/routing";
 import { company } from "@/data/company";
+import { localeAlternates } from "@/lib/metadata";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ChatWidget from "@/components/ChatWidget";
 import FloatingLine from "@/components/FloatingLine";
 import JsonLd from "@/components/JsonLd";
 import "../globals.css";
 
+// The chat panel is opened by a minority of visitors — keep its JS out of the
+// initial payload on all 50 pages.
+const ChatWidget = dynamic(() => import("@/components/ChatWidget"));
+
 const inter = Inter({
   subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
   variable: "--font-inter",
   display: "swap",
 });
 
 const notoSansThai = Noto_Sans_Thai({
-  subsets: ["thai", "latin"],
+  subsets: ["thai"], // Latin glyphs come from Inter
+  weight: ["400", "600", "700", "800"],
   variable: "--font-noto-thai",
   display: "swap",
 });
@@ -44,12 +53,8 @@ export async function generateMetadata({
       template: `%s | ${company.shortName.en}`,
     },
     description: t("description"),
-    alternates: {
-      canonical: `/${locale}`,
-      languages: Object.fromEntries(
-        routing.locales.map((l) => [l, `/${l}`]),
-      ),
-    },
+    // Home page only — every other route declares its own via localeAlternates
+    alternates: localeAlternates(locale),
     openGraph: {
       type: "website",
       siteName: company.shortName.en,
@@ -90,6 +95,8 @@ export default async function LocaleLayout({
           <FloatingLine />
           <ChatWidget locale={locale as Locale} />
         </NextIntlClientProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

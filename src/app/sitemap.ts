@@ -5,6 +5,19 @@ import { productCategories } from "@/data/products";
 
 const staticPaths = ["", "/products", "/industries", "/about", "/contact"];
 
+// Photos to advertise per route, so the product shots can surface in Google Images
+const imagesFor = (path: string): string[] => {
+  if (path === "") return [`${company.siteUrl}/og.png`];
+  if (path === "/products") {
+    return productCategories.map((c) => `${company.siteUrl}${c.image}`);
+  }
+  const cat = productCategories.find((c) => `/products/${c.slug}` === path);
+  if (!cat) return [];
+  return [...new Set([cat.image, ...(cat.gallery ?? [])])].map(
+    (img) => `${company.siteUrl}${img}`,
+  );
+};
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     ...staticPaths,
@@ -16,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: path === "" ? "weekly" : "monthly",
     priority: path === "" ? 1 : path.startsWith("/products") ? 0.8 : 0.6,
+    images: imagesFor(path),
     alternates: {
       languages: Object.fromEntries(
         routing.locales.map((l) => [l, `${company.siteUrl}/${l}${path}`]),
