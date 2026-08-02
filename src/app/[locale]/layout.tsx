@@ -70,6 +70,12 @@ export async function generateMetadata({
       images: ["/og.png"],
     },
     robots: { index: true, follow: true },
+    // Search Console ownership. A vercel.app subdomain can't be verified by DNS,
+    // so the meta-tag method is the only route: paste the token from
+    // Search Console into GOOGLE_SITE_VERIFICATION in the Vercel dashboard.
+    verification: process.env.GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+      : undefined,
   };
 }
 
