@@ -93,6 +93,25 @@ AI chat system prompt in `src/app/api/chat/route.ts`.
 - `src/app/icon.png`, `src/app/apple-icon.png` — favicons; `public/og.png` — social card.
 - Next.js/Vercel starter assets have been deleted; `devIndicators: false` hides the dev badge.
 
+## Performance & SEO rules
+
+- **Every page must declare its own canonical.** Next merges `alternates` from
+  the layout into children, so a page without its own `alternates` inherits the
+  locale home URL and gets dropped from Google's index. Use
+  `localeAlternates(locale, path)` from `src/lib/metadata.ts` in every
+  `generateMetadata`.
+- **Site origin** comes from `company.siteUrl` (env `NEXT_PUBLIC_SITE_URL`, else
+  Vercel's production URL). Never hard-code a domain.
+- **New photos**: drop the master anywhere under `public/photos/<category>/`,
+  then run `npm run optimize:images`. It resizes to 1200px, converts alpha-free
+  PNGs to JPEG (update the paths it prints), regenerates `src/data/blur.ts`, and
+  backs originals up to gitignored `assets-original/`. Keep files under ~250KB.
+- **Client components** that are interactive but not immediately visible
+  (chat, 3D viewer, carousel) load through `next/dynamic`; give anything above
+  the fold a fixed-height placeholder to avoid layout shift.
+- Only one image per page may carry `priority` — it should be the LCP element.
+- Meta descriptions stay under ~155 characters.
+
 ## Verify before finishing
 
 `npm run build` must pass, then check in the browser preview: homepage, one photo
