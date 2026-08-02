@@ -4,6 +4,11 @@ import { routing } from "./i18n/routing";
 export default createMiddleware(routing);
 
 export const config = {
-  // Skip API routes, Next internals and static files (paths containing a dot)
-  matcher: "/((?!api|_next|_vercel|.*\\..*).*)",
+  // Run only where a locale decision is actually needed: the bare root and any
+  // path that is not already locale-prefixed. Prefixed pages are static and are
+  // served straight from the CDN without paying for a middleware hop.
+  matcher: [
+    "/",
+    "/((?!api|_next|_vercel|th/|en/|ja/|zh/|th$|en$|ja$|zh$|.*\\..*).*)",
+  ],
 };
