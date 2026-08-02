@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
+import { routing } from "./src/i18n/routing";
 
 const withNextIntl = createNextIntlPlugin();
 
@@ -14,6 +15,12 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     // Product photography changes rarely; keep optimised variants for a month
     minimumCacheTTL: 60 * 60 * 24 * 31,
+  },
+  async redirects() {
+    // Locale detection is off, so "/" always lands on the default locale.
+    // Doing it here keeps the entry point (typed URLs, ad clicks) on Vercel's
+    // edge redirect instead of paying for a middleware invocation.
+    return [{ source: "/", destination: `/${routing.defaultLocale}`, permanent: false }];
   },
   async headers() {
     return [

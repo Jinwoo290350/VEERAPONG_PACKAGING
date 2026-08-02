@@ -7,8 +7,6 @@ export const config = {
   // Run only where a locale decision is actually needed: the bare root and any
   // path that is not already locale-prefixed. Prefixed pages are static and are
   // served straight from the CDN without paying for a middleware hop.
-  matcher: [
-    "/",
-    "/((?!api|_next|_vercel|th/|en/|ja/|zh/|th$|en$|ja$|zh$|.*\\..*).*)",
-  ],
+  // "/" is handled by a static redirect in next.config.ts
+  matcher: ["/((?!api|_next|_vercel|th/|en/|ja/|zh/|th$|en$|ja$|zh$|.*\\..*).*)"],
 };
