@@ -16,7 +16,15 @@ export default function JsonLd({ locale }: { locale: Locale }) {
         email: company.email,
         telephone: company.phone,
         taxID: company.regNo,
+        logo: `${company.siteUrl}/logo-mark.png`,
         description: `Industrial packaging wholesaler with ${yearsInBusiness}+ years of experience serving automotive supply chains.`,
+        // Ties this site to the same legal entity listed in the public company
+        // registries, so Google can merge the signals into one business.
+        sameAs: [
+          company.lineUrl,
+          `https://www.dataforthai.com/company/${company.regNo}/`,
+          `https://data.creden.co/company/general/${company.regNo}`,
+        ],
         address: {
           "@type": "PostalAddress",
           streetAddress: "12/34 Macharoen Road",
@@ -43,19 +51,28 @@ export default function JsonLd({ locale }: { locale: Locale }) {
           postalCode: "10160",
           addressCountry: "TH",
         },
-        openingHoursSpecification: {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-          ],
-          opens: "08:00",
-          closes: "17:30",
-        },
+        // Must stay identical to the hours on the Google Business Profile —
+        // conflicting hours make Google distrust both sources.
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+            ],
+            opens: "08:30",
+            closes: "17:00",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: "Saturday",
+            opens: "08:30",
+            closes: "12:00",
+          },
+        ],
         parentOrganization: { "@id": `${company.siteUrl}/#organization` },
       },
       {

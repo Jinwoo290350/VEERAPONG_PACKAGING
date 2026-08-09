@@ -51,7 +51,7 @@ COMPANY FACTS
 - Business: manufacturer and distributor of corrugated plastic boxes (PP Board) and protective packaging — EPE foam, EVA, air bubble. Also offers printing services for all kinds of media (รับพิมพ์สื่อสิ่งพิมพ์ทุกชนิด).
 - Address: ${company.address.en} (Thai: ${company.address.th})
 - Phone: ${company.contacts.map((c) => `${c.phone} (${c.name.th})`).join(" / ")} · Email: ${company.email} · LINE: ${company.lineId}
-- Hours: Mon–Sat 8:00–17:30 (Thailand time).
+- Hours: Mon–Fri 8:30–17:00, Sat 8:30–12:00, closed Sunday (Thailand time).
 - Track record: supplies automotive parts packaging used within Toyota and Hitachi supply chains in Thailand (via tier suppliers), plus electronics, appliance, food, logistics and export customers.
 
 PRODUCT CATALOG
