@@ -22,6 +22,10 @@ export interface ProductCategory {
   gallery?: string[];
   accent: string; // tailwind gradient classes for the card header
   name: Localized;
+  // Page <title> when the trade name people actually search for is longer than
+  // the label the UI should show (e.g. "ฟิวเจอร์บอร์ด" for PP Board).
+  // Falls back to `name`.
+  seoTitle?: Localized;
   tagline: Localized;
   description: Localized;
   items: ProductItem[];
@@ -36,6 +40,12 @@ export interface ProductCategory {
 export const productCategories: ProductCategory[] = [
   {
     slug: "foam",
+    seoTitle: {
+      th: "โฟมกันกระแทก EPE EVA PU ตัดขึ้นรูปตามชิ้นงาน",
+      en: "EPE / EVA / PU Protective Foam, Die-cut to Your Part",
+      ja: "EPE・EVA・PU 緩衝フォーム（型抜き対応）",
+      zh: "EPE／EVA／PU 防震泡棉，按工件模切",
+    },
     image: "/photos/foam/epe-foam-roll.png",
     isPhoto: true,
     gallery: [
@@ -51,7 +61,7 @@ export const productCategories: ProductCategory[] = [
       zh: "缓冲泡沫材料",
     },
     tagline: {
-      th: "EPE / PU / EVA ตัดขึ้นรูปตามชิ้นงาน",
+      th: "โฟมกันกระแทก EPE / PU / EVA ตัดขึ้นรูปตามชิ้นงาน",
       en: "EPE / PU / EVA, die-cut to your part",
       ja: "EPE・PU・EVA、部品形状に合わせた加工",
       zh: "EPE / PU / EVA，按工件裁切成型",
@@ -151,6 +161,12 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "bubble",
+    seoTitle: {
+      th: "แอร์บับเบิ้ล พลาสติกกันกระแทก งานถุงและงานแผ่น",
+      en: "Air Bubble Wrap & Bubble Bags, Made to Your Size",
+      ja: "エアキャップ（気泡緩衝材）シート・袋",
+      zh: "气泡膜与气泡袋，按尺寸定制",
+    },
     image: "/photos/bubble/air-bubble-rolls.jpg",
     isPhoto: true,
     gallery: [
@@ -256,6 +272,12 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "pp-board",
+    seoTitle: {
+      th: "ฟิวเจอร์บอร์ด PP Board แผ่นพลาสติกลูกฟูก โรงงานผลิตเอง",
+      en: "Future Board / PP Board Corrugated Plastic Sheets & Boxes",
+      ja: "フューチャーボード／PPボード（PPプラダン）",
+      zh: "Future Board／PP Board 中空板与周转箱",
+    },
     image: "/photos/pp-board/pp-box-partition-set.jpg",
     isPhoto: true,
     gallery: [
@@ -271,13 +293,13 @@ export const productCategories: ProductCategory[] = [
       zh: "中空板（PP瓦楞板）",
     },
     tagline: {
-      th: "สินค้าหลักผลิตเอง — กล่องและไส้กั้นหมุนเวียนสำหรับสายการผลิต",
+      th: "โรงงานผลิตเอง — ฟิวเจอร์บอร์ด กล่องและไส้กั้นหมุนเวียนสำหรับสายการผลิต",
       en: "Manufactured in-house — returnable boxes & dividers",
       ja: "自社製造 — 生産ライン向け通い箱・仕切り",
       zh: "自主生产 — 生产线用周转箱与隔板",
     },
     description: {
-      th: "สินค้าหลักที่เราผลิตเอง — แผ่นและกล่องพลาสติกลูกฟูก (PP Board / Future Board) ผลิตจากพลาสติก PP แข็งแรงไม่ฉีกขาดง่าย กันน้ำ 100% เช็ดล้างแล้วนำกลับมาใช้ซ้ำได้หลายรอบ ทนทั้งสารเคมีและน้ำมัน แผ่นมาตรฐาน 1300×2450 มม. ความหนา 2–10 มม. มีให้เลือกถึง 14 สี ตัดตามขนาดที่ต้องการ และขึ้นรูปเป็นกล่องได้หลายแบบตามลักษณะงาน",
+      th: "สินค้าหลักที่เราผลิตเอง — แผ่นและกล่องพลาสติกลูกฟูก หรือที่เรียกกันทั่วไปว่า ฟิวเจอร์บอร์ด (PP Board / Future Board / Corrugated Plastic) ผลิตจากพลาสติก PP แข็งแรงไม่ฉีกขาดง่าย กันน้ำ 100% เช็ดล้างแล้วนำกลับมาใช้ซ้ำได้หลายรอบ ทนทั้งสารเคมีและน้ำมัน แผ่นมาตรฐาน 1300×2450 มม. ความหนา 2–10 มม. มีให้เลือกถึง 14 สี ตัดตามขนาดที่ต้องการ และขึ้นรูปเป็นกล่องได้หลายแบบตามลักษณะงาน",
       en: "Our flagship in-house product — PP corrugated sheets and boxes (PP Board / Future Board). Tough polypropylene that won't tear like cardboard: 100% waterproof, washable and reusable trip after trip, resistant to chemicals and oils. Standard 1300×2450 mm sheets in 2–10 mm thickness and 14 colours, cut to any size and fabricated into boxes to suit the job.",
       ja: "当社の主力自社製造製品 — プラダン（PPボード／フューチャーボード）のシートと箱。丈夫なPP製で紙のように破れず、100%防水、洗浄して何度でも再利用可能。薬品や油にも強い素材です。標準シート1300×2450mm、厚さ2〜10mm、14色展開。ご希望サイズにカットし、用途に合わせた箱に加工します。",
       zh: "我们的核心自产产品——中空板（PP Board / Future Board）板材与箱子。坚韧的PP塑料不像纸箱易撕裂：100%防水、可清洗反复使用、耐化学品和油污。标准板材1300×2450毫米，厚度2–10毫米，多达14种颜色，可任意裁切并按用途加工成各类箱型。",

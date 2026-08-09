@@ -44,8 +44,10 @@ export async function generateMetadata({
   if (!cat) return {};
   const l = locale as Locale;
   const description = `${cat.tagline[l]} — ${cat.description[l].slice(0, 120)}`;
+  // Search-term title where one is defined; the on-page heading keeps cat.name
+  const title = cat.seoTitle?.[l] ?? cat.name[l];
   return {
-    title: cat.name[l],
+    title,
     description,
     alternates: localeAlternates(locale, `/products/${cat.slug}`),
     // Share this category's own photo, not the generic site card

@@ -56,7 +56,7 @@ export default async function HomePage({
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [1, 2, 3, 4, 5].map((n) => ({
+    mainEntity: [1, 2, 3, 4, 5, 6].map((n) => ({
       "@type": "Question",
       name: t(`faq.q${n}`),
       acceptedAnswer: { "@type": "Answer", text: t(`faq.a${n}`) },
@@ -292,7 +292,7 @@ export default async function HomePage({
             <p className="mt-3 text-slate-500">{t("faq.subtitle")}</p>
           </Reveal>
           <div className="mt-10 space-y-3">
-            {([1, 2, 3, 4, 5] as const).map((n) => (
+            {([1, 2, 3, 4, 5, 6] as const).map((n) => (
               <details
                 key={n}
                 className="group rounded-2xl border border-slate-100 bg-white shadow-sm open:shadow-md"
