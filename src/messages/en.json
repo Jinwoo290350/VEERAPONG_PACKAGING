@@ -19,6 +19,14 @@
     "contact": {
       "title": "Contact Us / Request a Quote | Veerapong Packaging",
       "description": "Contact Veerapong Packaging in Nong Khaem, Bangkok. Free industrial packaging consultation and quotes within 24 hours."
+    },
+    "quote": {
+      "title": "PP Board & Protective Foam Pricing | Request a Quote",
+      "description": "What drives the price of PP Board, EPE foam and air bubble packaging, what to prepare, and how to get a quote straight from the factory."
+    },
+    "areas": {
+      "title": "Service Areas | Packaging Factory in Nong Khaem, Bangkok",
+      "description": "Packaging manufacturer in Nong Khaem, Bangkok. Direct factory delivery across Bangkok, Samut Sakhon, Nakhon Pathom and the Eastern Seaboard."
     }
   },
   "nav": {
@@ -27,7 +35,9 @@
     "industries": "Industries",
     "about": "About",
     "contact": "Contact",
-    "getQuote": "Get a Quote"
+    "getQuote": "Get a Quote",
+    "quote": "Pricing",
+    "areas": "Service areas"
   },
   "hero": {
     "badge": "Industrial packaging specialists since 2007",
@@ -247,5 +257,50 @@
   "notFound": {
     "title": "Page not found",
     "backHome": "Back to home"
+  },
+  "quote": {
+    "title": "How our packaging is priced",
+    "subtitle": "Every job is made to its own size and spec, so there is no single list price. This page explains what moves the number and what to send us for the fastest quote.",
+    "factorsTitle": "Six things that set the price",
+    "f1": "Size and thickness",
+    "f1d": "PP Board runs 2-10 mm thick — thicker is stronger and costs more. Foam is priced by thickness and density the same way.",
+    "f2": "Order quantity",
+    "f2d": "Larger runs spread tooling and setup across more pieces, so the unit price falls as volume rises.",
+    "f3": "Colour and printing",
+    "f3d": "PP Board comes in 14 colours. Printing a logo or text adds a production step and shows up in the price.",
+    "f4": "Format of the job",
+    "f4d": "Plain sheets are cheapest. Die-cutting, folding, fitted partitions or full box assembly each add labour.",
+    "f5": "Material and grade",
+    "f5d": "EPE, EVA and PU differ in cost, and anti-static grades for electronics work carry a premium over standard grades.",
+    "f6": "Delivery date",
+    "f6d": "Planned orders price better than rush jobs, because we can schedule production and buy material to suit.",
+    "prepareTitle": "Send us this and we can quote",
+    "prepareNote": "You don't need all of it — a photo of the part is enough to start the conversation.",
+    "p1": "Dimensions of the part you need to protect (W x L x H)",
+    "p2": "Quantity per order, and roughly per month",
+    "p3": "How it will be used — export, in-plant returnable, or single trip",
+    "p4": "Photos of the part, or a drawing / CAD file if you have one",
+    "p5": "The date you need it by",
+    "stepsTitle": "From enquiry to delivery",
+    "s1": "Send the details by phone, LINE or email",
+    "s2": "We quote, with a material recommendation",
+    "s3": "We make a sample to test against your real part",
+    "s4": "You approve, we produce and deliver to your plant",
+    "ctaTitle": "Send us the details",
+    "ctaText": "Our team replies with pricing and a material recommendation.",
+    "ctaButton": "Go to contact page"
+  },
+  "areas": {
+    "title": "Service areas",
+    "subtitle": "Our factory is in Nong Khaem, Bangkok, and we deliver straight to your plant with no middleman.",
+    "bkkTitle": "Bangkok",
+    "bkkNote": "Districts closest to the factory get the quickest turnaround",
+    "upcTitle": "Greater Bangkok and beyond",
+    "upcNote": "The industrial areas we ship to regularly",
+    "farTitle": "Outside our delivery area",
+    "farText": "Anywhere else in Thailand ships by freight carrier. Tell us the destination with your enquiry and we will include the freight cost in the quote.",
+    "visitTitle": "You are welcome at the factory",
+    "visitText": "To see real samples or work through the details in person, arrange a visit. Call ahead so the team can have samples ready for you.",
+    "ctaButton": "Request a quote"
   }
 }

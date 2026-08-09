@@ -3,7 +3,15 @@ import { routing } from "@/i18n/routing";
 import { company } from "@/data/company";
 import { productCategories } from "@/data/products";
 
-const staticPaths = ["", "/products", "/industries", "/about", "/contact"];
+const staticPaths = [
+  "",
+  "/products",
+  "/industries",
+  "/quote",
+  "/service-areas",
+  "/about",
+  "/contact",
+];
 
 // Photos to advertise per route, so the product shots can surface in Google Images
 const imagesFor = (path: string): string[] => {

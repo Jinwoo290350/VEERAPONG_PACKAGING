@@ -31,6 +31,8 @@ export default function Footer() {
                 ["/", "home"],
                 ["/products", "products"],
                 ["/industries", "industries"],
+                ["/quote", "quote"],
+                ["/service-areas", "areas"],
                 ["/about", "about"],
                 ["/contact", "contact"],
               ] as const
