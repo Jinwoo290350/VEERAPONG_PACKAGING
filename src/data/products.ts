@@ -402,6 +402,12 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "boxes",
+    seoTitle: {
+      th: "กล่องกระดาษลูกฟูก ลังพลาสติก พาเลท สำหรับโรงงาน",
+      en: "Corrugated Cartons, Plastic Crates & Pallets for Factories",
+      ja: "段ボール箱・プラスチックコンテナ・パレット",
+      zh: "瓦楞纸箱、塑料周转箱与托盘",
+    },
     image: "/photos/boxes/pp-box-handles.jpg",
     isPhoto: true,
     gallery: ["/photos/boxes/pp-box-handles.jpg", "/photos/boxes.jpg"],
@@ -476,6 +482,12 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "film-tape",
+    seoTitle: {
+      th: "สเตรทช์ฟิล์ม เทปกาว สายรัดพลาสติก ราคาส่ง",
+      en: "Stretch Film, Packing Tape & Strapping — Wholesale",
+      ja: "ストレッチフィルム・梱包テープ・PPバンド",
+      zh: "拉伸膜、封箱胶带与打包带（批发）",
+    },
     image: "/photos/film-tape/stretch-film-rolls.jpg",
     isPhoto: true,
     gallery: ["/photos/film-tape/stretch-film-rolls.jpg"],
@@ -550,6 +562,12 @@ export const productCategories: ProductCategory[] = [
   },
   {
     slug: "custom",
+    seoTitle: {
+      th: "รับออกแบบบรรจุภัณฑ์ สั่งผลิตตามแบบชิ้นงาน",
+      en: "Custom Packaging Design & Made-to-Part Production",
+      ja: "オーダーメイド梱包設計・部品形状に合わせた製作",
+      zh: "定制包装设计与按件生产",
+    },
     image: "/photos/foam/partition-pp-eva-foam.jpg",
     isPhoto: true,
     gallery: [
