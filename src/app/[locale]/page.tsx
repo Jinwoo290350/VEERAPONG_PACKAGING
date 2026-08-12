@@ -96,6 +96,11 @@ export default async function HomePage({
               {t("hero.badge")}
             </p>
             <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
+              {/* The company name belongs in the h1 — brand searches look for it
+                  here, and the headline alone never says who we are. */}
+              <span className="mb-3 block text-base font-bold tracking-wide text-forest-200 sm:text-lg">
+                {t("hero.brandLine")}
+              </span>
               {t("hero.title")}{" "}
               <span className="text-amber-400">{t("hero.titleHighlight")}</span>{" "}
               {t("hero.titleEnd")}
