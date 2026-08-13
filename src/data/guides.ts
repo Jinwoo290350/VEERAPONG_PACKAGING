@@ -198,6 +198,20 @@ export const guides: Guide[] = [
       },
       {
         q: {
+          th: "โฟมบอร์ดกับฟิวเจอร์บอร์ดต่างกันยังไง",
+          en: "What is the difference between foam board and PP Board?",
+          ja: "フォームボードとPPボードの違いは",
+          zh: "泡沫板和PP中空板有什么区别",
+        },
+        a: {
+          th: "คนละวัสดุกัน โฟมบอร์ดคือแผ่นโฟมประกบกระดาษ เบามากแต่โดนน้ำแล้วเสีย ใช้ทำป้ายและงานโมเดล ส่วนฟิวเจอร์บอร์ดทำจากพลาสติก PP ทั้งแผ่น กันน้ำ 100% ล้างแล้วใช้ซ้ำได้ จึงเป็นตัวที่ใช้ทำกล่องหมุนเวียนและไส้กั้นในโรงงาน",
+          en: "Different materials. Foam board is a foam core faced with paper — very light, used for signage and models, and ruined by water. PP Board is solid polypropylene: waterproof, washable and reusable, which is why factories use it for returnable boxes and partitions.",
+          ja: "別素材です。フォームボードは紙で挟んだ発泡芯材で、軽い一方で水に弱く、看板や模型向けです。PPボードはポリプロピレン製で防水・洗浄可能なため、リターナブル箱や仕切りに使われます。",
+          zh: "材质不同。泡沫板是纸面夹发泡芯，很轻但遇水即坏，用于标牌和模型。PP中空板为聚丙烯材质，防水、可清洗重复使用，因此工厂用它做周转箱和隔板。",
+        },
+      },
+      {
+        q: {
           th: "ขนาดแผ่นมาตรฐานเท่าไหร่ ตัดขนาดอื่นได้ไหม",
           en: "What is the standard sheet size? Can you cut to size?",
           ja: "標準サイズと、カット対応について",
