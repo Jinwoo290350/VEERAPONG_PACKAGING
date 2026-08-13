@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { company } from "@/data/company";
 import { productCategories } from "@/data/products";
+import { guides } from "@/data/guides";
 
 const staticPaths = [
   "",
@@ -30,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     ...staticPaths,
     ...productCategories.map((c) => `/products/${c.slug}`),
+    ...guides.map((g) => `/guides/${g.slug}`),
   ];
 
   return paths.map((path) => ({

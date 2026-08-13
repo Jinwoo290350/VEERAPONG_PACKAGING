@@ -10,6 +10,7 @@ import { Link } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { company } from "@/data/company";
 import { getCategory, productCategories } from "@/data/products";
+import { guides } from "@/data/guides";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 import type { ShowcaseVariant } from "@/components/Showcase3D";
@@ -26,6 +27,12 @@ const showcaseVariants: Record<string, ShowcaseVariant> = {
   foam: "foam",
   "pp-board": "ppboard",
   bubble: "bubble",
+};
+
+// Categories that have a long-tail guide to hand the reader on to
+const guideFor: Record<string, string> = {
+  "pp-board": "pp-board-thickness",
+  foam: "epe-foam-thickness",
 };
 
 export function generateStaticParams() {
@@ -266,6 +273,17 @@ export default async function CategoryPage({
                   ))}
                 </tbody>
               </table>
+              {guideFor[cat.slug] ? (
+                <div className="border-t border-slate-100 bg-white px-6 py-4">
+                  <Link
+                    href={`/guides/${guideFor[cat.slug]}`}
+                    className="text-sm font-bold text-forest-700 transition hover:text-forest-800"
+                  >
+                    {guides.find((g) => g.slug === guideFor[cat.slug])?.title[l]}{" "}
+                    →
+                  </Link>
+                </div>
+              ) : null}
               <div className="border-t border-slate-100 bg-forest-50 px-6 py-4">
                 <Link
                   href="/contact"
